@@ -3,7 +3,7 @@ Repositório criado para a Unidade Curricular Engenharia de Segurança, do perfi
 
 ---
 
-## **Composição do Grupo 5**
+## **Composição do Grupo**
 * Diogo Araújo, A78485 - [dichico](https://github.com/dichico)
 * Diogo Nogueira, A78957 - [diogoesnog](https://github.com/diogoesnog)
 

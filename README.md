@@ -1,3 +1,9 @@
+<p align="center">
+   <img width="200" height="182" src="https://upload.wikimedia.org/wikipedia/commons/9/93/EEUMLOGO.png">
+</p>
+
+<br>
+
 # Engenharia de Segurança
 Repositório criado para a Unidade Curricular Engenharia de Segurança, do perfil **Criptografia e Segurança da Informação**, que irá conter as resoluções de todos os trabalhos práticos propostos assim como uma breve descrição das decisões tomadas e possíveis dificuldades encontradas no decorrer de cada um dos guiões.
 

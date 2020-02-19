@@ -1,6 +1,7 @@
 # Trabalho Prático 1 - Aula 17/02/2020
 
-Add Small Description.
+1. [Pergunta P1.1.](#P1.1)
+2. [Pergunta P1.2.](#P1.2)
 
 ---
 
@@ -8,8 +9,7 @@ Add Small Description.
 
 ### 1\. Números Aleatórios/Pseudoaleatórios
 
-<p>
-
+<a name="P1.1"/>
 #### 	1.1\. Pergunta P1.1
 
 O comando `openssl rand -base64 1024` pedido para teste na Experiência 1.1 é claro de se compreender.
@@ -49,9 +49,12 @@ Dado que o *special file* `/dev/unrandom` nunca interrompe a operação de leitu
 - O uso do *special file* `/dev/random` ou `/dev/unrandom` é determinante no Tempo de Execução.
   - O **Comando 3** e o **Comando 4** solicitam a mesma quantidade de *bytes*, mas a diferença de tempo é muito grande. Isso acontece porque o **Comando 4** faz uso do `unrandom`, o que leva a que quando a entropia não é suficiente, exista uma espécie de implementação de PRNG próprio através de uma *seed* (que é o que OpenSSL acaba por fazer), acelarando todo o processo em si.
 
+***
 <p>
+<a name="P1.2"/>
 
-#### 	1.2\. Pergunta P2.1
+
+#### 	1.2\. Pergunta P1.2
 
 Conforme anunciado, o haveged é um *daemon* de entropia totalmente adaptado através do algoritmo HAVEGE, criado com o objetivo de corrigir/colmatar problemas em que existe uma baixa entropia no *special file* em si. A sua ideia base passa por fornecer um RNG simples de usar que possibilite essa medida através da criação da entropia necessária para se excutar o comando/operações em causa.
 

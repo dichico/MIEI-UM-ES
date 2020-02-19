@@ -29,12 +29,12 @@ O que faz sentido, dado que o *output* produzido por este comando consiste preci
 
 Note-se que o tempo de execução destes comandos é uma estimativa dada pelo próprio *Debian*, fazendo-se uso do comando `time`.
 
-|                 Lista de Comandos                 | Tempo de Execução | Resultados/Observações |
-| :-----------------------------------------------: | :---------------: | :--------------------: |
-|  `head -c 32 /dev/random | openssl enc -base64`   |     ≡ 0.004s      |                        |
-|  `head -c 64 /dev/random | openssl enc -base64`   |     ≡ 0.012s      |                        |
-| `head -c 1024 /dev/random | openssl enc -base64`  |       ≡ 0.        |                        |
-| `head -c 1024 /dev/urandom | openssl enc -base64` |       ≡ 0.        |                        |
+|               Lista de Comandos               | Tempo de Execução | Resultados/Observações |
+| :-------------------------------------------: | :---------------: | :--------------------: |
+|   **Comando 1** - 32 *bytes*, `/dev/random`   |     ≡ 0.004s      |                        |
+|   **Comando 2** - 64 *bytes*, `/dev/random`   |     ≡ 0.012s      |                        |
+|  **Comando 3** - 1024 *bytes*, `/dev/random`  |       ≡ 0.        |                        |
+| **Comando 4** - 1024 *bytes*, `/dev/unrandom` |       ≡ 0.        |                        |
 
 
 

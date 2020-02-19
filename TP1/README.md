@@ -1,6 +1,6 @@
 # Trabalho Prático 1 - Aula 17/02/2020
 
-1. [Pergunta P1.1.](#P1.1)
+1. [Pergunta P1.1.](#11-pergunta-p11)
 2. [Pergunta P1.2.](#P1.2)
 
 ---
@@ -8,8 +8,6 @@
 ## Resolução do Guião
 
 ### 1\. Números Aleatórios/Pseudoaleatórios
-
-<a name="P1.1"/>
 
 #### 	1.1\. Pergunta P1.1
 

@@ -1,7 +1,7 @@
 # Trabalho Prático 1 - Aula 17/02/2020
 
 1. [Pergunta P1.1.](#11-pergunta-p11)
-2. [Pergunta P1.2.](#P1.2)
+2. [Pergunta P1.2.](#12-pergunta-p12)
 
 ---
 
@@ -50,8 +50,6 @@ Dado que o *special file* `/dev/unrandom` nunca interrompe a operação de leitu
 
 ***
 <p>
-<a name="P1.2"/>
-
 
 #### 	1.2\. Pergunta P1.2
 

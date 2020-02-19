@@ -1,7 +1,7 @@
 # Pergunta 1 - Números Aleatórios/Pseudoaleatórios
 
-1. [Pergunta P1.1.](#11-pergunta-p11)
-2. [Pergunta P1.2.](#12-pergunta-p12)
+1. [Pergunta P1.1](#11-pergunta-p11)
+2. [Pergunta P1.2](#12-pergunta-p12)
 
 ---
 
@@ -61,13 +61,13 @@ Igualmente à **Pergunta P1.1**,  será feita uma análise basilar acerca dos co
 | **Comando 3** - 1024 *bytes*, `/dev/random`   |     ≡ 0.004s      | Tempo de Execução muito inferior ao da **Pergunta P1.1**.  |
 | **Comando 4** - 1024 *bytes*, `/dev/unrandom` |     ≡ 0.004s      | Tempo de Execução mantém-se igual ao da **Pergunta P1.1**. |
 
-<br/>
+
 
 - Ambos os comandos executam em tempos aproximadamente iguais. 
 - Relativamente à **Pergunta P1.1**, nota-se uma diferença significativa em relação ao **Comando 3**. 
 
   - Isto deve-se ao facto de que quando o `/dev/random` é executado, passa a existir desta vez a entropia essencial/necessária para que se produzam os 1024 *bytes* pedidos. 
-  - Essa entropia é então calculada pelo haveged. 
+  - Essa entropia é então calculada pelo haveged. <br/>
 
 ---
 

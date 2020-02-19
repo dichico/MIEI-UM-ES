@@ -1,0 +1,1 @@
+# Pergunta 3 - Authenticated Encryption

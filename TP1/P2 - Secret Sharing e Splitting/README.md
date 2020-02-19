@@ -1,0 +1,1 @@
+# Pergunta 2 - Secret Sharing/Splitting

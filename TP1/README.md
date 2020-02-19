@@ -50,12 +50,12 @@ Dado que o *special file* `/dev/unrandom` nunca interrompe a operação de leitu
   - O **Comando 3** e o **Comando 4** solicitam a mesma quantidade de *bytes*, mas a diferença de tempo é muito grande. Isso acontece porque o **Comando 4** faz uso do `unrandom`, o que leva a que quando a entropia não é suficiente, exista uma espécie de implementação de PRNG próprio através de uma *seed* (que é o que OpenSSL acaba por fazer), acelarando todo o processo em si.
 
 <p>
-  
+
 #### 	1.2\. Pergunta P2.1
 
 Conforme anunciado, o haveged é um *daemon* de entropia totalmente adaptado através do algoritmo HAVEGE, criado com o objetivo de corrigir/colmatar problemas em que existe uma baixa entropia no *special file* em si. A sua ideia base passa por fornecer um RNG simples de usar que possibilite essa medida através da criação da entropia necessária para se excutar o comando/operações em causa.
 
-<p>
+<br/>
 
 Igualmente à **Pergunta P1.1**,  será feita uma análise basilar acerca dos comandos, estudando-se agora apenas o **Comando 3** e o **Comando 4**.
 

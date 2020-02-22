@@ -76,15 +76,14 @@ Fazendo uma pequena análise do ficheiro em causa, tanto em termos de código em
 
 Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Classe que se cria quando se executa o ficheiro java em si.
 
-*Esta pasta inclui figuras que ilustram como isto funciona através de um exemplo prático de bytes gerados a partir deste pequeno algoritmo.*
+***Esta pasta inclui figuras que ilustram como isto funciona através de um exemplo prático de bytes gerados a partir deste pequeno algoritmo.***
 
 <br/>
 
 - **Análise Ficheiro *generateSecret-app.py***
 
 1. O ficheiro em causa é muito pequeno, dado que usa o módulo **eVotUM.Cripto** e que este acaba por fazer o trabalho principal na geração de *bytes*.
-
-  O link fornecido permite estudar como funciona este módulo e com isso chegar a uma conclusão acerca do *output* quando se executa o programa Python.
+O link fornecido permite estudar como funciona este módulo e com isso chegar a uma conclusão acerca do *output* quando se executa o programa Python.
 
   Como o próprio main indica, para processar os *bytes*, recorre-se ao módulo *shamirscret.py*, mais propriamente ao método **generateSecret**.
 
@@ -113,11 +112,17 @@ Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Cla
   O módulo *utils* usado para a variável **s** permite que esta seja construída através do comando *unrandom*.
   Após esta variável ser construída existe uma verificação *if*, que trata de verificar cada caractér da mesma e com isso limitar apenas aqueles que são letras (```string.ascii_letters```) ou dígitos (```string.digits```).
 
+<br/>
+
 2. Para não se limitar o *output* a letras e dígitos a alteração necessária em termos de código seria muito simples.
 
 Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia-se escrever:
 
   ```python
+  def generateSecretTime(secretLength, timeToLive):
+
+    (...)
+    
     while (l < secretLength):
         s = utils.generateRandomData(secretLength - l)
         for c in s:
@@ -128,7 +133,7 @@ Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia
     return secret, time.time() + timeToLive
   ```
 
-  *Estão incluídos na pasta os dois outputs executados para a análise deste ficheiro Python que permitem assim.*
+  ***Estão incluídos na pasta os dois outputs executados para a análise deste ficheiro Python que permitem assim.***
 
 ---
 

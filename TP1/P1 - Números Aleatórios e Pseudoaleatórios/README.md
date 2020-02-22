@@ -2,6 +2,7 @@
 
 1. [Pergunta P1.1.](#pergunta-p11)
 2. [Pergunta P1.2.](#pergunta-p12)
+3. [Pergunta P1.3.](#pergunta-p13)
 
 ---
 
@@ -66,6 +67,68 @@ Igualmente à **Pergunta P1.1**,  será feita uma análise basilar acerca dos co
 
   - Isto deve-se ao facto de que quando o `/dev/random` é executado, passa a existir desta vez a entropia essencial/necessária para que se produzam os 1024 *bytes* pedidos. 
   - Essa entropia é então calculada pelo haveged. <br/>
+
+### Pergunta P1.3
+
+- **Análise Ficheiro *RandomBytes.java***
+
+Fazendo uma pequena análise do ficheiro em causa, tanto em termos de código em si como em termos de resultado, chegamos à conclusão que se trata de um algoritmo similar ao que vimos anteriormente.
+
+Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Classe que se cria quando se executa o ficheiro java em si.
+
+*Esta pasta inclui figuras que ilustram como isto funciona através de um exemplo prático de bytes gerados a partir deste pequeno algoritmo.*
+
+<br/>
+
+- **Análise Ficheiro *generateSecret-app.py***
+
+1. O ficheiro em causa é muito pequeno, dado que usa o módulo **eVotUM.Cripto** e que este acaba por fazer o trabalho principal na geração de *bytes*.
+
+  O link fornecido permite estudar como funciona este módulo e com isso chegar a uma conclusão acerca do *output* quando se executa o programa Python.
+
+  Como o próprio main indica, para processar os *bytes*, recorre-se ao módulo *shamirscret.py*, mais propriamente ao método **generateSecret**.
+
+  ```python
+  def main(length):
+    sys.stdout.write("%s\n" % shamirsecret.generateSecret(length))
+  ``` 
+  É precisamente esse método que importa compreender, tendo em conta que é ele que trata de gerar todo o "segredo".
+
+  ```python
+  def generateSecretTime(secretLength, timeToLive, chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789"):
+
+    (...)
+
+    while (l < secretLength):
+        s = utils.generateRandomData(secretLength - l)
+        for c in s:
+            if (c in chars and l < secretLength): 
+            # printable character
+                l += 1
+                secret += c
+    return secret, time.time() + timeToLive
+  ```
+  O código indica que para gerar a sequência de *bytes* existe um ciclo que "sobrevive" enquanto não for atingido o número de *bytes* pedido.
+
+  O módulo *utils* usado para a variável **s** permite que esta seja construída através do comando *unrandom*.
+  Após esta variável ser construída existe uma verificação *if*, que trata de verificar cada caractér da mesma e com isso limitar apenas aqueles que são letras (```string.ascii_letters```) ou dígitos (```string.digits```).
+
+2. Para não se limitar o *output* a letras e dígitos a alteração necessária em termos de código seria muito simples.
+
+Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia-se escrever:
+
+  ```python
+    while (l < secretLength):
+        s = utils.generateRandomData(secretLength - l)
+        for c in s:
+            if (c in (string.ascii_letters + string.digits + string.punctuation) and l < secretLength): 
+            # printable character
+                l += 1
+                secret += c
+    return secret, time.time() + timeToLive
+  ```
+
+  *Estão incluídos na pasta os dois outputs executados para a análise deste ficheiro Python que permitem assim.*
 
 ---
 

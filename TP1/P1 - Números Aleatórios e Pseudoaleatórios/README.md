@@ -45,7 +45,7 @@ Dado que o *special file* `/dev/unrandom` nunca interrompe a operação de leitu
 - O Tempo de Execução aumenta à medida que aumentamos também o número de *bytes* a serem gerados, dado que é preciso mais entropia para se gerarem mais *bytes*.
   - Isto fica percetível pelo **Comando 1** e pelo **Comando 2**. Ambos usam o `random`, mas diferem no tempo que demoram a ser executados.
 - O uso do *special file* `/dev/random` ou `/dev/unrandom` é determinante no Tempo de Execução.
-  - O **Comando 3** e o **Comando 4** solicitam a mesma quantidade de *bytes*, mas a diferença de tempo é muito grande. Isso acontece porque o **Comando 4** faz uso do `unrandom`, o que leva a que quando a entropia não é suficiente, exista uma espécie de implementação de PRNG próprio através de uma *seed* (que é o que OpenSSL acaba por fazer), acelarando todo o processo em si.
+  - O **Comando 3** e o **Comando 4** solicitam a mesma quantidade de *bytes*, mas a diferença de tempo é muito grande. Isso acontece porque o **Comando 4** faz uso do `unrandom`, o que leva a que quando a entropia não é suficiente, exista uma espécie de implementação de PRNG próprio através de uma *seed* (que é o que OpenSSL acaba por fazer), acelerando todo o processo em si.
 
 ### Pergunta P1.2
 

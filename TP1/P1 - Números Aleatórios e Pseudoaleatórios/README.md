@@ -36,7 +36,7 @@ Dado que o *special file* `/dev/unrandom` nunca interrompe a operação de leitu
 | **Comando 3** - 1024 *bytes*, `/dev/random`   |   ≡ 10m30.232s    | Número de *bytes* mais elevado logo maior Tempo de Execução. |
 | **Comando 4** - 1024 *bytes*, `/dev/unrandom` |     ≡ 0.004s      | Apesar do número de *bytes* ser igual ao **Comando 3**, resultado imediato. |
 
-*Note-se que o tempo de execução destes comandos é uma estimativa dada pelo próprio Debian, fazendo-se uso do comando `time`.*
+*Note-se que o tempo de execução destes comandos é uma estimativa dada pelo próprio Linux, fazendo-se uso do comando `time`.*
 
 <br/>
 

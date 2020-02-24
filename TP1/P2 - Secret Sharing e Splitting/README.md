@@ -2,8 +2,13 @@
 
 Todas as imagens consideradas relevantes para o entendimento complementar da resolução a todas as questões encontram-se listadas na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Experiência 2.1**](#experiência-11---comando-openssl) - **Execução comando OpenSSL `openssl rand -base64 1024` para gerar 1024 *bytes* pseudoaleatórios.**
-    - Pequeno enquadramento teórico.    
+1. [**Experiência 2.1 e 2.2**](#experiência-21-e-22---ficheiro-gensharedsecretphp-e-reconstroisecretphp) - **Geração e Reconstrução de Segredos**
+    - Análise dos ficheiros que tratam de Criar e Reconstruir um Segredo.
+2. [**Pergunta 2.1**](#pergunta-21---divisão-e-recuperação-de-segredos) - **Criação e Reconstrução de Segredos através de Componentes**
+    - Introdução de *Private Key* (com *passphrase*) para a criação de um segredo.
+    - Uso de Certificado associado à *Private Key* para reconstruir um segredo.
+    - Diferenças entre dois programas de Reconstrução de Segredos.
+    - Conclusões.
 ---
 
 ## Resolução da Pergunta 2
@@ -27,9 +32,11 @@ Conforme indicado no enunciado, estamos agora a lidar com uma chave privada , da
 <br/>
 
 **Para gerarmos a chave privada podemos recorrer ao seguinte comando:**
+
 `openssl genrsa -aes128 -out privateKey.pem 1024`
 
 **Com a *Private Key* pronta, podemos agora executar o programa, dividindo em oito partes, um *quorom* de 5 (tal como pedido), o *uid* de 0 e a chave em causa:**
+
 `python createSharedSecret-app.py 8 5 0 privateKey.pem`
 
 *Note-se que para existir a construção da Private Key incial é pedido uma passphrase ao utilizador. Esta passphrase é depois usada ao executar o ficheiro Python, juntamente com o segredo que se pretende dividir.*
@@ -47,6 +54,7 @@ B. Estando o segredo criado e os códigos devidamente distribuídos para todas a
 <br/>
 
 **Antes demais, comece-se por criar um certificado à *Private Key* criada na alínea anterior.**
+
 `openssl req -key privateKey.pem -new -x509 -days 365 -out keyCert.cert`
 
 Este certificado servirá para auxiliar na reconstrução do segredo em si.
@@ -73,4 +81,5 @@ Pensando um cenário hipotético de um **Depósito Bancário**. Se assumirmos qu
 
 ## Notas/Observações Finais
 
-- [Imagem **Experiência 1.1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P1%20-%20N%C3%BAmeros%20Aleat%C3%B3rios%20e%20Pseudoaleat%C3%B3rios/Experi%C3%AAncia%201.1.PNG) permite observar o tipo de resposta por parte do comando e os tais *bytes* pseudoaleatórios que devolve.
+- [Imagem **Experiência 2.1 e 2.2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting/Experi%C3%AAncia%202.1.PNG) permite observar o processo simples de Geração e Reconstrução de um Segredo.
+- [Imagem **Pergunta 2.1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting/Experi%C3%AAncia%202.1.PNG) permite observar o processo simples de Geração e Reconstrução de um Segredo.

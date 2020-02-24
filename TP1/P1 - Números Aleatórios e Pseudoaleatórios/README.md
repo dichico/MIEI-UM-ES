@@ -1,19 +1,19 @@
 # Pergunta 1 - Números Aleatórios/Pseudoaleatórios
 
-Todas as imagens consideradas relevantes para o entendimento complementar da resolução a todas as questões encontram-se listadas na secção de [**Notas/Observações Finais**](#notasobservações-finais).
+Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Experiência 1.1**](#experiência-11---comando-openssl) - **Execução comando OpenSSL `openssl rand -base64 1024` para gerar 1024 *bytes* pseudoaleatórios.**
+1. [**Experiência 1.1**](#experiência-11---comando-openssl) - **Execução comando OpenSSL `openssl rand -base64 1024` para gerar 1024 *bytes* pseudoaleatórios**
     - Pequeno enquadramento teórico.
-2. [**Pergunta P1.1**](#pergunta-p11---outros-comandos-openssl-e-diferenças) - **Execução outros comandos OpenSSL para obter outro conjunto de *bytes*.**
-    - Tabela que permite compreender a diferença entre os vários comandos.
+2. [**Pergunta P1.1**](#pergunta-p11---outros-comandos-openssl-e-diferenças) - **Execução outros comandos OpenSSL para gerar conjuntos de *bytes***
+    - Tabela que permite estabelecer uma diferença entre os vários comandos.
     - Conclusões.
-3. [**Pergunta P1.2**](#pergunta-p12---daemon-haveged) - **Execucão comandos OpenSSL com o *package* haveged instalado.**
+3. [**Pergunta P1.2**](#pergunta-p12---daemon-haveged) - **Execucão comandos OpenSSL com o *package* haveged instalado**
     - Pequena explicação do *daemon* de entropia haveged.
     - Tabela que permite estabelecer uma nova diferença entre os vários comandos.
     - Conclusões.
-3. [**Experiência 1.2**](#experiência-12---ficheiro-randombytesjava) - **Análise Ficheiro *RandomBytes.java***
-    - Pequena análise do ficheiro.
-4. [**Experiência 1.3**](#experiência-12---ficheiro-randombytesjava) - **Análise Ficheiro *generateSecret-app.py***
+3. [**Experiência 1.2**](#experiência-12---ficheiro-randombytesjava) - **Uso do Ficheiro *RandomBytes.java* para gerar conjuntos de *bytes***
+    - Análise do *output* do ficheiro.
+4. [**Experiência 1.3**](#experiência-12---ficheiro-randombytesjava) - **Uso do Ficheiro *generateSecret-app.py* para gerar conjunto de *bytes***
     - Análise do *output* do ficheiro.
     - Tentativa de não limitar este *output* a letras e dígitos.
     
@@ -49,7 +49,6 @@ Dado que a fonte de aleatoriedade vinda do `/dev/unrandom` nunca interrompe a op
 ---
 
 ### Pergunta P1.1 - Outros Comandos OpenSSL e Diferenças
-
 
 |               Comando/Tipologia               | Tempo de Execução |                    Resultados/Observações                    |
 | :-------------------------------------------: | :---------------: | :----------------------------------------------------------: |

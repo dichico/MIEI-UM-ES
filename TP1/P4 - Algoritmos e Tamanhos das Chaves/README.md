@@ -1,9 +1,10 @@
 # Pergunta 4 - Algoritmos e Tamanhos das Chaves
 
-Todas as imagens consideradas relevantes para o entendimento complementar da resolução a todas as questões encontram-se listadas na secção de [**Notas/Observações Finais**](#notasobservações-finais).
+Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
 1. [**Pergunta P4.1**]() - **Extração/Criação de um Certificado e Visualização de Informações nele contidas**
-    - Pequeno enquadramento teórico.
+    - Pequeno enquadramento site usado para retirar o Certificado.
+    - Criação e visualização do Certificado.
     
 ---
 
@@ -158,3 +159,9 @@ Certificate:
 - Certificado válido de 23 de Dezembro de 2019 até 22 de Dezembro de 2049.
 - Chave Pública baseia-se no RSA com 4096 *bits*.
   - Dessa forma, torna-se num Certificado seguro, dado que a chave RSA possui mais de 3000 *bits*.
+
+## Notas/Observações Finais
+
+- [Imagem **Qualified Certificate**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Qualified%20Certificate.PNG) corresponde à página Web da EC Lottomatica Holding S.r.l..
+- [Imagem **Certificado**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Certificado.PNG) permite validar a correta criação do Certificado.
+- [Ficheiro **Certificado.crt**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Certificado.PNG) corresponde ao Certificado em si.

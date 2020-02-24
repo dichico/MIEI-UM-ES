@@ -16,4 +16,4 @@ README principal que contém o conteúdo correspondente ao Primeiro Trabalho Pr�
 
 ## Notas
 
-- Em cada pasta criada para cada pergunta podem existir eventuais ficheiros extra ao README em si.
+- Cada pasta correspondente a uma pergunta pode conter eventuais ficheiros extra ao README em si e que complementam a resolução dos exercícios.

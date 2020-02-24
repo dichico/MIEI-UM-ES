@@ -1,7 +1,7 @@
 # Pergunta 3 - Authenticated Encryption
 
 1. [**Experiência 3.1**](#experiência-31---cifragemdecifragem-de-segredos-usando-authenticated-encryption) - **Cifragem/Decifragem de Segredos usando Authenticated Encryption**
-    - Justificação da abordagem usada.
+    - Justificação da abordagem usada - *encrypt then MAC*.
     - Desenvolvimento/Explicação do algoritmo de Cifragem e Decifragem do Segredo.
 ---
 

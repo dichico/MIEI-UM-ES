@@ -1,13 +1,13 @@
 # Pergunta 2 - Secret Sharing/Splitting
 
-Todas as imagens consideradas relevantes para o entendimento complementar da resolução a todas as questões encontram-se listadas na secção de [**Notas/Observações Finais**](#notasobservações-finais).
+Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Experiência 2.1 e 2.2**](#experiência-21-e-22---ficheiro-gensharedsecretphp-e-reconstroisecretphp) - **Análise Ficheiro *genSharedSecret.php* e *reconstroiSecret.php***
-    - Análise dos ficheiros que tratam de Criar e Reconstruir um Segredo de forma simples.
-2. [**Pergunta 2.1**](#pergunta-21---criação-e-reconstrução-de-segredos-com-uso-private-key) - **Criação e Reconstrução de Segredos com uso *Private Key***
+1. [**Experiência 2.1 e 2.2**](#experiência-21-e-22---ficheiro-gensharedsecretphp-e-reconstroisecretphp) - **Uso do Ficheiro *genSharedSecret.php* e *reconstroiSecret.php* gerar e reconstruir segredos**
+    - Análise dos ficheiros que tratam de criar e reconstruir um segredo de forma simples.
+2. [**Pergunta 2.1**](#pergunta-21---criação-e-reconstrução-de-segredos-com-uso-private-key) - **Criação e Reconstrução de Segredos com o uso de uma *Private Key***
     - Introdução de *Private Key* (com *passphrase*) para a criação de um segredo.
     - Uso de Certificado associado à *Private Key* para reconstruir um segredo.
-    - Diferenças entre dois programas de Reconstrução de Segredos.
+    - Diferenças entre dois programas de reconstrução de segredos.
     - Conclusões.
 ---
 
@@ -31,7 +31,7 @@ Todas as imagens consideradas relevantes para o entendimento complementar da res
 
 ---
 
-### Pergunta 2.1 - Criação e Reconstrução de Segredos com uso *Private Key*
+### Pergunta 2.1 - Criação e Reconstrução de Segredos com uso de uma *Private Key*
 
 A. O programa Python anunciado baseia-se na divisão de um determinado segredo por um determinado grupo de entidades, sendo entregue a cada uma destas uma parte de um código que é depois essencial para reconstruir o segredo em si. Este processo torna-se semelhante ao que ficou visto na **Experiência 2.1** e **2.2**, estando neste caso a lidar com um algoritmo mais complexo e moldável ao pedido via terminal, através de um conjunto de parâmetros essenciais para o *output* deste programa.
 

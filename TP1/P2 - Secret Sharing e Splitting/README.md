@@ -15,6 +15,14 @@ Todas as imagens consideradas relevantes para o entendimento complementar da res
 
 ### Experiência 2.1 e 2.2 - Ficheiro *genSharedSecret.php* e *reconstroiSecret.php*
 
+<br/>
+
+<p align="center">
+    <img width="646" height="306" src="Experi%C3%AAncia%202.1%20e%202.2.PNG">
+</p>
+
+<br/>
+
   - Se executarmos este exemplo a limpo verificamos que é necessário fornecer o **segredo** em si e o **número de entidades** a partilhar;
   - Quando são fornecidos esses dois parâmetros, é dado um código binário para cada entidade em causa.
   - Ao tentar reconstruir o segredo com o código binário dado para essa entidade verificamos a necessidade de explicitar os códigos gerados anteriormente.
@@ -41,7 +49,13 @@ Conforme indicado no enunciado, estamos agora a lidar com uma chave privada , da
 
 *Note-se que para existir a construção da Private Key incial é pedido uma passphrase ao utilizador. Esta passphrase é depois usada ao executar o ficheiro Python, juntamente com o segredo que se pretende dividir.*
 
-<br>
+<br/>
+
+<p align="center">
+    <img width="736" height="605" src="Pergunta%20P2.1%20-%20Cria%C3%A7%C3%A3o%20do%20Segredo.PNG">
+</p>
+
+<br/>
 
 Em termos de algoritmo existe a recorrência à função **createSharedSecretComponents** presente no módulo *shamirscret.py* do *package* **eVotUM** usado para a [Pergunta 1](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP1/P1%20-%20N%C3%BAmeros%20Aleat%C3%B3rios%20e%20Pseudoaleat%C3%B3rios).
 

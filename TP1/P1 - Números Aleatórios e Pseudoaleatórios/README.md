@@ -33,6 +33,12 @@ O que faz sentido, dado que o *output* produzido por este comando consiste preci
 
 <br/>
 
+<p align="center">
+    <img width="519" height="349" src="Experi%C3%AAncia%201.1.PNG">
+</p>
+
+<br/>
+
 **Como vamos constar ao executar/analisar os comandos abaixo, existem diferenças determinantes entre as duas fontes de aleatoriedade do UNIX cujo propósito passa por gerar números pseudoaleatórios, através de um gerador que se baseia numa estimativa em termos de *bits* do ruído da *pool* de entropia.**
 
 - `/dev/random`- devolve *bytes* aleatórios estimados pela *pool* de entropia existente, bloqueando a operação de leitura quando a entropia disponível é inferior à solicitada/necessária para a geração em causa;
@@ -95,11 +101,29 @@ Fazendo uma pequena análise do ficheiro em causa, tanto em termos de código em
 
 Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Classe que se cria quando se executa o ficheiro *Java* em si.
 
+<br/>
+
+<p align="center">
+    <img width="650" height="217" src="Experi%C3%AAncia%201.2.PNG">
+</p>
+
+<br/>
+
 ---
 
 ### Experiência 1.3 - Ficheiro *generateSecret-app.py*
 
-1. O ficheiro em causa é muito pequeno, dado que usa o módulo **eVotUM.Cripto** e que este acaba por fazer o trabalho principal na geração de *bytes*.
+O ficheiro em causa tem o mesmo princípio base em relação aquilo que temos vindo a falar nesta **Pergunta 1** - gerar um segredo que consiste num conjunto pseudoaleatório de dígitos e letras.
+
+<br/>
+
+<p align="center">
+    <img width="647" height="361" src="Experi%C3%AAncia%201.3.PNG">
+</p>
+
+<br/>
+
+1. O ficheiro é muito pequeno, dado que usa o módulo **eVotUM.Cripto** e que este acaba por fazer o trabalho principal na geração de *bytes*.
 O link fornecido permite estudar como funciona este módulo e com isso chegar a uma conclusão acerca do *output* quando se executa o programa Python.
 
   Como o próprio main indica, para processar os *bytes*, recorre-se ao módulo *shamirscret.py*, mais propriamente ao método **generateSecret**.
@@ -149,7 +173,7 @@ Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia
                 secret += c
     return secret, time.time() + timeToLive
   ```
-  
+
 ---
 
 ## Notas/Observações Finais

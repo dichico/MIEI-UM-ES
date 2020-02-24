@@ -2,16 +2,18 @@
 
 Todas as imagens consideradas relevantes para o entendimento complementar da resolução a todas as questões encontram-se listadas na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Pergunta P4.1**]() - **Execução comando OpenSSL `openssl rand -base64 1024` para gerar 1024 *bytes* pseudoaleatórios.**
+1. [**Pergunta P4.1**]() - **Extração/Criação de um Certificado e Visualização de Informações nele contidas**
     - Pequeno enquadramento teórico.
     
 ---
 
 ## Resolução da Pergunta 4
 
-### Pergunta P4.1 - 
+### Pergunta P4.1 - Extração/Criação de um Certificado
 
-Tendo em conta o site disponibilizado e o número de grupo, somos redirecionados para a página https://webgate.ec.europa.eu/tl-browser/#/tl/IT/45/.
+Tendo em conta o site disponibilizado e o número de grupo, somos redirecionados para a página https://webgate.ec.europa.eu/tl-browser/#/tl/IT/45.
+
+Nesta página existem alguns separadores. Selecionando o separador "*Qualified certificate for eletronic signature*" encontram-se apenas dois certificados. Dado que se pretende considerar apenas o último certificado emitido, escolhe-se então o certificado com validade maior.
 
 <br/>
 
@@ -21,7 +23,10 @@ Tendo em conta o site disponibilizado e o número de grupo, somos redirecionados
 
 <br/>
 
-Nesta página existem alguns separadores. Selecionando o separador "*Qualified certificate for eletronic signature*" encontram-se apenas dois certificados. Dado que se pretende considerar apenas o último certificado emitido, escolhe-se então o certificado com validade maior. Este certificado é emitido pela EC [Lottomatica Holding S.r.l.](https://webgate.ec.europa.eu/tl-browser/#/tl/IT/45) e tem de nome [C=IT, O=Lottomatica Holding S.r.l., OID.2.5.4.97=VATIT-02611940038, CN=Lottomatica EU Qualified Certificates CA](https://webgate.ec.europa.eu/tl-browser/#/tl/IT/45/2)
+ Este certificado é emitido pela EC [Lottomatica Holding S.r.l.](https://webgate.ec.europa.eu/tl-browser/#/tl/IT/45) e tem de nome [C=IT, O=Lottomatica Holding S.r.l., OID.2.5.4.97=VATIT-02611940038
+, CN=Lottomatica EU Qualified Certificates CA](https://webgate.ec.europa.eu/tl-browser/#/tl/IT/45/2)
+
+<br/>
 
 **Seguindo-se as instruções fornecidas na Nota 2, eis a informação dada para este Certificado:**
 
@@ -30,7 +35,7 @@ Nesta página existem alguns separadores. Selecionando o separador "*Qualified c
 <br/>
 
 <p align="center">
-    <img src="Certificado.PNG">
+    <img width="519" height="349" src="Certificado.PNG">
 </p>
 
 <br/>
@@ -142,6 +147,14 @@ Certificate:
          a9:44:16:20:35:21:a8:0f
 ```
 
+<br/>
+
 **Conclusões:**
 
+| Algoritmo da Assinatura    | Tamanho da *Private Key* |
+| -------------------------- | ------------------------ |
+| Sha256 with RSA encryption | 4096 *bits*              |
 
+- Certificado válido de 23 de Dezembro de 2019 até 22 de Dezembro de 2049.
+- Chave Pública baseia-se no RSA com 4096 *bits*.
+  - Dessa forma, torna-se num Certificado seguro, dado que a chave RSA possui mais de 3000 *bits*.

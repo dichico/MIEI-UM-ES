@@ -8,7 +8,7 @@
 
 ## Resolução da Pergunta 1
 
-### Pergunta P1.1
+### Experiência 1.1 - Comando OpenSSL
 
 O comando `openssl rand -base64 1024` pedido para teste na Experiência 1.1 é claro de se compreender.
 
@@ -20,14 +20,17 @@ O que faz sentido, dado que o *output* produzido por este comando consiste preci
 
 <br/>
 
-**Como vamos constar ao executar/analisar os comandos abaixo, existem diferenças determinantes entre as duas fontes de aleatoriedade do UNIX cujo propósito passa por gerar números pseudoaleatórios, através do uso de um gerador que se baseia numa estimativa em termos de *bits* do ruído da *pool* de entropia.**
+**Como vamos constar ao executar/analisar os comandos abaixo, existem diferenças determinantes entre as duas fontes de aleatoriedade do UNIX cujo propósito passa por gerar números pseudoaleatórios, através de um gerador que se baseia numa estimativa em termos de *bits* do ruído da *pool* de entropia.**
 
 - `/dev/random`- devolve *bytes* aleatórios estimados pela *pool* de entropia existente, bloqueando a operação de leitura quando a entropia disponível é inferior à solicitada/necessária para a geração em causa;
 - `/dev/unrandom`- contrariamente ao anterior, caso não exista entropia suficiente/necessária, reusa o *pool* de forma a produzir os bits pseudoaleatórios em causa. 
 
 Dado que a fonte de aleatoriedade vinda do `/dev/unrandom` nunca interrompe a operação de leitura, é possível que os valores dados no *output* estejam vulneráveis a ataques criptográficos.
 
-<br/>
+---
+
+### Pergunta P1.1 - Outros Comandos OpenSSL e Diferenças
+
 
 |               Comando/Tipologia               | Tempo de Execução |                    Resultados/Observações                    |
 | :-------------------------------------------: | :---------------: | :----------------------------------------------------------: |
@@ -42,16 +45,17 @@ Dado que a fonte de aleatoriedade vinda do `/dev/unrandom` nunca interrompe a op
 
 **Conclusões:**
 
-- O Tempo de Execução aumenta à medida que aumentamos também o número de *bytes* a serem gerados, dado que é preciso esperar que a *pool* de entropia encha, ou seja, bloqueie.
+- O Tempo de Execução aumenta à medida que aumentamos também o número de *bytes* a serem gerados, dado que é preciso mais entropia para o processo em si.
   - Isto fica percetível pelo **Comando 1** e pelo **Comando 2**. Ambos usam o `random`, mas diferem no tempo que demoram a ser executados.
 - O uso da fonte de aleatoriedade `/dev/random` ou `/dev/unrandom` é determinante no Tempo de Execução.
   - O **Comando 3** e o **Comando 4** solicitam a mesma quantidade de *bytes*, mas a diferença de tempo é consideravelmente grande. Isso acontece porque o **Comando 4** faz uso do `unrandom`, o que leva a que quando a entropia não é suficiente, exista uma espécie de implementação de PRNG próprio através de uma *seed* (que é o que OpenSSL acaba por fazer), acelerando todo o processo em si.
 
 ---
 
-### Pergunta P1.2
+### Pergunta P1.2 - *Daemon* haveged
 
 Conforme anunciado, o haveged é um *daemon* de entropia totalmente adaptado através do algoritmo HAVEGE, criado com o objetivo de corrigir/colmatar problemas em que existe uma baixa entropia no *special file* em si. A sua ideia base passa por fornecer um RNG simples de usar que possibilite essa medida através da criação da entropia necessária para se excutar o comando/operações em causa.
+Este *daemon* obtém assim sequências imprevisíveis de números aleatórios, com base na entropia de eventos externos que se baseiam no algoritmos HAVEGE.
 
 <br/>
 
@@ -66,15 +70,12 @@ Conforme anunciado, o haveged é um *daemon* de entropia totalmente adaptado atr
 
 - Ambos os comandos executam em tempos aproximadamente iguais. 
 - Relativamente à **Pergunta P1.1**, nota-se uma diferença significativa em relação ao **Comando 3**. 
-
   - Isto deve-se ao facto de que quando o `/dev/random` é executado, passa a existir desta vez a entropia essencial/necessária para que se produzam os 1024 *bytes* pedidos. 
   - Essa entropia é então calculada pelo haveged. 
 
 ---
 
-### Pergunta P1.3
-
-- **Análise Ficheiro *RandomBytes.java***
+### Experiência 1.2 - Análise Ficheiro *RandomBytes.java*
 
 Fazendo uma pequena análise do ficheiro em causa, tanto em termos de código em si como em termos de resultado, chegamos à conclusão que se trata de um algoritmo similar ao que vimos anteriormente.
 
@@ -82,9 +83,9 @@ Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Cla
 
 ***Esta pasta inclui figuras que ilustram como isto funciona através de um exemplo prático de bytes gerados a partir deste pequeno algoritmo.***
 
-<br/>
+---
 
-- **Análise Ficheiro *generateSecret-app.py***
+### Experiência 1.3 - Análise Ficheiro *generateSecret-app.py*
 
 1. O ficheiro em causa é muito pequeno, dado que usa o módulo **eVotUM.Cripto** e que este acaba por fazer o trabalho principal na geração de *bytes*.
 O link fornecido permite estudar como funciona este módulo e com isso chegar a uma conclusão acerca do *output* quando se executa o programa Python.

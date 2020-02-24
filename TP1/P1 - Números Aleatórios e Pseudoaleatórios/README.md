@@ -75,17 +75,15 @@ Este *daemon* obtém assim sequências imprevisíveis de números aleatórios, c
 
 ---
 
-### Experiência 1.2 - Análise Ficheiro *RandomBytes.java*
+### Experiência 1.2 - Ficheiro *RandomBytes.java*
 
 Fazendo uma pequena análise do ficheiro em causa, tanto em termos de código em si como em termos de resultado, chegamos à conclusão que se trata de um algoritmo similar ao que vimos anteriormente.
 
 Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Classe que se cria quando se executa o ficheiro *Java* em si.
 
-***Esta pasta inclui figuras que ilustram como isto funciona através de um exemplo prático de bytes gerados a partir deste pequeno algoritmo.***
-
 ---
 
-### Experiência 1.3 - Análise Ficheiro *generateSecret-app.py*
+### Experiência 1.3 - Ficheiro *generateSecret-app.py*
 
 1. O ficheiro em causa é muito pequeno, dado que usa o módulo **eVotUM.Cripto** e que este acaba por fazer o trabalho principal na geração de *bytes*.
 O link fornecido permite estudar como funciona este módulo e com isso chegar a uma conclusão acerca do *output* quando se executa o programa Python.
@@ -137,9 +135,7 @@ Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia
                 secret += c
     return secret, time.time() + timeToLive
   ```
-
-  ***Estão incluídos na pasta os dois outputs executados para a análise deste ficheiro Python que permitem assim.***
-
+  
 ---
 
 ## Observações Finais

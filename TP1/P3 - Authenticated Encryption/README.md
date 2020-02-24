@@ -12,6 +12,14 @@
 Perante o cenário descrito e as especificações do serviço que a empresa pretende/ambiciona colocar no mercado, o primeiro passo a adotar é escolher a forma como vai ser feita a implementação da *Authenticated Encryption*.
 As abordagens estudadas na Unidade Curricular de **Tecnologia Criptográfica** permitem concluir que o método *encrypt then MAC* se revela uma melhor opção, dado que não associa o *plaintext* ao MAC em si.
 
+<br/>
+
+<p align="center">
+    <img src="encrypt%20then%20MAC.png">
+</p>
+
+<br/>
+
 Assim, a ideia passa por combinar a Cifra com um MAC e aplicar a mesma tanto sobre a **etiqueta** como sobre o **criptograma**, de modo a se tentar obter uma confidencialidade, integridade e autenticidade dos mesmos.
 
 <br/>

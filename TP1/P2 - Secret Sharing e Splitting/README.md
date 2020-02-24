@@ -4,7 +4,7 @@ Todas as imagens consideradas relevantes para o entendimento complementar da res
 
 1. [**Experiência 2.1 e 2.2**](#experiência-21-e-22---ficheiro-gensharedsecretphp-e-reconstroisecretphp) - **Geração e Reconstrução de Segredos**
     - Análise dos ficheiros que tratam de Criar e Reconstruir um Segredo.
-2. [**Pergunta 2.1**](#pergunta-21---divisão-e-recuperação-de-segredos) - **Criação e Reconstrução de Segredos através de Componentes**
+2. [**Pergunta 2.1**](#pergunta-21---divisão-e-recuperação-de-segredos) - **Criação e Reconstrução de Segredos com uso *Private Key***
     - Introdução de *Private Key* (com *passphrase*) para a criação de um segredo.
     - Uso de Certificado associado à *Private Key* para reconstruir um segredo.
     - Diferenças entre dois programas de Reconstrução de Segredos.
@@ -23,7 +23,7 @@ Todas as imagens consideradas relevantes para o entendimento complementar da res
 
 ---
 
-### Pergunta 2.1 - Divisão e Recuperação de Segredos
+### Pergunta 2.1 - Criação e Reconstrução de Segredos com uso *Private Key*
 
 A. O programa Python anunciado baseia-se na divisão de um determinado segredo por um determinado grupo de entidades, sendo entregue a cada uma destas uma parte de um código que é depois essencial para reconstruir o segredo em si. Este processo torna-se semelhante ao que ficou visto na **Experiência 2.1** e **2.2**, estando neste caso a lidar com um algoritmo mais complexo e moldável ao pedido via terminal, através de um conjunto de parâmetros essenciais para o *output* deste programa.
 
@@ -81,5 +81,5 @@ Pensando um cenário hipotético de um **Depósito Bancário**. Se assumirmos qu
 
 ## Notas/Observações Finais
 
-- [Imagem **Experiência 2.1 e 2.2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting/Experi%C3%AAncia%202.1.PNG) permite observar o processo simples de Geração e Reconstrução de um Segredo.
-- [Imagem **Pergunta 2.1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting/Experi%C3%AAncia%202.1.PNG) permite observar o processo simples de Geração e Reconstrução de um Segredo.
+- [Imagem **Experiência 2.1 e 2.2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting) permite observar o processo simples de Geração e Reconstrução de um Segredo.
+- [Imagem **Pergunta 2.1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting/Pergunta%20P2.1%20-%20Cria%C3%A7%C3%A3o%20do%20Segredo.PNG) permite observar o processo de Criação da Chave Privada e do Segredo através da mesma.

@@ -2,7 +2,7 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Pergunta P4.1**]() - **Extração/Criação de um Certificado e Visualização de Informações nele contidas**
+1. [**Pergunta P4.1**](#pergunta-p41---extraçãocriação-de-um-certificado) - **Extração/Criação de um Certificado e Visualização de Informações nele contidas**
     - Pequeno enquadramento site usado para retirar o Certificado.
     - Criação e visualização do Certificado.
     

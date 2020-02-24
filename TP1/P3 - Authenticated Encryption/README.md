@@ -44,7 +44,7 @@ def cifrar(segredo, etiqueta, uID):
 ```
 
 - Verificar se o Utilizador com um determinado identificador uID fornecido pagou a anuidade.
-- Retirar a data atual no formato "ano.mes.dia" através da função **dataAtual()**.
+- Retirar a data atual no formato "ano.mes.dia" através da função **dataAtual**.
 - Aplica-se a operação/algoritmo de cifragem tanto ao segredo como à etiqueta, através da função **cifra** já existente na API.
 - Uso da função **hmac** para criar um MAC para ambos.
   - A chave necessária para este processo é calculada através da função **criarChave** que usa por si só a data atual.

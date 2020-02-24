@@ -1,8 +1,9 @@
 # Pergunta 1 - Números Aleatórios/Pseudoaleatórios
 
+Todas as imagens consideradas relevantes para um entendimento extra da resolução a todas as questões encontram-se listadas na secção de [**Notas/Observações Finais**]().
+
 1. [**Experiência 1.1**](#experiência-11---comando-openssl) - **Execução comando OpenSSL `openssl rand -base64 1024` para gerar 1024 *bytes* pseudoaleatórios.**
     - Pequeno enquadramento teórico.
-    - Imagem que demonstra o *output* deste comando.
 2. [**Pergunta P1.1**](#pergunta-p11---outros-comandos-openssl-e-diferenças) - **Execução outros comandos OpenSSL para obter outro conjunto de *bytes*.**
     - Tabela que permite compreender a diferença entre os vários comandos.
     - Conclusões.
@@ -151,6 +152,8 @@ Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia
   
 ---
 
-## Observações Finais
+## Notas/Observações Finais
 
 - Imagem **Experiência 1.1** permite observar o tipo de resposta por parte do comando e os tais *bytes* pseudoaleatórios que devolve.
+- Imagem **Experiência 1.2** permite observar que é necessário fornecer o número de *bytes* a gerar e o resultado caso esse número seja fornecido.
+- Imagem **Experiência 1.3** iguala-se à imagem anterior mas o algoritmo é processado na linguagem Python.

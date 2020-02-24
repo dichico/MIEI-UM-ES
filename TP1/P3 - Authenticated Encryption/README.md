@@ -2,7 +2,7 @@
 
 Todas as imagens consideradas relevantes para o entendimento complementar da resolução a todas as questões encontram-se listadas na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Experiência 3.1**]() - **Cifragem/Decifragem de Segredos usando Authenticated Encryption**
+1. [**Experiência 3.1**](#experiência-31---cifragemdecifragem-de-segredos-usando-authenticated-encryption) - **Cifragem/Decifragem de Segredos usando Authenticated Encryption**
     - Justificação da abordagem usada.
     - Desenvolvimento/Explicação do algoritmo de Cifragem e Decifragem do Segredo.
 ---

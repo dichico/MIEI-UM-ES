@@ -18,7 +18,7 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 <br/>
 
 <p align="center">
-    <img width="646" height="306" src="Experi%C3%AAncia%202.1%20e%202.2.PNG">
+    <img width="490" height="232" src="Experi%C3%AAncia%202.1%20e%202.2.PNG">
 </p>
 
 <br/>
@@ -52,7 +52,7 @@ Conforme indicado no enunciado, estamos agora a lidar com uma chave privada , da
 <br/>
 
 <p align="center">
-    <img width="736" height="605" src="Pergunta%20P2.1%20-%20Cria%C3%A7%C3%A3o%20do%20Segredo.PNG">
+    <img width="500" height="411" src="Pergunta%20P2.1%20-%20Cria%C3%A7%C3%A3o%20do%20Segredo.PNG">
 </p>
 
 <br/>

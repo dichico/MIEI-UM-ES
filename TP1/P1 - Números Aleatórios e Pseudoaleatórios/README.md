@@ -36,7 +36,7 @@ Dado que a fonte de aleatoriedade vinda do `/dev/unrandom` nunca interrompe a op
 |  **Comando 3** - 1024 *bytes*, `/dev/random`  |    ≡ 5m30.232s    | Número de *bytes* mais elevado logo maior Tempo de Execução. |
 | **Comando 4** - 1024 *bytes*, `/dev/unrandom` |     ≡ 0.004s      | Apesar do número de *bytes* ser igual ao **Comando 3**, resultado imediato. |
 
-*Note-se que o tempo de execução destes comandos é uma estimativa dada pelo próprio Debian, fazendo-se uso do comando `time`, podendo variar consoante certos fatores.*
+*Note-se que o tempo de execução destes comandos é uma estimativa dada pelo próprio Linux, fazendo-se uso do comando `time`, podendo variar consoante certos fatores.*
 
 <br/>
 
@@ -45,7 +45,7 @@ Dado que a fonte de aleatoriedade vinda do `/dev/unrandom` nunca interrompe a op
 - O Tempo de Execução aumenta à medida que aumentamos também o número de *bytes* a serem gerados, dado que é preciso esperar que a *pool* de entropia encha, ou seja, bloqueie.
   - Isto fica percetível pelo **Comando 1** e pelo **Comando 2**. Ambos usam o `random`, mas diferem no tempo que demoram a ser executados.
 - O uso da fonte de aleatoriedade `/dev/random` ou `/dev/unrandom` é determinante no Tempo de Execução.
-  - O **Comando 3** e o **Comando 4** solicitam a mesma quantidade de *bytes*, mas a diferença de tempo é consideravelmente grande. Isso acontece porque o **Comando 4** faz uso do `unrandom`, o que leva a que quando a entropia não é suficiente, exista uma espécie de implementação de PRNG próprio através de uma *seed* (que é o que OpenSSL acaba por fazer), acelarando todo o processo em si.
+  - O **Comando 3** e o **Comando 4** solicitam a mesma quantidade de *bytes*, mas a diferença de tempo é consideravelmente grande. Isso acontece porque o **Comando 4** faz uso do `unrandom`, o que leva a que quando a entropia não é suficiente, exista uma espécie de implementação de PRNG próprio através de uma *seed* (que é o que OpenSSL acaba por fazer), acelerando todo o processo em si.
 
 ---
 
@@ -80,15 +80,14 @@ Fazendo uma pequena análise do ficheiro em causa, tanto em termos de código em
 
 Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Classe que se cria quando se executa o ficheiro *Java* em si.
 
-*Esta pasta inclui figuras que ilustram como isto funciona através de um exemplo prático de bytes gerados a partir deste pequeno algoritmo.*
+***Esta pasta inclui figuras que ilustram como isto funciona através de um exemplo prático de bytes gerados a partir deste pequeno algoritmo.***
 
 <br/>
 
 - **Análise Ficheiro *generateSecret-app.py***
 
 1. O ficheiro em causa é muito pequeno, dado que usa o módulo **eVotUM.Cripto** e que este acaba por fazer o trabalho principal na geração de *bytes*.
-
-  O link fornecido permite estudar como funciona este módulo e com isso chegar a uma conclusão acerca do *output* quando se executa o programa Python.
+O link fornecido permite estudar como funciona este módulo e com isso chegar a uma conclusão acerca do *output* quando se executa o programa Python.
 
   Como o próprio main indica, para processar os *bytes*, recorre-se ao módulo *shamirscret.py*, mais propriamente ao método **generateSecret**.
 
@@ -124,6 +123,10 @@ Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Cla
 Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia-se escrever:
 
   ```python
+  def generateSecretTime(secretLength, timeToLive):
+
+    (...)
+    
     while (l < secretLength):
         s = utils.generateRandomData(secretLength - l)
         for c in s:
@@ -134,7 +137,7 @@ Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia
     return secret, time.time() + timeToLive
   ```
 
-  *Estão incluídos na pasta os dois outputs executados para a análise deste ficheiro Python que permitem assim.*
+  ***Estão incluídos na pasta os dois outputs executados para a análise deste ficheiro Python que permitem assim.***
 
 ---
 

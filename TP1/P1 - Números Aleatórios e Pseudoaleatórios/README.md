@@ -1,9 +1,21 @@
 # Pergunta 1 - Números Aleatórios/Pseudoaleatórios
 
-1. [Pergunta P1.1.](#pergunta-p11)
-2. [Pergunta P1.2.](#pergunta-p12)
-3. [Pergunta P1.3.](#pergunta-p13)
-
+1. [**Experiência 1.1**](#experiência-11---comando-openssl) - **Execução comando OpenSSL `openssl rand -base64 1024` para gerar 1024 *bytes* pseudoaleatórios.**
+    - Pequeno enquadramento teórico.
+    - Imagem que demonstra o *output* deste comando.
+2. [**Pergunta P1.1**](#pergunta-p11---outros-comandos-openssl-e-diferenças) - **Execução outros comandos OpenSSL para obter outro conjunto de *bytes*.**
+    - Tabela que permite compreender a diferença entre os vários comandos.
+    - Conclusões.
+3. [**Pergunta P1.2**](#pergunta-p12---daemon-haveged) - **Execucão comandos OpenSSL com o *package* haveged instalado.**
+    - Pequena explicação do *daemon* de entropia haveged.
+    - Tabela que permite estabelecer uma nova diferença entre os vários comandos.
+    - Conclusões.
+3. [**Experiência 1.2**](#experiência-12---ficheiro-randombytesjava) - **Análise Ficheiro *RandomBytes.java***
+    - Pequena análise do ficheiro.
+4. [**Experiência 1.3**](#experiência-12---ficheiro-randombytesjava) - **Análise Ficheiro *generateSecret-app.py***
+    - Análise do *output* do ficheiro.
+    - Tentativa de não limitar este *output* a letras e dígitos.
+    
 ---
 
 ## Resolução da Pergunta 1
@@ -55,6 +67,7 @@ Dado que a fonte de aleatoriedade vinda do `/dev/unrandom` nunca interrompe a op
 ### Pergunta P1.2 - *Daemon* haveged
 
 Conforme anunciado, o haveged é um *daemon* de entropia totalmente adaptado através do algoritmo HAVEGE, criado com o objetivo de corrigir/colmatar problemas em que existe uma baixa entropia no *special file* em si. A sua ideia base passa por fornecer um RNG simples de usar que possibilite essa medida através da criação da entropia necessária para se excutar o comando/operações em causa.
+
 Este *daemon* obtém assim sequências imprevisíveis de números aleatórios, com base na entropia de eventos externos que se baseiam no algoritmos HAVEGE.
 
 <br/>
@@ -140,4 +153,4 @@ Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia
 
 ## Observações Finais
 
-Add Final Observations.
+- Imagem **Experiência 1.1** permite observar o tipo de resposta por parte do comando e os tais *bytes* pseudoaleatórios que devolve.

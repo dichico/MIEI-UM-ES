@@ -13,7 +13,7 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
     - Conclusões.
 3. [**Experiência 1.2**](#experiência-12---ficheiro-randombytesjava) - **Uso do Ficheiro *RandomBytes.java* para gerar conjuntos de *bytes***
     - Análise do *output* do ficheiro.
-4. [**Experiência 1.3**](#experiência-12---ficheiro-randombytesjava) - **Uso do Ficheiro *generateSecret-app.py* para gerar conjunto de *bytes***
+4. [**Experiência 1.3**](#experiência-13---ficheiro-generatesecret-apppy) - **Uso do Ficheiro *generateSecret-app.py* para gerar conjunto de *bytes***
     - Análise do *output* do ficheiro.
     - Tentativa de não limitar este *output* a letras e dígitos.
     

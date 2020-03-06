@@ -18,7 +18,7 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 <br/>
 
 <p align="center">
-    <img width="490" height="232" src="Experi%C3%AAncia%202.1%20e%202.2.PNG">
+    <img width="490" height="232" src="Images/Generate Shared Secret.png">
 </p>
 
 <br/>
@@ -52,7 +52,7 @@ Conforme indicado no enunciado, estamos agora a lidar com uma chave privada , da
 <br/>
 
 <p align="center">
-    <img width="500" height="411" src="Pergunta%20P2.1%20-%20Cria%C3%A7%C3%A3o%20do%20Segredo.PNG">
+    <img width="500" height="411" src="Images/Create Shared Secret.png">
 </p>
 
 <br/>
@@ -95,5 +95,5 @@ Pensando um cenário hipotético de um **Depósito Bancário**. Se assumirmos qu
 
 ## Notas/Observações Finais
 
-- [Imagem **Experiência 2.1 e 2.2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting) permite observar o processo simples de Geração e Reconstrução de um Segredo.
-- [Imagem **Pergunta 2.1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting/Pergunta%20P2.1%20-%20Cria%C3%A7%C3%A3o%20do%20Segredo.PNG) permite observar o processo de Criação da Chave Privada e do Segredo através da mesma.
+- Imagem [**Generate Shared Secret**]() permite observar o processo simples de Geração e Reconstrução de um Segredo.
+- Imagem [**Create Shared Secret**]() permite observar o processo de Criação da Chave Privada e do Segredo através da mesma.

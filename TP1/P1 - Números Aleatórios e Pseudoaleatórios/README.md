@@ -34,7 +34,7 @@ O que faz sentido, dado que o *output* produzido por este comando consiste preci
 <br/>
 
 <p align="center">
-    <img width="519" height="349" src="Experi%C3%AAncia%201.1.PNG">
+    <img width="519" height="349" src="Images/Comando OpenSSL.png">
 </p>
 
 <br/>
@@ -103,7 +103,7 @@ Dessa forma, podemos gerar *bytes* aleatórios correndo apenas o ficheiro de Cla
 <br/>
 
 <p align="center">
-    <img width="650" height="217" src="Experi%C3%AAncia%201.2.PNG">
+    <img width="650" height="217" src="Images/Random Bytes Java.png">
 </p>
 
 <br/>
@@ -117,7 +117,7 @@ O ficheiro em causa tem o mesmo princípio base em relação aquilo que temos vi
 <br/>
 
 <p align="center">
-    <img width="647" height="361" src="Experi%C3%AAncia%201.3.PNG">
+    <img width="647" height="361" src="Images/Generate Secret Python.png">
 </p>
 
 <br/>
@@ -177,6 +177,6 @@ Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia
 
 ## Notas/Observações Finais
 
-- [Imagem **Experiência 1.1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P1%20-%20N%C3%BAmeros%20Aleat%C3%B3rios%20e%20Pseudoaleat%C3%B3rios/Experi%C3%AAncia%201.1.PNG) permite observar o tipo de resposta por parte do comando e os tais *bytes* pseudoaleatórios que devolve.
-- [Imagem **Experiência 1.2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P1%20-%20N%C3%BAmeros%20Aleat%C3%B3rios%20e%20Pseudoaleat%C3%B3rios/Experi%C3%AAncia%201.2.PNG) permite observar que é necessário fornecer o número de *bytes* a gerar e o resultado caso esse número seja fornecido.
-- [Imagem **Experiência 1.3**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P1%20-%20N%C3%BAmeros%20Aleat%C3%B3rios%20e%20Pseudoaleat%C3%B3rios/Experi%C3%AAncia%201.3.PNG) iguala-se à imagem anterior mas o algoritmo é processado na linguagem Python.
+- Imagem [**Comando OpenSSL**]() permite observar o tipo de resposta por parte do comando e os tais *bytes* pseudoaleatórios que devolve.
+- Imagem [**Random Bytes Java**]() permite observar que é necessário fornecer o número de *bytes* a gerar e o resultado caso esse número seja fornecido.
+- Imagem [**Generate Secret Python**]() iguala-se à imagem anterior mas o algoritmo é processado na linguagem Python.

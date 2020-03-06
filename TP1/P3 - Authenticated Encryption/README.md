@@ -15,8 +15,9 @@ As abordagens estudadas na Unidade Curricular de **Tecnologia Criptográfica** p
 <br/>
 
 <p align="center">
-    <img src="encrypt%20then%20MAC.png">
+    <img src="Images/encrypt then MAC.png">
 </p>
+
 
 <br/>
 

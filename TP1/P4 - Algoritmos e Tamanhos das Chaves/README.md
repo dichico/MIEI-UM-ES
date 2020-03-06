@@ -19,8 +19,9 @@ Nesta página existem alguns separadores. Selecionando o separador "*Qualified c
 <br/>
 
 <p align="center">
-    <img src="Qualified%20Certificate.PNG">
+    <img src="Images/Qualified Certificate.png">
 </p>
+
 
 <br/>
 
@@ -36,8 +37,9 @@ Nesta página existem alguns separadores. Selecionando o separador "*Qualified c
 <br/>
 
 <p align="center">
-    <img width="519" height="349" src="Certificado.PNG">
+    <img width="519" height="349" src="Images/Certificado.png">
 </p>
+
 
 <br/>
 
@@ -162,6 +164,6 @@ Certificate:
 
 ## Notas/Observações Finais
 
-- [Imagem **Qualified Certificate**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Qualified%20Certificate.PNG) corresponde à página Web da EC Lottomatica Holding S.r.l..
-- [Imagem **Certificado**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Certificado.PNG) permite validar a correta criação do Certificado.
-- [Ficheiro **Certificado.crt**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Certificado.PNG) corresponde ao Certificado em si.
+- Imagem [**Qualified Certificate**]() corresponde à página Web da EC Lottomatica Holding S.r.l..
+- Imagem [**Certificado**]() permite validar a correta criação do Certificado.
+- Ficheiro [**Certificado.crt**]() corresponde ao Certificado em si.

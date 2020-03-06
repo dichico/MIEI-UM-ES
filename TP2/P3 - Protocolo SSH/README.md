@@ -1,8 +1,13 @@
 # Pergunta 3 - Protocolo SSH
 
-1. [**Experiência 3.1**]() - **Descrição**
-    - Justificação da abordagem usada - *encrypt then MAC*.
-2. [**Pergunta P3.1**]() - **Descrição**
+1. [**Experiência 3.1**](#experiência-31---teste-ao-servidor-através-do-programa-ssh-auditpy) - **Análise do *output* dado pelo programa *ssh-audit.py***
+    - Uso do programa *ssh-audit.py* para teste
+    - Análise do seu *output*
+2. [**Pergunta P3.1**](#pergunta-31---análise-do-output-do-programa-ssh-auditpy-para-dois-servidores-ssh-de-empresas-comerciais-no-porto) - **Análise da segurança de dois Servidores SSH de empresas comerciais no Porto**
+	- Uso do programa *ssh-audit.py* para esses dois servidores
+	- Estudo do *output* dado pelo programa *ssh-audit.py*
+	- Uso do *website Shodan* para análise das vulnerabilidades
+	- CVE Details
 
 ---
 
@@ -17,19 +22,21 @@
 
 ---
 
-### Pergunta 3.1 - Análise do *output* do programa *ssh-audit.py* para dois Servidores SSH de empresas comerciais no Porto
+### Pergunta 3.1 - Análise da segurança de dois Servidores SSH de empresas comerciais no Porto
 
 Começa-se por escolher dois Servidores SSH de empresas comerciais alojadas no Porto. Conforme enunciado, facilita-se esta pesquisa pelo uso do *website* [Shodan](https://www.shodan.io/), pesquisando por `port:22 country:pt city:braga`.
 
 <br/>
 
-#### Escolha dos Servidores e *output* dado pelo **ssh-audit.py*
+#### Escolha dos Servidores e *output* dado pelo programa *ssh-audit.py*
 
 Com a filtragem feita surge uma lista de servidores com o SSH ativo na porta número 22. Os servidores escolhidos correspondem à **Vodafone Portugal** e à **Universidade do Porto**.
 
 - [Vodafone Portugal](https://www.shodan.io/host/178.166.18.42)
 
 - [Universidade do Porto](https://www.shodan.io/host/193.137.28.238)
+
+*Os PDF que contêm o output dado pelo programa SSH Audit encontram-se na Secção [Notas/Observações Finais](#notasobservações-finais)*
 
 <br/>
 
@@ -104,8 +111,8 @@ Pela descrição e pela análise dos parâmetros que acompanham o *score* geral,
 
 ## Notas/Observações Finais
 
-- PDF [**Shodan - Vodafone**]() que contém todo o resultado dado pelo *website Shodan* relativamente ao servidor da empresa Vodafone alojado no Porto.
-- Ficheiro texto [**Shodan - Vodafone**]() que contém todo o resultado dado pelo comando SSH Audit relativamente ao endereço IP desse servidor.
-- PDF [**Shodan - Universidade do Porto**]() que contém todo o resultado dado pelo *website Shodan* relativamente ao servidor da empresa Universidade do Porto alojado no Porto.
-- Ficheiro texto [**Shodan - Universidade do Porto**]() que contém todo o resultado dado pelo comando SSH Audit relativamente ao endereço IP desse servidor.
-- Imagem [**CVE-2006-5051**]() que mostra a descrição da vulnerabilidade mais grave para o *software* do servidor SSH da Universidade do Porto.
+- PDF [**Shodan - Vodafone**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P3%20-%20Protocolo%20SSH/Shodan%20-%20Vodafone.pdf) que contém todo o resultado dado pelo *website Shodan* relativamente ao servidor da empresa Vodafone alojado no Porto.
+- Ficheiro texto [**SSH Audit - Vodafone**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P3%20-%20Protocolo%20SSH/SSH%20Audit%20-%20Vodafone.txt) que contém todo o resultado dado pelo comando SSH Audit relativamente ao endereço IP desse servidor.
+- PDF [**Shodan - Universidade do Porto**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P3%20-%20Protocolo%20SSH/Shodan%20-%20Universidade%20do%20Porto.pdf) que contém todo o resultado dado pelo *website Shodan* relativamente ao servidor da empresa Universidade do Porto alojado no Porto.
+- Ficheiro texto [**SSH Audit - Universidade do Porto**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P3%20-%20Protocolo%20SSH/SSH%20Audit%20-%20Universidade%20do%20Porto.txt) que contém todo o resultado dado pelo comando SSH Audit relativamente ao endereço IP desse servidor.
+- Imagem [**CVE-2006-5051**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P3%20-%20Protocolo%20SSH/Images/CVE-2006-5051.png) que mostra a descrição da vulnerabilidade mais grave para o *software* do servidor SSH da Universidade do Porto.

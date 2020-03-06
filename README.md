@@ -22,6 +22,8 @@ Repositório criado para a Unidade Curricular Engenharia de Segurança, do perfi
 	- Secret Sharing/Splitting
 	- Authenticated Encryption 
 	- Algoritmos e Tamanhos das Chaves
+	
+	
 - [**Trabalho Prático 2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP2) - Aula 02/03/2020
 	- Assinaturas Cegas baseados no ECDLP
 	- Protocolo SSL/TLS

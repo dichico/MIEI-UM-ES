@@ -2,9 +2,9 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Experiência 2.1**]() - ***SSL Server Test* para o site do Governo Português**
+1. [**Experiência 2.1**](#experiência-21---ssl-server-test-para-o-site-do-governo-português) - ***SSL Server Test* para o site do Governo Português**
     - Uso do *website SSL Labs* para obter informações acerca da segurança do *website* correspondente ao Governo Português.  
-2. [**Pergunta 2.1**]() - **Protocolo SSL/TLS**
+2. [**Pergunta 2.1**](#pergunta-21---protocolo-ssltls) - **Protocolo SSL/TLS**
     - Uso do *website SSL Labs* para obter informações acerca da segurança de dois *websites* de Governo de dois países europeus diferentes.  
     - Análise do resultado do *website* com pior *rating*.
     - Análise do **BEAST *attack*** e do seu impacto no protocolo TLS. 
@@ -163,9 +163,9 @@ No resultado obtido pelo *SSL Server Test*, o campo **BEAST attack** apresenta o
 
 ## Notas/Observações Finais
 
-- PDF [**SSL Server Test - Espanha**]() que contém todo o resultado dado pelo *website SSL Labs* relativamente ao *website* do Ministério de Educação de Espanha.
-- Imagem [**SSL Server Test - Espanha**]() que contém o sumário do resultado descrito no ponto anterior.
-- PDF [**SSL Server Test - Holanda**]() que contém todo o resultado dado pelo *website SSL Labs* relativamente ao *website* do Ministério de Educação de Holanda..
-- Imagem [**SSL Server Test - Holanda**]() que contém o sumário do resultado descrito no ponto anterior.
-- Imagem [**CBC Encryption**]() que contém o esquema relativo ao modo de operação CBC de uma Cifra por Blocos.
-- Imagem [**Protocol Details**]() que comprova a mitigação do **BEAST *attack***.
+- PDF [**SSL Server Test - Espanha**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P2%20-%20Protocolo%20SSL-TLS/SSL%20Server%20Test%20-%20Espanha.pdf) que contém todo o resultado dado pelo *website SSL Labs* relativamente ao *website* do Ministério de Educação de Espanha.
+- Imagem [**SSL Server Test - Espanha**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P2%20-%20Protocolo%20SSL-TLS/Images/SSL%20Server%20Test%20-%20Espanha.png) que contém o sumário do resultado descrito no ponto anterior.
+- PDF [**SSL Server Test - Holanda**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P2%20-%20Protocolo%20SSL-TLS/SSL%20Server%20Test%20-%20Holanda.pdf) que contém todo o resultado dado pelo *website SSL Labs* relativamente ao *website* do Ministério de Educação de Holanda..
+- Imagem [**SSL Server Test - Holanda**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P2%20-%20Protocolo%20SSL-TLS/Images/SSL%20Server%20Test%20-%20Holanda.png) que contém o sumário do resultado descrito no ponto anterior.
+- Imagem [**CBC Encryption**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P2%20-%20Protocolo%20SSL-TLS/Images/CBC%20Encryption.png) que contém o esquema relativo ao modo de operação CBC de uma Cifra por Blocos.
+- Imagem [**Protocol Details**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P2%20-%20Protocolo%20SSL-TLS/Images/Protocol%20Details%20-%20Espanha.png) que comprova a mitigação do **BEAST *attack***.

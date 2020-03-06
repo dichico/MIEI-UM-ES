@@ -177,6 +177,6 @@ Ao invés de declararmos o **chars** no *if* intrínseco ao ciclo *for*, poderia
 
 ## Notas/Observações Finais
 
-- Imagem [**Comando OpenSSL**]() permite observar o tipo de resposta por parte do comando e os tais *bytes* pseudoaleatórios que devolve.
-- Imagem [**Random Bytes Java**]() permite observar que é necessário fornecer o número de *bytes* a gerar e o resultado caso esse número seja fornecido.
-- Imagem [**Generate Secret Python**]() iguala-se à imagem anterior mas o algoritmo é processado na linguagem Python.
+- Imagem [**Comando OpenSSL**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P1%20-%20N%C3%BAmeros%20Aleat%C3%B3rios%20e%20Pseudoaleat%C3%B3rios/Images/Comando%20OpenSSL.png) permite observar o tipo de resposta por parte do comando e os tais *bytes* pseudoaleatórios que devolve.
+- Imagem [**Random Bytes Java**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P1%20-%20N%C3%BAmeros%20Aleat%C3%B3rios%20e%20Pseudoaleat%C3%B3rios/Images/Random%20Bytes%20Java.png) permite observar que é necessário fornecer o número de *bytes* a gerar e o resultado caso esse número seja fornecido.
+- Imagem [**Generate Secret Python**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P1%20-%20N%C3%BAmeros%20Aleat%C3%B3rios%20e%20Pseudoaleat%C3%B3rios/Images/Generate%20Secret%20Python.png) iguala-se à imagem anterior mas o algoritmo é processado na linguagem Python.

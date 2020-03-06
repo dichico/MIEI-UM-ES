@@ -95,5 +95,5 @@ Pensando um cenário hipotético de um **Depósito Bancário**. Se assumirmos qu
 
 ## Notas/Observações Finais
 
-- Imagem [**Generate Shared Secret**]() permite observar o processo simples de Geração e Reconstrução de um Segredo.
-- Imagem [**Create Shared Secret**]() permite observar o processo de Criação da Chave Privada e do Segredo através da mesma.
+- Imagem [**Generate Shared Secret**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting/Images/Generate%20Shared%20Secret.png) permite observar o processo simples de Geração e Reconstrução de um Segredo.
+- Imagem [**Create Shared Secret**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P2%20-%20Secret%20Sharing%20e%20Splitting/Images/Create%20Shared%20Secret.png) permite observar o processo de Criação da Chave Privada e do Segredo através da mesma.

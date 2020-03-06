@@ -25,12 +25,12 @@ A remodelação do código surge com o objetivo de simplificar tanto o input com
 ## Notas/Observações Finais
 
 - **Ficheiros Assinante**
-  - Ficheiro [init-app.py]() que permite efetuar a fase de **Inicialização** (1), devolvendo o *pRDashComponents* e *InitComponents*.
-  - Ficheiro [blindSignature-app.py]() que permite efetuar a fase **Assinatura** (3), devolvendo a *BlindSignature*.
+  - Ficheiro [init-app.py](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P1%20-%20Assinaturas%20Cegas%20baseadas%20no%20ECDLP/BlindSignature/init-app.py) que permite efetuar a fase de **Inicialização** (1), devolvendo o *pRDashComponents* e *InitComponents*.
+  - Ficheiro [blindSignature-app.py](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P1%20-%20Assinaturas%20Cegas%20baseadas%20no%20ECDLP/BlindSignature/blindSignature-app.py) que permite efetuar a fase **Assinatura** (3), devolvendo a *BlindSignature*.
 - **Ficheiros Requerente**
-  - Ficheiro [ofusca-app.py]() que permite efetuar a fase de **Ofuscação** (2), devolvendo a *BlindMessage*, *BlindComponents* e *pRComponents*.
-  - Ficheiro [desofusca-app.py]() que permite efetuar a fase **Desofuscação** (4), devolvendo a *Signature*.
+  - Ficheiro [ofusca-app.py](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P1%20-%20Assinaturas%20Cegas%20baseadas%20no%20ECDLP/BlindSignature/ofusca-app.py) que permite efetuar a fase de **Ofuscação** (2), devolvendo a *BlindMessage*, *BlindComponents* e *pRComponents*.
+  - Ficheiro [desofusca-app.py](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P1%20-%20Assinaturas%20Cegas%20baseadas%20no%20ECDLP/BlindSignature/desofusca-app.py) que permite efetuar a fase **Desofuscação** (4), devolvendo a *Signature*.
 - **Ficheiros Verificador**
-  - Ficheiro [verify-app.py]() que permite efetuar a fase de **Verificação** (5), devolvendo o resultado da validação da assinatura sobre a mensagem original.
+  - Ficheiro [verify-app.py](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP2/P1%20-%20Assinaturas%20Cegas%20baseadas%20no%20ECDLP/BlindSignature/verify-app.py) que permite efetuar a fase de **Verificação** (5), devolvendo o resultado da validação da assinatura sobre a mensagem original.
 
 - Estes três participantes permitem entender melhor o modo com as assinaturas cegas operam. 

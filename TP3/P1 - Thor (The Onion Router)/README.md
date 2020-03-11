@@ -6,10 +6,10 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
     - Uso do comando `anonsurf`para efetuar uma navegação anónima.
     - Mudança de endereço IP através desse comando.
     - Conclusões acerca do potencial do mesmo.
-2. [**Pergunta P1.1**](#pergunta-11---acesso-a-sites-dos-eua-através-o-anonsurf-start) - **Acesso a sites do EUA através do `anonsurf start`**
+2. [**Pergunta P1.1**](#pergunta-p11---acesso-a-sites-dos-eua-através-o-anonsurf-start) - **Acesso a sites dos EUA**
 	- Uso do comando `anonsurf start` para tentar aceder a uma localização específica.
 	- Pequena contextualização com o funcionamento do protocolo TOR.
-3. [**Pergunta P1.2**]() - **Análise dos circuitos de um *website***
+3. [**Pergunta P1.2**](#pergunta-p12---análise-do-circuito-de-ors-de-um-website) - **Análise dos circuitos de um *website***
 	- Uso do *browser* TOR para verificar o circuito de um determinado *website*
 	- Pequena contextualização com o funcionamento do protocolo TOR.
 
@@ -199,7 +199,7 @@ Os circuitos de que falamos estão associados aos serviços anónimos e pontos d
 ## Notas/Observações Finais
 
 - Imagem [**anonsurf start**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/anonsurf%20start.png) que mostra as informações dadas pelo anonsurf quando o mesmo é iniciado.
-- Imagem [**anonsurf stop**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/anonsurf%20start.png) que mostra as informações dadas pelo anonsurf quando o mesmo é parado.
+- Imagem [**anonsurf stop**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/anonsurf%20stop.png) que mostra as informações dadas pelo anonsurf quando o mesmo é parado.
 - Imagem [**Circuito**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/anonsurf%20start.png) que mostra o circuito do *website* [http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page](http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page).
 - Imagem [**TOR Onion Services, Part 1-2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/TOR%20Onion%20Services%2C%20Part%201-2.png) que detalha os dois primeiros passos do funcionamento do protocolo TOR.
 - Imagem [**TOR Onion Services, Part 3-4**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/TOR%20Onion%20Services%2C%20Part%203-4.png) que detalha o terceiro e quarto passos do funcionamento do protocolo TOR.

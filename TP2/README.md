@@ -1,6 +1,6 @@
 # Trabalho Prático 2 - Aula 02/03/2020
 
-README principal que contém o conteúdo correspondente ao Primeiro Trabalho Prático.
+README principal que contém o conteúdo correspondente ao Segundo Trabalho Prático.
 
 <p>
 

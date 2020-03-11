@@ -23,12 +23,19 @@ Repositório criado para a Unidade Curricular Engenharia de Segurança, do perfi
 	- Authenticated Encryption 
 	- Algoritmos e Tamanhos das Chaves
 	
-	
 - [**Trabalho Prático 2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP2) - Aula 02/03/2020
 	- Assinaturas Cegas baseados no ECDLP
 	- Protocolo SSL/TLS
 	- Protocolo SSH
 
+- [**Trabalho Prático 3**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP3) - Aula 02/03/2020
+	- TOR (The Onion Router)
+
+---
+
+## Lista dos Projetos
+
+- [**Projeto 1**]()
 ---
 
 ## Notas

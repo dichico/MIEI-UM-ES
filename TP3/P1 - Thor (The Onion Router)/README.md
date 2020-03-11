@@ -2,11 +2,16 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Experiência 1.1**]() - ***Mudança localização geográfica**
+1. [**Experiência 1.1**](#experiência-11---mudança-localização-geográfica-através-do-anonsurf) - **Mudança localização geográfica**
     - Uso do comando `anonsurf`para efetuar uma navegação anónima.
     - Mudança de endereço IP através desse comando.
     - Conclusões acerca do potencial do mesmo.
-2. [**Pergunta 1.1**]() - **Acesso a sites do EUA através do `anonsurf start`**
+2. [**Pergunta P1.1**](#pergunta-11---acesso-a-sites-dos-eua-através-o-anonsurf-start) - **Acesso a sites do EUA através do `anonsurf start`**
+	- Uso do comando `anonsurf start` para tentar aceder a uma localização específica.
+	- Pequena contextualização com o funcionamento do protocolo TOR.
+3. [**Pergunta P1.2**]() - **Análise dos circuitos de um *website***
+	- Uso do *browser* TOR para verificar o circuito de um determinado *website*
+	- Pequena contextualização com o funcionamento do protocolo TOR.
 
 ---
 
@@ -38,7 +43,6 @@ Ao realizarmos todos os passos propostos para esta experiência somos capazes de
 <p align="center">
 	<img src="Images/anonsurf start.png">
 </p>
-
 <br/>
 
 - Executar novamente comando `sudo anonsurf myip`
@@ -78,7 +82,7 @@ Desta forma verificamos que o endereço IP incial é mantido, corroborando a ide
 
 ---
 
-### Pergunta 1.1 - Acesso a sites dos EUA através o `anonsurf start`
+### Pergunta P1.1 - Acesso a sites dos EUA através o `anonsurf start`
 
 Estando a experiência anterior realizada e devidamente compreendida, ficamos com uma ideia daquilo que cada comando representa na totalidade do processo de navegação anónima. Dessa forma, fica clara a impossibilidade do comando `sudo anonsurf start` em garantirar que estamos localizados nos EUA.
 
@@ -97,11 +101,11 @@ Estando a experiência anterior realizada e devidamente compreendida, ficamos co
 
 Esta impossibilidade de atribuir ao utilizador uma localização específica através do comando em causa deve-se então ao facto do processo de estabelecimento de circuito através da rede TOR ser um processo executado de forma aleatória e independente ao utilizador em si, ou seja, podemos saber as localizações que os circuitos abrangem, mas não podemos escolher estar especificamente numa, dado que o TOR garante anonimato ponto a ponto.
 
-**A ideia de OR's (*Onion Routers*) ficará mais clara ao resolver a pergunta seguinte, tendo em conta que analisaremos o circuito e as OR's que dele fazem parte. **
+**A ideia de OR's (*Onion Routers*) ficará mais clara ao resolver a pergunta seguinte, tendo em conta que analisaremos o circuito e as OR's que dele fazem parte.**
 
 ---
 
-### Pergunta P1.2
+### Pergunta P1.2 - Análise do circuito de OR's de um *website*
 
 <br/>
 
@@ -194,3 +198,9 @@ Os circuitos de que falamos estão associados aos serviços anónimos e pontos d
 
 ## Notas/Observações Finais
 
+- Imagem [**anonsurf start**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/anonsurf%20start.png) que mostra as informações dadas pelo anonsurf quando o mesmo é iniciado.
+- Imagem [**anonsurf stop**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/anonsurf%20start.png) que mostra as informações dadas pelo anonsurf quando o mesmo é parado.
+- Imagem [**Circuito**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/anonsurf%20start.png) que mostra o circuito do *website* [http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page](http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page).
+- Imagem [**TOR Onion Services, Part 1-2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/TOR%20Onion%20Services%2C%20Part%201-2.png) que detalha os dois primeiros passos do funcionamento do protocolo TOR.
+- Imagem [**TOR Onion Services, Part 3-4**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/TOR%20Onion%20Services%2C%20Part%203-4.png) que detalha o terceiro e quarto passos do funcionamento do protocolo TOR.
+- Imagem [**TOR Onion Services, Part 5-6**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP3/P1%20-%20Thor%20(The%20Onion%20Router)/Images/TOR%20Onion%20Services%2C%20Part%205-6.png) que detalha os dois últimos passos do funcionamento do protocolo TOR.

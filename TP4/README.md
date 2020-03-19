@@ -4,7 +4,8 @@ README principal que contém o conteúdo correspondente ao Quarto Trabalho Prát
 
 ## Conteúdo
 
-1. ?
+1. [Pergunta 1](../TP4/P1) - *Blockchain*
+2. [Pergunta 2](../TP4/P2) - *Proof of Work Consensus Model*
 
 <p>
 

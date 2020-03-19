@@ -70,3 +70,21 @@ sys     0m2.660s
 
 ## Pergunta 2.2
 
+### 1.
+O algoritmo **Proof of Work** que foi utilizado foi relativamente simples de entender. Cada *miner* tem que incrementar (1) ao número obtido no **Proof of Work** anterior e assim quando esse número for divisível por 9 (nº de caracteres da palavra *SnakeCoin*) e também divisível pelo número da prova do bloco anterior, será criado um novo bloco e o _mining_ recompensado.
+
+### 2.
+Um algoritmo de mineração tem de oferecer ao *miner* um problema intensivo para existir a recompensa e a criação dum novo bloco. Este problema tem de ser difícil de resolver, mas verificável com uma facilidade grande. 
+
+Após fazer algumas tentativas dá para perceber que o padrão deste **Proof of Work** é que todos os números gerados vão ser múltiplos de 9 e assim conseguem divisíveis pela "prova" anterior e consequentemente por 9. A "prova" do próximo bloco será o "próximo" múltiplo de 9, associando assim o resultado de forma determinística com o índice do bloco na *chain*. 
+
+| Índice | **Proof of Work** | Mat  |
+| -----  | ------------- | -------  |
+|   0    |            9  | 2^0 * 9  |
+|   1    |           18  | 2^1 * 9  |
+|   2    |           36  | 2^2 * 9  |
+|   3    |           72  | 2^3 * 9  |
+|   4    |          144  | 2^4 * 9  |
+|   5    |          288  | 2^5 * 9  |
+
+Claro que a fatorização é algo complexo computacional, mas só quando o número de blocos seja bem grande (índice) de forma a ser díficil fatorizar esse número. Daí o algoritmo **não é válido** porque é previsível tanto os números anteriores como os futuros através do índice. (Isto assumindo-se que o algoritmo é conhecido).

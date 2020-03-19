@@ -1,5 +1,10 @@
 # Pergunta 1 - Construindo uma *blockchain*
 
+  - [Pergunta 1.1](#pergunta-11)
+    - Alteração do método que cria o **Genesis Block**.
+  - [Pergunta 1.2](#pergunta-12)
+    - Adicionar blocos com transações novas.
+
 ## Pergunta 1.1
 
 O código do *blockchain* está presente no ficheiro `main.experiencia1.1.js` e ele foi alterado para que o primeiro bloco desta implementação em *JavaScript* (que cria o **Genesis Block**) tivesse um *timestamp* com a data de hoje, ou seja, podemos utilizar um método da linguagem *JavaScript* que nos facilita automaticamente o processo:

@@ -31,11 +31,15 @@ Repositório criado para a Unidade Curricular Engenharia de Segurança, do perfi
 - [**Trabalho Prático 3**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP3) - Aula 02/03/2020
 	- TOR (The Onion Router)
 
+- [**Trabalho Prático 4**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP4) - Aula 09/03/2020
+	- *Blockchain*
+	- *Proof of Work Consensus Model*
 ---
 
 ## Lista dos Projetos
 
-- [**Projeto 1**]()
+- [**Projeto 1**]() - *Managing Security Risks Inherent in the Use of Third-party Components*
+
 ---
 
 ## Notas

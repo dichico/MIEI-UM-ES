@@ -17,28 +17,28 @@ Repositório criado para a Unidade Curricular Engenharia de Segurança, do perfi
 
 ## Lista dos Trabalhos Práticos
 
-- [**Trabalho Prático 1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP1) - Aula 17/02/2020
+- [**Trabalho Prático 1**](TP1) - Aula 17/02/2020
 	- Números Aleatórios/Pseudoaleatórios
 	- Secret Sharing/Splitting
 	- Authenticated Encryption 
 	- Algoritmos e Tamanhos das Chaves
 	
-- [**Trabalho Prático 2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP2) - Aula 02/03/2020
+- [**Trabalho Prático 2**](TP2) - Aula 02/03/2020
 	- Assinaturas Cegas baseados no ECDLP
 	- Protocolo SSL/TLS
 	- Protocolo SSH
 
-- [**Trabalho Prático 3**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP3) - Aula 02/03/2020
+- [**Trabalho Prático 3**](TP3) - Aula 02/03/2020
 	- TOR (The Onion Router)
 
-- [**Trabalho Prático 4**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP4) - Aula 09/03/2020
+- [**Trabalho Prático 4**](TP4) - Aula 09/03/2020
 	- *Blockchain*
 	- *Proof of Work Consensus Model*
 ---
 
 ## Lista dos Projetos
 
-- [**Projeto 1**]() - *Managing Security Risks Inherent in the Use of Third-party Components*
+- [**Projeto 1**](Projetos/Projeto%201%20-%20ES.pdf) - *Managing Security Risks Inherent in the Use of Third-party Components*
 
 ---
 

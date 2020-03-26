@@ -1,4 +1,4 @@
-# Trabalho Prático 3 - Aula 02/03/2020
+# Trabalho Prático 3 - Aula 4 (02/03/2020)
 
 README principal que contém o conteúdo correspondente ao Terceiro Trabalho Prático.
 

@@ -1,4 +1,4 @@
-# Trabalho Prático 1 - Aula 17/02/2020
+# Trabalho Prático 1 - Aula 2 (17/02/2020)
 
 README principal que contém o conteúdo correspondente ao Primeiro Trabalho Prático.
 

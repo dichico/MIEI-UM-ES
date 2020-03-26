@@ -18,9 +18,9 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 4. [**Experiência 1.4**](#) - **Ferramenta usada para o *Data Protection Impact Assessment* (DPIA)**
 	- Utilização da ferramenta no projeto hipotético pensado anteriormente
 5. [**Pergunta P1.2**](#) - ***Handbook on Security of Personal Data Processing***
-  - Análise do caso de uso *Marketing/advertising*
-  - Passos metodológicos seguidos até à avaliação do risco
-  - Medidas propostas para diminuir/mitigar determinados riscos
+    - Análise do caso de uso *Marketing/advertising*
+    - Passos metodológicos seguidos até à avaliação do risco
+    - Medidas propostas para diminuir/mitigar determinados riscos
 
 ---
 
@@ -48,7 +48,7 @@ Texto.
 
 Texto.
 
---- 
+---
 
 ### Pergunta P1.2 - *Handbook on Security of Personal Data Processing*
 

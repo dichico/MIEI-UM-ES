@@ -1,11 +1,11 @@
-# Trabalho Prático 4 - Aula 09/03/2020
+# Trabalho Prático 4 - Aula 5 (09/03/2020)
 
 README principal que contém o conteúdo correspondente ao Quarto Trabalho Prático.
 
 ## Conteúdo
 
-1. [Pergunta 1](../TP4/P1 - Blockchain) - *Blockchain*
-2. [Pergunta 2](../TP4/P2 - Proof of Work Consensus Model) - *Proof of Work Consensus Model*
+1. [Pergunta 1](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP4/P1%20-%20Blockchain) - *Blockchain*
+2. [Pergunta 2](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/TP4/P2%20-%20Proof%20of%20Work%20Consensus%20Model) - *Proof of Work Consensus Model*
 
 <p>
 

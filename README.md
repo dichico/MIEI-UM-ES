@@ -17,5 +17,5 @@ Repositório criado para a Unidade Curricular Engenharia de Segurança, do perfi
 
 ## **Composição do Repositório**
 
-- [Lista de todos os Trabalhos Práticos e sua respetiva resolução](/Trabalhos Práticos)
+- [Lista de todos os Trabalhos Práticos e sua respetiva resolução](/Trabalhos%20Pr%C3%A1ticos)
 - [Lista de todos os Projetos e sua respetiva resolução](/Projetos)

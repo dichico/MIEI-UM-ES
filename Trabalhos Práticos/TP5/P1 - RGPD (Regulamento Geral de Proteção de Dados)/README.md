@@ -178,7 +178,7 @@ O *template* DPIA foi devidamente preenchido, encontrando-se em anexo neste repo
 
 ### Experiência 1.4 - Ferramenta usada para o *Data Protection Impact Assessment* (DPIA)
 
-Texto.
+O PIA está em modo PDF e ZIP na pasta deste repositório.
 
 ---
 

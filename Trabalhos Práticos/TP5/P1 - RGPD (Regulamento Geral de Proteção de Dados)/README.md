@@ -65,8 +65,8 @@ Estas considerações inicias trazem noções necessárias para este Artigo N.º
 
 
 
-| RGPD -> Software                                             | Software -> RGPD                                             |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| RGPD -> Software                                                                                                                                                                                                                                                                                                                                                                         | Software -> RGPD                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A ideia é que se tenha uma atenção reforçada ao nível dos dados pessoais ao longo de todo o processo de desenvolvimento de *software*. <br />Isso deve ser feito usando-se técnicas que garantam a segurança dos dados, ao mesmo tempo que se avaliam essas mesmas técnicas, deixando assim clara a certeza de que o sistema está integrado num plano de técnicas perfeitamente seguras. | O *software* pode ajudar a estabelecer um encontro entre o RGPD, ao mesmo tempo que traz benefícios para o negócio. Através do *software* podemos realizar um conjunto de processos obrigatórios ao regulamento, evitando intervenções manuais com custos superiores.<br />Dessa forma, simplifica na execução de determinadas medidas que são impostas, como o acesso aos dados, o seu rastreamento e ainda as suas respetivas limitações. |
 
 ---
@@ -81,21 +81,21 @@ Esta secção apresenta como objetivo a apresentação de apresentar práticas r
 
 - **Critério N.º 1: *Minimum amount of personal data***, Quantidade mínima de dados pessoais.
 
-| Prática                                                      | Descrição da Prática                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| "***The less data, the better***", Quanto menos data, melhor. | Recolher apenas os dados que sejam considerados estritamente necessários. <br />**Exemplo:** Formulários online. Neste caso pode-se minimizar a quantidade de dados pessoais que são recolhidos do utilizador. |
-| "***Granular collection of data on the basis of necessity***", Coleta granular dos dados baseada na necessidade. | Garantir que a recolha de dados seja feita de forma granular. A ideia é ir recolhendo os dados consoante a necessidade gradual dos serviços prestados.<br />**Exemplo:** Pagamentos online antecipados. Neste caso não há a necessidade de pedir ao utilizador uma quantidade de dados tão grande à partida. |
-| "***Use of privacy enhancing technologies***", Uso de tecnologias que melhorem a privacidade. | Fala-se do uso de técnicas criptográficas, de pseudonimização ou anonimização perante cada caso, no sentido de melhorar a segurança e a privacidade dos dados.<br />**Exemplo:** Gerir maiores de idade para compras de bebidas alcoólicas. Em vez de se retirar o ano de nascimento, implementar um mecanismo/técnica que verifica se a condição de "maior de idade" é cumprida. Assim, em vez de retirarmos a data de nascimento, retiramos o resultado dessa verificação. |
-| "***Different minimum per purpose***", Diferentes mínimos para cada propósito. | Definir o minímo de dados perante cada situação.<br />**Exemplo:** O acesso ao microfone não deve ser obrigatório em todo o tipo de aplicações. |
+| Prática                                                                                                          | Descrição da Prática                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "***The less data, the better***", Quanto menos data, melhor.                                                    | Recolher apenas os dados que sejam considerados estritamente necessários. <br />**Exemplo:** Formulários online. Neste caso pode-se minimizar a quantidade de dados pessoais que são recolhidos do utilizador.                                                                                                                                                                                                                                                               |
+| "***Granular collection of data on the basis of necessity***", Coleta granular dos dados baseada na necessidade. | Garantir que a recolha de dados seja feita de forma granular. A ideia é ir recolhendo os dados consoante a necessidade gradual dos serviços prestados.<br />**Exemplo:** Pagamentos online antecipados. Neste caso não há a necessidade de pedir ao utilizador uma quantidade de dados tão grande à partida.                                                                                                                                                                 |
+| "***Use of privacy enhancing technologies***", Uso de tecnologias que melhorem a privacidade.                    | Fala-se do uso de técnicas criptográficas, de pseudonimização ou anonimização perante cada caso, no sentido de melhorar a segurança e a privacidade dos dados.<br />**Exemplo:** Gerir maiores de idade para compras de bebidas alcoólicas. Em vez de se retirar o ano de nascimento, implementar um mecanismo/técnica que verifica se a condição de "maior de idade" é cumprida. Assim, em vez de retirarmos a data de nascimento, retiramos o resultado dessa verificação. |
+| "***Different minimum per purpose***", Diferentes mínimos para cada propósito.                                   | Definir o minímo de dados perante cada situação.<br />**Exemplo:** O acesso ao microfone não deve ser obrigatório em todo o tipo de aplicações.                                                                                                                                                                                                                                                                                                                              |
 
 <br/>
 
 - **Critério N.º 2: *Minimum extent of the processing of the personal data***, Mínima extensão do processamento dos dados pessoais.
 
-| Prática                                                      | Descrição da Prática                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Prática                                                                      | Descrição da Prática                                                                                                                                                                                                             |
+| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | "***The less processing, the better***", Quanto menos processamento, melhor. | Diminuir a quantidade de dados que são processados, o que não significa reduzir a quantidade de operações de processamento. <br />**Exemplo:** Deixar de armazenar dados pessoais em casos que seja possível trabalhar sem eles. |
-| "***User empowering tools***", Ferramentas de empoderamento do usuário. | Deixar que o titular dos dados pessoais em causa saiba o rumo de todos esses dados, ou seja, o que será feito com os mesmos. |
+| "***User empowering tools***", Ferramentas de empoderamento do usuário.      | Deixar que o titular dos dados pessoais em causa saiba o rumo de todos esses dados, ou seja, o que será feito com os mesmos.                                                                                                     |
 
 Ter em mente que *less processing* inclui também *less data*, *less storage* e *less acessibility*. Dessa forma, este critério deve ser combinado com outros conjuntos de práticas que englobem estes conceitos.
 
@@ -103,8 +103,8 @@ Ter em mente que *less processing* inclui também *less data*, *less storage* e 
 
 - **Critério N.º 3: *Minimum period of the storage of the personal data***, Mínimo período do armazenamento dos dados pessoais.
 
-| Prática                                                      | Descrição da Prática                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Prática                                                                           | Descrição da Prática                                                                                                      |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | "***Storage - the shorter, the better***", Quanto menos tempo armazenado, melhor. | Diminuir o período de armazenamento para os dados pessoais., dado que nem sempre o armazenamento permanente é necessário. |
 
 Para este critério, deixa-se evidente que esta minimização do armazenamento pode-se conseguir através do uso de tecnologias que melhorem segurança e privacidade dos dados. 
@@ -113,10 +113,10 @@ Para este critério, deixa-se evidente que esta minimização do armazenamento p
 
 - **Critério N.º 4: *Minimum accessibility of the personal data***, Mínima acessibilidade aos dados pessoais
 
-| Prática                                                      | Descrição da Prática                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| "***Restricting access on the basis of necessity***", Restringir o acesso consoante a necessidade. | Uso de políticas e controles de acesso, projetados consoante o princípio da necessidade de conhecimento. |
-| "***Limiting ways of sharing***", Limitar as formas de compartilhar dados | Tendo em conta que existe uma facilidade em copiar e partilhar informação parra outros destinatários, devem existir técnicas que definam permissões para esse tipo de ações, de modo a limitar esta partilha excessiva e desautorizada. |
+| Prática                                                                                                  | Descrição da Prática                                                                                                                                                                                                                                                                                                                                                   |
+| -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "***Restricting access on the basis of necessity***", Restringir o acesso consoante a necessidade.       | Uso de políticas e controles de acesso, projetados consoante o princípio da necessidade de conhecimento.                                                                                                                                                                                                                                                               |
+| "***Limiting ways of sharing***", Limitar as formas de compartilhar dados                                | Tendo em conta que existe uma facilidade em copiar e partilhar informação parra outros destinatários, devem existir técnicas que definam permissões para esse tipo de ações, de modo a limitar esta partilha excessiva e desautorizada.                                                                                                                                |
 | "***No public by default without active intervention***", Impedir que o dado se torne público por padrão | Os dados precisam ser privados/restritos por padrão. A ideia é que exista uma intervenção ativa por parte do titular para que os mesmos possam ser divulgados para os demais.<br />**Exemplo**: Redes Sociais. Este é o melhor exemplo que se pode dar. Fala-se quando queremos limitar certas informações nossas para que sejam visíveis apenas pela lista de amigos. |
 
 ---
@@ -184,8 +184,42 @@ O PIA está em modo PDF e ZIP na pasta deste repositório.
 
 ### Pergunta P1.2 - *Handbook on Security of Personal Data Processing*
 
-Texto.
+O documento a analisar apresenta uma metodologia para avaliar o risco de segurança no processamento de dados pessoais e alguns casos de uso para calcular o nível de risco associado. O caso de uso a avaliar pelo nosso grupo é a secção de *Marketing/Advertising* duma empresa.
+
+Este caso de uso pega numa pequena e média empresa que processa os dados pessoais de potenciais clientes para promover os seus produtos. Para esta operação, utiliza uma ferramenta *web* oferecida por terceiros que se especializam nestas atividades de publicidade e *marketing*. Assim cria-se uma *mailing list* e cada semana uma campanha de *marketing* acontece e a ferramenta *web* dá um relatório com estatísticas sobre os *emails* que foram lidos, ignorados ou apagados, mas sem informações detalhadas sobre as pessoas envolvidas em cada parte.
 
 ---
 
-## Notas/Observações Finais
+| Descrição de operação          | Marketing e publicidade                                   |
+| ------------------------------ | --------------------------------------------------------- |
+| Dados pessoais processados     | Informação de contacto (nome, endereço, telefone e email) |
+| Propósito                      | Publicidade de artigos e ofertas novas                    |
+| Sujeito dos dados              | Clientes e potenciais clientes                            |
+| Meios de processamento         | Serviço web de terceiros                                  |
+| Destinatários dos dados        | Departamento de marketing, CRM, e o serviço Web           |
+| Processador de dados escolhido | Empresa que criou o *web service* de marketing            |
+
+O impacto na perda de confidencialidade e/ou integridade e/ou disponibilidade dos dados é considerado **BAIXO**, dado que a inconveniência máxima que pode acontecer é a divulgação dos dados que pode surgir *spam* ou a eliminação dos mesmos, que os pode excluir duma campanha de *marketing* ideal.
+Fugindo ao exemplo seguido no documento, o impacto pode ser maior caso o processamento de dados pessoias inclua hábitos, preferências, origens étnicas, opiniões políticas ou informações de saúde. Dessa forma acontece um *profiling* mais sério, levando ao impacto ser **MÉDIO** caso terceiros tenham acesso a esses dados de forma anónima, ou **ALTO** caso o *profiling* seja baseado em informação sensível.
+
+---
+
+| Área de análise                                  | Probabilidade (Nível/Score) |
+| :----------------------------------------------- | :-------------------------: |
+| Recursos técnicos e em rede                      |          Médio / 2          |
+| Processos relacionados ao processamento de dados |           Low / 1           |
+| Pessoas involvidas no processamento de dados     |          Médio / 2          |
+| Setor de negócio (e-shop)                        |          Médio / 2          |
+| Ocorrência de ameaças                            |          **MÉDIA** / 7          |
+
+---
+
+Desta forma, podemos considerar que o risco no geral é baixo e algumas medidas a tomar para tal seriam:
+
+- Política de controlo de acesso (interno)
+- Autenticação desse controlo
+- *Logging* para o processamento de dados
+- Segurança no servidor/base de dados
+- Política de segurança e proteção dos dados ao transferir para terceiros
+
+---

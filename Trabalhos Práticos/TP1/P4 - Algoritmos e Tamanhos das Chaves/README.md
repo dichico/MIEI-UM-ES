@@ -164,6 +164,6 @@ Certificate:
 
 ## Notas/Observações Finais
 
-- Imagem [**Qualified Certificate**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Images/Qualified%20Certificate.png) corresponde à página Web da EC Lottomatica Holding S.r.l..
-- Imagem [**Certificado**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Images/Certificado.png) permite validar a correta criação do Certificado.
-- Ficheiro [**Certificado.crt**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Certificado.crt) corresponde ao Certificado em si.
+- Imagem [**Qualified Certificate**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Images/Qualified%20Certificate.png) corresponde à página Web da EC Lottomatica Holding S.r.l..
+- Imagem [**Certificado**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Images/Certificado.png) permite validar a correta criação do Certificado.
+- Ficheiro [**Certificado.crt**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP1/P4%20-%20Algoritmos%20e%20Tamanhos%20das%20Chaves/Certificado.crt) corresponde ao Certificado em si.

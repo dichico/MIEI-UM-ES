@@ -2,22 +2,22 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Experiência 1.1**](#) - **Regulamento (UE) 2016/679 (RGPD)**
+1. [**Experiência 1.1**](#experiência-11---regulamento-ue-2016679-rgpd) - **Regulamento (UE) 2016/679 (RGPD)**
     - Análise do Artigo 32.º - Segurança do tratamento
     - Escrita de pequeno texto que reflete a forma como este artigo pode influir no desenvolvimento de *software*
-2. [**Pergunta P1.1**](#) - ***Recommendations on shaping technology according to GDPR provisions - Exploring the notion of data protection by default***
+2. [**Pergunta P1.1**](#pergunta-11---recommendations-on-shaping-technology-according-to-gdpr-provisions---exploring-the-notion-of-data-protection-by-default) - ***Recommendations on shaping technology according to GDPR provisions - Exploring the notion of data protection by default***
 	- Análise da Secção 3 - *Data protection by default in practice*
 	- Pequeno resumo da mesma
-3. [**Experiência 1.3**](#) - ***Guidelines on Data Protection Impact Assessment (DPIA) and determining whether processing is “likely to result in a high risk” for the purposes of Regulation 2016/679***
+3. [**Experiência 1.3**](#experiência-13---guidelines-on-data-protection-impact-assessment-dpia-and-determining-whether-processing-is-likely-to-result-in-a-high-risk-for-the-purposes-of-regulation-2016679) - ***Guidelines on Data Protection Impact Assessment (DPIA) and determining whether processing is “likely to result in a high risk” for the purposes of Regulation 2016/679***
 	- Nove critérios a ser considerados na avaliação do risco do processamento de dados pessoais
 	- Projeto hipotético que envolva a utilização de dados pessoais
 	  - Explicação do projeto
 	  - Processamento dos dados pessoais
 	  - Critérios que satisfaz
 	  - Template DPIA
-4. [**Experiência 1.4**](#) - **Ferramenta usada para o *Data Protection Impact Assessment* (DPIA)**
+4. [**Experiência 1.4**](#experiência-14---ferramenta-usada-para-o-data-protection-impact-assessment-dpia) - **Ferramenta usada para o *Data Protection Impact Assessment* (DPIA)**
 	- Utilização da ferramenta no projeto hipotético pensado anteriormente
-5. [**Pergunta P1.2**](#) - ***Handbook on Security of Personal Data Processing***
+5. [**Pergunta P1.2**](#pergunta-p12---handbook-on-security-of-personal-data-processing) - ***Handbook on Security of Personal Data Processing***
     - Análise do caso de uso *Marketing/advertising*
     - Passos metodológicos seguidos até à avaliação do risco
     - Medidas propostas para diminuir/mitigar determinados riscos
@@ -172,13 +172,13 @@ Dadas as circunstâncias atuais, o projeto consistiria numa *web app* para infor
 
 #### Alínea III. Preenchimento do *template* DPIA
 
-O *template* DPIA foi devidamente preenchido, encontrando-se em anexo neste repositório.
+O *template* DPIA foi devidamente preenchido, encontrando-se em modo [PDF](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP5/P1%20-%20RGPD%20(Regulamento%20Geral%20de%20Prote%C3%A7%C3%A3o%20de%20Dados)/DPIA.pdf) em anexo neste repositório.
 
 ---
 
 ### Experiência 1.4 - Ferramenta usada para o *Data Protection Impact Assessment* (DPIA)
 
-O PIA está em modo PDF e ZIP na pasta deste repositório.
+O PIA está em modo [PDF](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP5/P1%20-%20RGPD%20(Regulamento%20Geral%20de%20Prote%C3%A7%C3%A3o%20de%20Dados)/pia-COVID%20app.pdf) e [ZIP](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP5/P1%20-%20RGPD%20(Regulamento%20Geral%20de%20Prote%C3%A7%C3%A3o%20de%20Dados)/pia-COVID%20app.zip) na pasta deste repositório.
 
 ---
 
@@ -188,7 +188,7 @@ O documento a analisar apresenta uma metodologia para avaliar o risco de seguran
 
 Este caso de uso pega numa pequena e média empresa que processa os dados pessoais de potenciais clientes para promover os seus produtos. Para esta operação, utiliza uma ferramenta *web* oferecida por terceiros que se especializam nestas atividades de publicidade e *marketing*. Assim cria-se uma *mailing list* e cada semana uma campanha de *marketing* acontece e a ferramenta *web* dá um relatório com estatísticas sobre os *emails* que foram lidos, ignorados ou apagados, mas sem informações detalhadas sobre as pessoas envolvidas em cada parte.
 
----
+<br/>
 
 | Descrição de operação          | Marketing e publicidade                                   |
 | ------------------------------ | --------------------------------------------------------- |
@@ -202,7 +202,7 @@ Este caso de uso pega numa pequena e média empresa que processa os dados pessoa
 O impacto na perda de confidencialidade e/ou integridade e/ou disponibilidade dos dados é considerado **BAIXO**, dado que a inconveniência máxima que pode acontecer é a divulgação dos dados que pode surgir *spam* ou a eliminação dos mesmos, que os pode excluir duma campanha de *marketing* ideal.
 Fugindo ao exemplo seguido no documento, o impacto pode ser maior caso o processamento de dados pessoias inclua hábitos, preferências, origens étnicas, opiniões políticas ou informações de saúde. Dessa forma acontece um *profiling* mais sério, levando ao impacto ser **MÉDIO** caso terceiros tenham acesso a esses dados de forma anónima, ou **ALTO** caso o *profiling* seja baseado em informação sensível.
 
----
+<br/>
 
 | Área de análise                                  | Probabilidade (Nível/Score) |
 | :----------------------------------------------- | :-------------------------: |
@@ -212,7 +212,7 @@ Fugindo ao exemplo seguido no documento, o impacto pode ser maior caso o process
 | Setor de negócio (e-shop)                        |          Médio / 2          |
 | Ocorrência de ameaças                            |          **MÉDIA** / 7          |
 
----
+<br/>
 
 Desta forma, podemos considerar que o risco no geral é baixo e algumas medidas a tomar para tal seriam:
 
@@ -223,3 +223,9 @@ Desta forma, podemos considerar que o risco no geral é baixo e algumas medidas 
 - Política de segurança e proteção dos dados ao transferir para terceiros
 
 ---
+
+## Notas/Observações Finais
+
+- PDF [**DPIA**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP5/P1%20-%20RGPD%20(Regulamento%20Geral%20de%20Prote%C3%A7%C3%A3o%20de%20Dados)/DPIA.pdf) que corresponde ao *template* DPIA proposto.
+- PDF [**PIA**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP5/P1%20-%20RGPD%20(Regulamento%20Geral%20de%20Prote%C3%A7%C3%A3o%20de%20Dados)/DPIA.pdf) que corresponde ao output do PIA *software*.
+- ZIP [**PIA**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP5/P1%20-%20RGPD%20(Regulamento%20Geral%20de%20Prote%C3%A7%C3%A3o%20de%20Dados)/pia-COVID%20app.zip) que corresponde ao output do PIA *software*.

@@ -116,7 +116,7 @@ Sabe-se que o número de *bugs* e o número de vulnerabilidades estão intername
 
 ---
 
-### Pergunta P1.3
+### Pergunta P1.3 - Tipos de vulnerabilidades em todo o ciclo do *software* e exemplos associados
 
 **Vulnerabilidades de Projeto** são problemas introduzidos no projeto na fase do planeamento do mesmo tal como:
 
@@ -133,7 +133,7 @@ Sabe-se que o número de *bugs* e o número de vulnerabilidades estão intername
 
 ---
 
-### Pergunta P1.4
+### Pergunta P1.4 - Vulnerabilidades dia-zero
 
 As vulnerabilidades de **dia-zero** são vulnerabilidades que não têm um *patch* para corrigir disponível, fazendo com que seja uma falha de segurança para qualquer *hacker* explorar e atacar, dado que toda a gente usando esse produto afetado está exposto dada a falta de correção da vulnerabilidade.
 
@@ -145,4 +145,4 @@ O caso mais infame e recente foi a vulnerabilidade **HeartBleed** que afetou a b
 
 ## Notas/Observações Finais
 
-Escrever Notas.
+Não existem observações finais para este Trabalho Prático.

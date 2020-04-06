@@ -7,16 +7,17 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
     - Análise das três primeiras *Weakness* do *ranking* do CWE
     - Análise da *Weakness* N.º 9 do *ranking* do CWE
     
-2. [**Pergunta P1.2**](#) - ***Source Lines Of Code* (SLOC)**
+2. [**Pergunta P1.2**](#pergunta-p12---source-lines-of-code-sloc) - ***Source Lines Of Code* (SLOC)**
    - Análise do número de linhas de código de um pacote/plataforma de *software*
     - Estimativa de número de *bugs* a partir desse número de linhas de código
     - Possíveis Vulnerabilidades
-
+3. [**Pergunta P1.3**](#pergunta-p13) - Tipos de vulnerabilidades em todo o ciclo do *software* e exemplos associados
+4. [**Pergunta P1.4**](#pergunta-p14) - Vulnerabilidades **dia-zero**
 ---
 
 ## Resolução da Pergunta 1
 
-### Pergunta 1.1 - ***Common Weakness Enumeration* (CWE)**
+### Pergunta P1.1 - ***Common Weakness Enumeration* (CWE)**
 
 Usando como base o **The CWE Top 25** de 2019 https://cwe.mitre.org/top25/, somos capazes de responder às seguinte perguntas práticas.
 

@@ -7,7 +7,7 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
     - Análise das três primeiras *Weakness* do *ranking* do CWE
     - Análise da *Weakness* N.º 9 do *ranking* do CWE
     
-2. [**Pergunta P1.2**](#) - ***SLOC ( Source Lines Of Code)***
+2. [**Pergunta P1.2**](#) - ***Source Lines Of Code* (SLOC)**
    - Análise do número de linhas de código de um pacote/plataforma de *software*
     - Estimativa de número de *bugs* a partir desse número de linhas de código
     - Possíveis Vulnerabilidades
@@ -24,19 +24,19 @@ Usando como base o **The CWE Top 25** de 2019 https://cwe.mitre.org/top25/, somo
 
 #### Alínea I. Características das três primeiras *Weakness* do *ranking*
 
-| ID *Weakness*/Name                                           | Descrição                                                    | Plataformas Aplicáveis                                       | Consequências mais comuns                                    |
+| ID da *Weakness*                                             | Descrição                                                    | Plataformas Aplicáveis                                       | Consequências mais comuns                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **ID** [**CWE-119**](https://cwe.mitre.org/data/definitions/119.html) - *Improper Restriction of Operations within the Bounds of a Memory Buffer* | *Weakness* presente quando estamos a lidar com um *buffer* presente numa aplicação e conseguimos ler/escrever num espaço de memória para além do que foi alocado a esse *buffer*. | **Linguagens de Programação**: Mais dominante em linguagens de baixo nível - C, C++ e *Assembly*. <br />Todas as linguagens que não garantam que a memória que está a ser acedida foi realmente alocada ao *buffer* em si estão suscetíveis a esta fraqueza.<br />**Tecnologias**: Não Aplicáveis. | - Execução de código ou comandos não autorizados;<br />- Leitura de memória, bem como informação sensível;<br />- Alterar o fluxo de controlo;<br />- Colocar o sistema indisponível. |
-| **ID** [**CWE-79**](https://cwe.mitre.org/data/definitions/79.html) - *Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')* | *Weakness* presente quando uma  *web app* não neutraliza ou neutraliza de forma incorreta o *input* dado pelo utilizador. Como o *ouput* destas páginas é veiculado a outros utilizador, tornam-se vulneráveis a esta fraqueza. | **Linguagens de Programação:** Indeterminadas.<br />**Tecnologias:** Todas as tecnologias *web* podem estar vulneráveis a este tipo de ataques. | - Obtenção de informação armazenada nos *cookies*;<br />- Execução de código ou comandos não autorizados;<br />Envio de pedidos fingindo ser a vítima. |
-| **ID** [**CWE-20**](https://cwe.mitre.org/data/definitions/20.html) - *Improper Input Validation* | *Weakness* presente quando uma *web app* não valida o *input* vindo do utilizador, podendo afetar o fluxo de controlo ou o fluxo de dados do programa em si.<br />**Apesar de similar à anterior em termos de descrição, esta *weakness* interfere nos servidores onde o *software* se encontra alojado, enquanto que a anterior pode chegar a afetar diretamente os dispositivos dos clientes do *software*.** | **Linguagens de Programação:** Indeterminadas.<br />**Tecnologias:** Não Aplicáveis. | - *Denial of Service*;<br />- Leitura de memória, bem como ficheiros ou pastas;<br />- Execução de código ou comandos não autorizados. |
+| **ID** [**CWE-119**](https://cwe.mitre.org/data/definitions/119.html) | ***Improper Restriction of Operations within the Bounds of a Memory Buffer***<br />Weakness* presente quando estamos a lidar com um *buffer* presente numa aplicação e conseguimos ler/escrever num espaço de memória para além do que foi alocado a esse *buffer*. | **Linguagens de Programação**: Mais dominante em linguagens de baixo nível - C, C++ e *Assembly*. <br />**Tecnologias**: Não Aplicáveis. | Execução de código ou comandos não autorizados; Leitura de memória, bem como informação sensível; Alterar o fluxo de controlo; Colocar o sistema indisponível. |
+| **ID** [**CWE-79**](https://cwe.mitre.org/data/definitions/79.html) | ***Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')***<br />*Weakness* presente quando uma  *web app* não neutraliza ou neutraliza de forma incorreta o *input* dado pelo utilizador. <br />Como o *ouput* destas páginas é veiculado a outros utilizador, tornam-se vulneráveis a esta fraqueza. | **Linguagens de Programação:** Indeterminadas.<br />**Tecnologias:** Todas as tecnologias *web* podem estar vulneráveis a este tipo de ataques. | Obtenção de informação armazenada nos *cookies*; Execução de código ou comandos não autorizados; Envio de pedidos fingindo ser a vítima. |
+| **ID** [**CWE-20**](https://cwe.mitre.org/data/definitions/20.html) | ***Improper Input Validation***<br />*Weakness* presente quando uma *web app* não valida o *input* vindo do utilizador, podendo afetar o fluxo de controlo ou o fluxo de dados do programa em si.<br />**Apesar de similar à anterior em termos de descrição, esta *weakness* interfere nos servidores onde o *software* se encontra alojado, enquanto que a anterior pode chegar a afetar diretamente os dispositivos dos clientes do *software*.** | **Linguagens de Programação:** Indeterminadas.<br />**Tecnologias:** Não Aplicáveis. | *Denial of Service*; Leitura de memória, bem como ficheiros ou pastas; Execução de código ou comandos não autorizados. |
 
 <br/>
 
 #### Alínea II. Características da *Weakness* N.º 9 do *ranking*
 
-| ID *Weakness*/Name                                           | Descrição                                                    | Linguagens/Tecnologias em que é mais prevalente              | Consequências mais comuns                                    |
+| ID da *Weakness*                                             | Descrição                                                    | Plataformas Aplicáveis                                       | Consequências mais comuns                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **ID** [**CWE-190**](https://cwe.mitre.org/data/definitions/190.html) - *Integer Overflow or Wraparound* | Cálculo que pode originar um excesso de número inteiro ou envolvente. Este *overflow* acontece quando um valor inteiro é incrementado para um valor demasiado grande para ser armazenado. Quando isto acontece, esse valor pode "estourar" e virar um número muito pequeno e até mesmo negativo. | **Linguagens de Programação:** Indeterminadas.<br />**Tecnologias:** Não Aplicáveis. | - *Denial of Service*;<br />- Modificação da memória;<br />- Execução de código ou comandos não autorizados. |
+| **ID** [**CWE-190**](https://cwe.mitre.org/data/definitions/190.html) | ***Integer Overflow or Wraparound***<br />Cálculo que pode originar um excesso de número inteiro ou envolvente.<br />Este *overflow* acontece quando um valor inteiro é incrementado para um valor demasiado grande para ser armazenado. <br />Quando isto acontece, esse valor pode "estourar" e virar um número muito pequeno e até mesmo negativo. | **Linguagens de Programação:** Indeterminadas.<br />**Tecnologias:** Não Aplicáveis. | *Denial of Service*; Modificação da memória; Execução de código ou comandos não autorizados. |
 
 <br/>
 
@@ -77,7 +77,7 @@ Neste caso, o valor de ```bytesRec``` pode também ele "estourar", criando um va
 
 ---
 
-### Pergunta P1.2 - *SLOC (Source Lines Of Code)*
+### Pergunta P1.2 - ***Source Lines Of Code* (SLOC)**
 
 A ideia desta pergunta passa por analisar os dados fornecidos relativamente ao número de linhas de código de um determinado pacote/plataforma de *software*, de modo a estabelecer uma estimativa do número de *bugs* dos mesmos e possíveis vulnerabilidades.
 
@@ -85,7 +85,7 @@ A ideia desta pergunta passa por analisar os dados fornecidos relativamente ao n
 
 #### Alínea I. Estimativa número de *bugs*
 
-Estima-se que qualquer pacote de de *software* tem uma média de 5 a 50 bugs por cada 1.000 linhas de código fonte (1.000 SLOC - *Source Lines of Code*) , alguns dos quais dados como vulnerabilidades.
+Estima-se que qualquer pacote de de *software* tem uma média de 5 a 50 bugs por cada 1.000 linhas de código fonte (1.000 *Source Lines Of Code*) , alguns dos quais dados como vulnerabilidades.
 
 <br/>
 

@@ -2,7 +2,7 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Pergunta 1.1**](#pergunta-p11---common-weakness-enumeration-cwe) - ***Common Weakness Enumeration* (CWE)**
+1. [**Pergunta P1.1**](#pergunta-p11---common-weakness-enumeration-cwe) - ***Common Weakness Enumeration* (CWE)**
    
     - Análise das três primeiras *Weakness* do *ranking* do CWE
     - Análise da *Weakness* N.º 9 do *ranking* do CWE

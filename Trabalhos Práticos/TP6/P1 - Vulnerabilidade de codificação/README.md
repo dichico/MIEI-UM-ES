@@ -117,7 +117,18 @@ Sabe-se que o número de *bugs* e o número de vulnerabilidades estão intername
 
 ### Pergunta P1.3
 
+**Vulnerabilidades de Projeto** são problemas introduzidos no projeto na fase do planeamento do mesmo tal como:
 
+- [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')](https://cwe.mitre.org/data/definitions/79.html) - Esta vulnerabilidade acontece quando não existe a filtração e neutralização do *input* introduzido pelo utilizador, por exemplo num *web request*. Assim a aplicação Web dinamicamente gera uma página com este *input* não confiável e com instruções para executar por exemplo *JavaScript*, *ActiveX*, *Flash* que possa ser malicioso. A vítima assim no seu *browser* corre este código existindo assim **Cross-site Scripting** violando o princípio de que os *scripts* dum domínio não devem poder aceder a recursos ou correr código noutro domínio/computador.
+- [Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html) - Colocar uma máscara na *password* como por exemplo colocar um *encoding* de forma a proteger a *password* é um erro grande. Guardar a *password* em texto limpo e de forma a remediar este erro já preocupante, mudar o *encoding* para por exemplo *BASE64*. Isto não protege a palavra-passe e é uma vulnerabilidade a ser evitada ou corrigida, logo na fase de planeamento.
+
+**Vulnerabilidades de codificação** são problemas introduzidos no projeto na fase de programação do *software*:
+- [Absolute Path Traversal](https://cwe.mitre.org/data/definitions/36.html) - O programa utiliza *input* externo para construir um caminho de diretoria que devia estar restrito, dado que não foi neutralizado e filtrado o *input* antes de efetuar o código. 
+- [Not Using Password Aging](https://cwe.mitre.org/data/definitions/262.html) - Não existir nenhum mecanismo colocado para verificar a idade das *passwords* de forma a incentivar o utilizador a trocar segundo as recomendações de especialistas em segurança. Mesmo assim tem de se pensar que a janela de renovação não seja muito curta, senão traz uma possibilidade maior dos utilizadores colocarem *passwords* fracas ou previsíveis. Assim, é também importante *passwords* similares às anteriores.
+
+**Vulnerabilidades Operacionais** são problemas causados pelo sistema onde o *software* está a correr ou a sua configuração (A categoria está obsoleta pelo MITRE, mas pegamos em vulnerabilidades que acreditamos estar neste ramo):
+- [Incorrect User Management](https://cwe.mitre.org/data/definitions/286.html) - O *software* não faz a gestão apropriadamente do utilizador no ambiente da empresa e sistema operativo. Assim os utilizadores podem ter acesso a ler/alterar/apagar dados sensíveis do sistema.
+- [Privilege Chaining](https://cwe.mitre.org/data/definitions/268.html) - Seguindo o mesmo problema da gestão de privilégios e utilizadores, dois privilégios distintos podem ser combinados duma maneira que cria uma cadeia de permissões que deixam uma entidade acionar procedimentos inseguros, que não aconteceriam se não existisse a possibilidade e facilidade de criar cadeias de privilégios e permissões.
 
 ---
 

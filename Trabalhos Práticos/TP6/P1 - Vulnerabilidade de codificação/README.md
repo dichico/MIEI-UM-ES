@@ -3,8 +3,14 @@
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
 1. [**Pergunta 1.1**](#) - ***Common Weakness Enumeration* (CWE)**
+   
     - Análise das três primeiras *Weakness* do *ranking* do CWE
     - Análise da *Weakness* N.º 9 do *ranking* do CWE
+    
+2. [**Pergunta P1.2**](#) - ***SLOC ( Source Lines Of Code)***
+   - Análise do número de linhas de código de um pacote/plataforma de *software*
+    - Estimativa de número de *bugs* a partir desse número de linhas de código
+    - Possíveis Vulnerabilidades
 
 ---
 
@@ -71,13 +77,13 @@ Neste caso, o valor de ```bytesRec``` pode também ele "estourar", criando um va
 
 ---
 
-### Pergunta P1.2 - *SLOC - Source Lines Of Code*
+### Pergunta P1.2 - *SLOC (Source Lines Of Code)*
 
 A ideia desta pergunta passa por analisar os dados fornecidos relativamente ao número de linhas de código de um determinado pacote/plataforma de *software*, de modo a estabelecer uma estimativa do número de *bugs* dos mesmos e possíveis vulnerabilidades.
 
 <br/>
 
-#### Estimativa número de *bugs*
+#### Alínea I. Estimativa número de *bugs*
 
 Estima-se que qualquer pacote de de *software* tem uma média de 5 a 50 bugs por cada 1.000 linhas de código fonte (1.000 SLOC - *Source Lines of Code*) , alguns dos quais dados como vulnerabilidades.
 
@@ -101,7 +107,7 @@ Isso deixa desde logo a ideia de que esta estimativa varia muito de acordo com o
 
 <br/>
 
-#### Possíveis Vulnerabilidades
+#### Alínea II. Possíveis Vulnerabilidades
 
 Sabe-se que o número de *bugs* e o número de vulnerabilidades estão internamente ligados. Basta pensar em grandes aplicações, com maior número de linhas de código fonte, para perceber que estão mais suscetíveis a apresentar um maior número de *bugs*, pelo simples facto de serem aplicações mais complexas em termos de desenvolvimento.
 

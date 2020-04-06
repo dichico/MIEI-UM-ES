@@ -27,6 +27,9 @@ README principal que contém o a lista de todos os Trabalhos Práticos de Engenh
 - [**Trabalho Prático 5**](TP5) - **Aula 6 (16/03/2020)**
 	- RGPD (Regulamento Geral de Proteção de Dados)
 
+- [**Trabalho Prático 6**](TP6) - **Aula 6 (23/03/2020)**
+	- Vulnerabilidade de codificação
+
 ---
 
 ## Notas

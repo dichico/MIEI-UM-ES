@@ -71,7 +71,7 @@ Estas considerações inicias trazem noções necessárias para este Artigo N.º
 
 ---
 
-### Pergunta 1.1 - *Recommendations on shaping technology according to GDPR provisions - Exploring the notion of data protection by default*
+### Pergunta P1.1 - *Recommendations on shaping technology according to GDPR provisions - Exploring the notion of data protection by default*
 
 Perante os critérios de escolha definidos para os vários grupos, cabe-nos analisar a Secção 3 do documentos em causa, de seu título *Data protection by default in practice*.
 

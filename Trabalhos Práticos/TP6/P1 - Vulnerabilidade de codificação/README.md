@@ -117,13 +117,17 @@ Sabe-se que o número de *bugs* e o número de vulnerabilidades estão intername
 
 ### Pergunta P1.3
 
-Resposta.
+
 
 ---
 
 ### Pergunta P1.4
 
-Resposta.
+As vulnerabilidades de **dia-zero** são vulnerabilidades que não têm um *patch* para corrigir disponível, fazendo com que seja uma falha de segurança para qualquer *hacker* explorar e atacar, dado que toda a gente usando esse produto afetado está exposto dada a falta de correção da vulnerabilidade.
+
+De forma análoga, uma vulnerabilidade que não seja **day-zero** é uma falha que foi encontrada pela comunidade e/ou pelo fabricante, mas já corrigida através dum *patch*. De qualquer forma, não deixa de ser uma vulnerabilidade dado que apenas aqueles que tenham o produto atualizado para a versão mais recente é que estão protegidos de possíveis *exploits* advindos dessa vulnerabilidade.
+
+O caso mais infame e recente foi a vulnerabilidade **HeartBleed** que afetou a biblioteca de segurança *open source* **OpenSSL**. Quando esta vulnerabilidade **dia-zero** no dia 1 de Abril de 2014, estimou-se que 17%, ou meio milhão de servidores Web que estavam certificados como seguros, estavam na verdade vulneráveis a *exploits* relacionados com esta vulnerabilidade, até ter existido o *patch* que demorou 7 dias a ser efetuado.
 
 ---
 

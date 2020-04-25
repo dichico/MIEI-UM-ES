@@ -30,6 +30,9 @@ README principal que contém o a lista de todos os Trabalhos Práticos de Engenh
 - [**Trabalho Prático 6**](TP6) - **Aula 7 (23/03/2020)**
 	- Vulnerabilidade de codificação
 
+- [**Trabalho Prático 7**](TP7) - **Aula 9 (20/04/2020)**
+	- *Buffer Overflow*
+
 ---
 
 ## Notas

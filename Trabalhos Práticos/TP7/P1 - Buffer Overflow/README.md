@@ -34,48 +34,20 @@ Se analisarmos os ficheiros referentes ao `LOverflow2` para as três linguagens 
 
 Apesar dessas diferenças, a ideia deste programa é universal  - armazenar num *buffer* tantos números quantos aqueles que são pedidos sob a forma de *input*. Apesar dessa ser a ideia teórica, constata-se que existem erros/problemas na execução deste programa que iremos detalhar a seguir.
 
-**Para as três linguagens, o problema central do programa `LOverflow2`  está na não verificação do primeiro inteiro que é pedido e depois inserido em modo *input*, que pela análise do código teria de ser igual ou inferior a 10.**
+Para as três linguagens, o problema central do programa `LOverflow2`  está na não verificação do primeiro inteiro que é pedido e depois inserido em modo *input*, que pela análise do código teria de ser igual ou inferior a 10.
+
+**O que se vai ver de seguida é a idealização de certos cenários que podem representar vulnerabilidades do programa e de que forma cada um deles reage perante os mesmos.**
 
 <p>
 
 #### Análise do programa Java
 
-Após a análise do programa na linguagem Java e de vários testes efetuados sobre o mesmo, consideram-se os seguintes cenários que podem representar vulnerabilidades do programa e de que forma o programa reage perante os mesmos.
-
-<br/>
-
-**1. Introdução de um inteiro muito elevado (*Overflow* de Inteiros)** 
-
-O programa lança uma exceção `java.util.InputMismatchException` , dado que no código consta que cada inteiro que é lido no *input* tem de ter entre [0,10] dígitos. 
-
-<p align="center">
-<img src="Images/LOverflow2Java1.png">
-</p>
-<br/>
-
-**2. Introdução de quantidade de números muito elevada**
-
-O programa lança novamente uma exceção `java.util.InputMismatchException` , dado que se trata de um número muito superior a 10. 
-
-<p align="center">
-<img src="Images/LOverflow2Java21.png">
-</p>
-
-Note-se que caso se defina a quantidade de números como sendo igual a 11, ao inserir-se o número 11, o programa informa acerca da impossibilidade de inserir além do índice 10 do *array* em si. Dessa forma, lança a exceção `java.lang.ArrayIndexOutOfBoundsException`.
-
-<p align="center">
-<img src="Images/LOverflow2Java22.png">
-</p>
-
-<br/>
-
-**3. Introdução de uma quantidade de números negativa**
-
-O programa é terminado de imediato. Como o valor da variável `count` será negativo, não chega a entrar no ciclo que controla a inserção dos `n` números pedidos no *input*.
-
-<p align="center">
-<img src="Images/LOverflow2Java3.png">
-</p>
+| Cenário                                                      | Reação do Programa                                           | Justificação                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Introdução de um inteiro muito elevado (*Overflow* de Inteiros) | O programa lança uma exceção `java.util.InputMismatchException` | No código consta que cada inteiro que é lido no *input* tem de ter entre [0-10] dígitos apenas |
+| Introdução de quantidade de números superior a 10            | O programa lança uma exceção `java.lang.ArrayIndexOutOfBoundsException` | Impossibilidade de inserir além do índice 10 do *array* em si |
+| Introdução de quantidade de números muito superior a 10      | O programa lança uma exceção `java.util.InputMismatchException` | Trata-se de um número muito superior a 10                    |
+| Introdução de uma quantidade de números negativa             | O programa é terminado de imediato                           | Como o valor da variável `count` será negativo, não chega a entrar no ciclo que controla a inserção dos `n` números pedidos no *input* |
 
 <p>
 
@@ -85,23 +57,14 @@ Em termos de linguagem Python o comportamento do programa é ligeiramente difere
 
 <br/>
 
-**1. Introdução de quantidade de números muito elevada**
-
-O programa em Python lança também ele uma exceção no caso de se introduzir um valor muito elevado para a quantidade de números a inserir. Trata-se de um `OverflowError`, cuja descrição detalha que o *range* de resultados possui demasiados itens a serem verificados no ciclo *for* do código em si. 
-
-<p align="center">
-<img src="Images/LOverflow2Python1.png">
-</p>
+| Cenário                                                      | Reação do Programa                                           | Justificação                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Introdução de um inteiro muito elevado (*Overflow* de Inteiros) | O programa não apresenta qualquer reação oposta/defensiva    | Isto deve-se ao facto das operações em si estarem em Python puro. Uma vez que os números inteiros Python têm uma precisão arbitrária (não têm comprimento de *bytes* fixo) não existe a possibilidade de *Overflow* |
+| Introdução de quantidade de números elevada                  | O programa lança uma exceção `OverflowError`                 | A descrição do erro detalha que o *range* de resultados possui demasiados itens a serem verificados no ciclo *for* do código em si |
+| Introdução de uma quantidade de números negativa             | O programa é terminado de imediato                           | A função `range()` do Python pode lidar com *ranges* negativos mas estes devem estar bem definidos e fazerem sentido. Dado que no código o range vai de `0` a `count-1` termos um valor de `count` negativo acabaria por não funcionar |
+| Invocação de funções no próprio *input*                      | O programa consegue lidar com estas invocações, dependendo o *output* da função usada | No caso do código fornecido,                                 |
 
 <br/>
-
-**2. Introdução de um inteiro muito elevado (*Overflow* de Inteiros) e quantidade de números negativa**
-
-O programa em Python lança também ele uma exceção no caso de se introduzir um valor muito elevado para a quantidade de números a inserir. Trata-se de um `OverflowError`, cuja descrição detalha que o *range* de resultados possui demasiados itens a serem verificados no ciclo *for* do código em si. 
-
-<p align="center">
-<img src="Images/LOverflow2Python1.png">
-</p>
 
 <p>
 

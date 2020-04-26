@@ -44,10 +44,10 @@ Para as três linguagens, o problema central do programa `LOverflow2`  está na 
 
 | Cenário                                                      | Reação do Programa                                           | Justificação                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Introdução de um inteiro muito elevado (*Overflow* de Inteiros) | O programa lança uma exceção `java.util.InputMismatchException` | No código consta que cada inteiro que é lido no *input* tem de ter entre [0-10] dígitos apenas |
-| Introdução de quantidade de números ligeiramente superior a 10 | O programa lança uma exceção `java.lang.ArrayIndexOutOfBoundsException` | Impossibilidade de inserir além do índice 10 do *array* em si |
-| Introdução de quantidade de números muito superior a 10      | O programa lança uma exceção `java.util.InputMismatchException` | Trata-se de um número muito superior a 10                    |
-| Introdução de uma quantidade de números negativa             | O programa é terminado de imediato, não sendo pedido qualquer valor | Como o valor da variável `count` será negativo, não chega a entrar no ciclo que controla a inserção dos `count` números pedidos no *input* |
+| Inserção de um inteiro muito elevado (*Overflow* de Inteiros) | O programa lança uma exceção `java.util.InputMismatchException` | No código consta que cada inteiro que é lido no *input* tem de ter entre [0-10] dígitos apenas |
+| Inserção de quantidade de números ligeiramente superior a 10 | O programa lança uma exceção `java.lang.ArrayIndexOutOfBoundsException` | Impossibilidade de inserir além do índice 10 do *array* em si |
+| Inserção de quantidade de números muito superior a 10        | O programa lança uma exceção `java.util.InputMismatchException` | Trata-se de um número muito superior a 10                    |
+| Inserção de uma quantidade de números negativa               | O programa é terminado de imediato, não sendo pedido qualquer valor | Como o valor da variável `count` será negativo, não chega a entrar no ciclo que controla a inserção dos `count` números pedidos no *input* |
 
 <p>
 
@@ -55,10 +55,10 @@ Para as três linguagens, o problema central do programa `LOverflow2`  está na 
 
 | Cenário                                                      | Reação do Programa                                           | Justificação                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Introdução de um inteiro muito elevado (*Overflow* de Inteiros) | O programa não apresenta qualquer reação oposta/defensiva    | Isto deve-se ao facto das operações em si estarem em Python puro. Uma vez que os números inteiros Python têm uma precisão arbitrária (não têm comprimento de *bytes* fixo) não existe a possibilidade de *Overflow* |
-| Introdução de quantidade de números ligeiramente superior a 10 | O programa vai pedindo os números até atingir o erro `IndexError` | A descrição do erro detalha que o índice que se quer alcançar está fora do *range* permitindo, daí a impossibilidade de inserir além do índice 10 do *array* em si |
-| Introdução de quantidade de números muito superior a 10      | O programa lança uma exceção `OverflowError`                 | A descrição do erro detalha que o *range* de resultados possui demasiados itens a serem verificados no ciclo *for* do código em si. Isto acontece porque a função `range()` vai devolver demasiados resultados possíveis, criando-se um *Overflow* |
-| Introdução de uma quantidade de números negativa             | O programa é terminado de imediato, não sendo pedido qualquer valor | A função `range()` do Python pode lidar com *ranges* negativos mas estes devem estar bem definidos e fazerem sentido. Dado que no código o range vai de `0` a `count-1` termos um valor de `count` negativo acabaria por não funcionar |
+| Inserção de um inteiro muito elevado (*Overflow* de Inteiros) | O programa não apresenta qualquer reação oposta/defensiva    | Isto deve-se ao facto das operações em si estarem em Python puro. Uma vez que os números inteiros Python têm uma precisão arbitrária (não têm comprimento de *bytes* fixo) não existe a possibilidade de *Overflow* |
+| Inserção de quantidade de números ligeiramente superior a 10 | O programa vai pedindo os números até atingir o erro `IndexError` | A descrição do erro detalha que o índice que se quer alcançar está fora do *range* permitindo, daí a impossibilidade de inserir além do índice 10 do *array* em si |
+| Inserção de quantidade de números muito superior a 10        | O programa lança uma exceção `OverflowError`                 | A descrição do erro detalha que o *range* de resultados possui demasiados itens a serem verificados no ciclo *for* do código em si. Isto acontece porque a função `range()` vai devolver demasiados resultados possíveis, criando-se um *Overflow* |
+| Inserção de uma quantidade de números negativa               | O programa é terminado de imediato, não sendo pedido qualquer valor | A função `range()` do Python pode lidar com *ranges* negativos mas estes devem estar bem definidos e fazerem sentido. Dado que no código o range vai de `0` a `count-1` termos um valor de `count` negativo acabaria por não funcionar |
 | Invocação de funções no próprio *input*                      | O programa consegue lidar com estas invocações, dependendo o *output* da função usada | A expressão absorvida no *stdin* é interpretada pelo Python, permitindo então a invocação a estas funções |
 
 <br/>
@@ -93,10 +93,10 @@ Entende-se assim a ideia de invocar funções que são depois executadas em modo
 
 | Cenário                                                      | Reação do Programa                                           | Justificação                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Introdução de um inteiro muito elevado (*Overflow* de Inteiros) | O programa imprime os restantes pedidos de números, não permitindo a sua introdução em termos de *input* | No código consta que cada inteiro que é lido no *input* tem de ter entre [0-10] dígitos apenas |
-| Introdução de quantidade de números ligeiramente superiores a 10 | O programa gera mais pedidos de números do que o suposto     | Impossibilidade de inserir além do índice 10 do *array* em si |
-| Introdução de quantidade de números muito superiores a 10    | O programa gera de forma repetida pedidos de números. Esta repetição acontece de forma infinita | Trata-se de um número muito superior a 10                    |
-| Introdução de uma quantidade de números negativa             | O programa é terminado de imediato, não sendo pedido qualquer valor | Como o valor da variável `num_elems` será negativo, não chega a entrar no ciclo que controla a inserção dos `num_elems` números pedidos no *input* |
+| Inserção de um inteiro muito elevado (*Overflow* de Inteiros) | O programa imprime os restantes pedidos de números, não permitindo a sua introdução em termos de *input* | No código consta que cada inteiro que é lido no *input* tem de ter entre [0-10] dígitos apenas |
+| Inserção de quantidade de números ligeiramente superiores a 10 | O programa gera mais pedidos de números do que o suposto     | Impossibilidade de inserir além do índice 10 do *array* em si |
+| Inserção de quantidade de números muito superiores a 10      | O programa gera de forma repetida pedidos de números. Esta repetição acontece de forma infinita | Trata-se de um número muito superior a 10                    |
+| Inserção de uma quantidade de números negativa               | O programa é terminado de imediato, não sendo pedido qualquer valor | Como o valor da variável `num_elems` será negativo, não chega a entrar no ciclo que controla a inserção dos `num_elems` números pedidos no *input* |
 
 <br/>
 
@@ -126,8 +126,6 @@ Comece-se por enumerar o algoritmo pensado para este programa. Com isto feito, p
 
 **1.1. Algoritmo do programa:**
 
-<br/>
-
 - Cria duas variáveis de instância a ser usadas ao longo do programa
 
 ```C
@@ -137,8 +135,6 @@ char buff[4];
 
 **A variável `pass` será usada para controlar o acesso root/admin do utilizador e a variável `buff` serve para armazenar a *password* dada pelo utilizador.**
 
-<br/>
-
 - Solicita a *password* de *root* ao utilizador e obtém/guarda a mesma pelo uso da função `gets`
 
 ```C
@@ -146,11 +142,7 @@ printf("\n Insira a password de root: \n");
 gets(buff);
 ```
 
-<br/>
-
 - Compara essa *string password* com a string `csi1`, que corresponde à *password* válida para obter os privilégios
-
-<br/>
 
 - Caso a *password* seja válida, a variável `pass` assume o valor de 1
 
@@ -161,8 +153,6 @@ else{
     pass = 1;
 }
 ```
-
-<br/>
 
 - Caso `pass` tenha o valor de 1, são dadas as permissões de root/admin ao utilizador
 
@@ -209,8 +199,6 @@ Comece-se por enumerar o algoritmo pensado para este programa. Com isto feito, p
 <br/>
 
 **2.1. Algoritmo do programa:**
-
-<br/>
 
 - Cria duas variáveis de instância a ser usadas ao longo do programa, inicializando uma delas a 0
 ```C
@@ -261,12 +249,94 @@ Seguindo o mesmo pensamento aplicado para o programa anterior, a ideia seria esc
 <p align = "center">
     <img src = "Images/0-simple.png" width = 70%/> 
 </p>
-
 ---
 
 ### Pergunta P1.3 - *Read Overflow*
 
-Texto
+Igualmente ao que aconteceu no exercício anterior, onde era pedido para analisar e consequentemente testar um programa em C, repete-se o mesmo procedimento para esta questão. 
+
+<br/>
+
+#### 1. Análise do programa `ReadOverflow` em  C
+
+Comece-se por enumerar o algoritmo pensado para este programa em C para que seja possível depois testar o mesmo com o espírito crítico necessário para compreender a relação com a temática de *Read Overflow*.
+
+<br/>
+
+**1.1. Algoritmo do programa:**
+
+- Cria quatro variáveis de instância a ser usadas ao longo do programa, entrado num ciclo *while* que existe enquanto o utilizador não forçar o término do programa
+
+```C
+char buf[100], *p;
+int i, len;
+```
+
+- Solicita uma quantidade de caracteres ao utilizador e lê/armazena essa quantidade de caracteres pelo uso da função `fgets`
+
+```C
+printf("Insira numero de caracteres: ");
+p = fgets(buf, sizeof(buf), stdin);
+```
+**Note-se que, contrariamente ao que acontecia no exercício anterior, já não se usa a função `gets`, que era claramente perigosa para a segurança dos dados existentes num programa.**
+
+- Uma vez que o valor lido do *stdin* vem em modo string, converte essa *string* para modo inteiro
+
+```C
+len = atoi(p);
+```
+
+- Solicita uma frase ao utilizador e lê/armazena a mesma do mesmo modo usado para a quantidade de caracteres anterior
+
+```C
+printf("Insira frase: ");
+p = fgets(buf, sizeof(buf), stdin);
+```
+
+- Através de um ciclo *for*, imprime apenas os `n` primeiros caracteres armazenados no `buf`. Caso este `buf` não tenha pelo menos os `n` caracteres, imprime um `.`.
+
+```C
+printf("ECO: |");
+for (i=0; i<len; i++) {
+	if (!iscntrl(buf[i])) putchar(buf[i]);
+	else putchar('.');
+}
+```
+
+- Reinicia o ciclo *while*, repetindo-se o processo.
+
+<br/>
+
+**1.2. Possíveis formas de explorar a vulnerabilidade do programa:**
+
+De modo a tentar descobrir possíveis vulnerabilidades existentes para o programa, executou-se um conjunto de *inputs* diferentes para o programa e com isso fez-se um apanhado daquilo que poderia ser realmente prejudicial/perigoso para o mesmo.
+
+<br/>
+
+| Cenário                                                      | Reação do Programa                                           | Justificação                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Inserção de uma quantidade de número de caracteres negativa  | Permite que o utilizador insira a frase mas não é devolvido nenhum *output* | Como existe um ciclo *for* que permite controlar os caracteres que são impressos, a condição `i<len` não se verifica. Dessa forma, nada é devolvido. |
+| Inserção de uma letra ao invés de um número                  | Permite que o utilizador insira a frase mas não é devolvido nenhum *output* | Como é feita a conversão do *input* que vem do *stdin* através do `atoi`, esta função devolverá 0 neste caso. Dessa forma, nada é devolvido. |
+| Inserção de uma frase com um número de caracteres inferior ao definido inicialmente | São devolvidos apenas os `n` caracteres presentes na frase, sendo os outros representados pelo caracter `.` | Como no ciclo *for* existe um *if then else* que verifica o conteúdo do `buf` em si, caso não exista nada numa determinada posição do `buf`, devolve-se o caracter `.`. |
+
+<br/>
+
+**Estando feita toda esta triagem de resultados para o programa, surgem as seguintes conclusões:**
+
+- Estes cenários testados para o programa não apresentam qualquer comportamento de alarme e de risco, dado que não se torna possível introduzir conteúdo para lá do espaço alocado ou até mesmo um acesso não autorizado a dados confidenciais, como acontecia na *password* do exercício anterior;
+- O uso inteligente da função `fgets` ao invés da `gets` permite que exista uma validação do tamanho do *input* dado pelo utilizador. Dessa forma, apenas são lidos a quantidade de caracteres permitida para o `buf` em causa;
+- Continua a não existir uma verificação do número de caracteres fornecido pelo utilizador, ou seja, se corresponde realmente a um inteiro ou não;
+  - Esta situação acaba por ser controlada pelo uso da função `atoi`. Isto funciona caso sejam escritas apenas letras ou letras seguidas de números. Caso o *input* seja do tipo `12asas`, o programa tem em consideração os 12 caracteres definidos antes das letras.
+
+<br/>
+
+Uma vez que o *buffer* em si nunca chega a ser libertado/limpo e que o número de caracteres nunca é comparado com o tamanho da *string* fornecida pelo utilizador, pode chegar a existir um problema de *Read Oveflow* - possibilidade de ler o conteúdo de zonas do *buffer* que não foram escritas pela frase fornecida, mas sim por anteriores a esta.
+
+**Veja-se essa ideia em prática:**
+
+<p align = "center">
+    <img src = "Images/ReadOverflow.png" width = 100% />
+</p>
 
 ---
 
@@ -291,3 +361,7 @@ Texto
 ## Notas/Observações Finais
 
 Não existem observações finais para este Trabalho Prático.
+
+```
+
+```

@@ -250,7 +250,6 @@ Seguindo o mesmo pensamento aplicado para o programa anterior, a ideia seria esc
 <p align = "center">
     <img src = "Images/0-simple.png" width = 70%/> 
 </p>
-
 ---
 
 ### Pergunta P1.3 - *Read Overflow*
@@ -339,7 +338,6 @@ Uma vez que o *buffer* em si nunca chega a ser libertado/limpo e que o número d
 <p align = "center">
     <img src = "Images/ReadOverflow.png" width = 100% />
 </p>
-
 ---
 
 ### Pergunta P1.4
@@ -477,13 +475,8 @@ int main(int argc, char **argv)
 ## Notas/Observações Finais
 
 - Imagem [**LOverflow2PythonTest**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/LOverflow2PythonTest.png) que demonstra a exploração da vulnerabilidade do programa `LOverflow2`.
-
 - Imagem [**Stack1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/Stack1.png) que demonstra a *stack* pensada para o programa `RootExploit`.
 - Imagem [**RootExploit**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/RootExploit.png) que demonstra a exploração da vulnerabilidade do programa `RootExploit`.
-
 - Imagem [**Stack2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/Stack2.png) que demonstra a *stack* pensada para o programa `0-simple`.
 - Imagem [**0-simple**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/0-simple.png) que demonstra a exploração da vulnerabilidade do programa `0-simple`.
 - Imagem [**ReadOverflow**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/ReadOverflow.png) que demonstra a exploração da vulnerabilidade do programa `ReadOverflow`.
-
-
-

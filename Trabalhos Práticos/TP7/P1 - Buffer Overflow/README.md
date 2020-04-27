@@ -439,6 +439,34 @@ Neste exercício devemos na mesma utilizar programação defensiva como:
 - Não verificação da existência do ficheiro, porque a função `fopen` pode ter resultado `NULL`.
 
 ```C
+/* stack.c */
+/* This program has a buffer overflow vulnerability. */
+/* Our task is to exploit this vulnerability */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+int bof(char *str)
+{
+	char buffer[24];
+	/* The following statement has a buffer overflow problem */
+	if (strlen(str) < strlen(buffer))
+		strcpy(buffer, str);
+	return 1;
+}
+
+int main(int argc, char **argv)
+{
+	char str[517];
+	FILE *badfile;
+
+	if((badfile = fopen("badfile", "r")) != NULL){
+	
+		fread(str, sizeof(char), 517, badfile);
+		bof(str);
+	}
+	printf("Returned Properly\n");
+	return 1;
+}
 
 ```
 

@@ -192,7 +192,7 @@ Com esta estrutura pensada, a escrita para lá dos 3 caracteres do *buffer* perm
 </p>
 <p>
 
-#### 2. Análise do programa `RootExploit` em  C
+#### 2. Análise do programa `0-simple` em  C
 
 Comece-se por enumerar o algoritmo pensado para este programa. Com isto feito, pode-se detetar a vulnerabilidade existente e definir a forma de explorá-la.
 
@@ -342,7 +342,47 @@ Uma vez que o *buffer* em si nunca chega a ser libertado/limpo e que o número d
 
 ### Pergunta P1.4
 
-Texto
+O programa em C intitulado de `1-match.c` tem a seguinte algoritmia:
+
+```C
+int main(int argc, char **argv)
+{
+  int control;
+  char buffer[64];
+
+  if(argc == 1) {
+      errx(1, "please specify an argument\n");
+  }
+
+  printf("You win this game if you can change variable control to the value 0x61626364'\n");
+
+  control = 0;
+  strcpy(buffer, argv[1]);
+
+  if(control == 0x61626364) {
+      printf("Congratulations, you win!!! You correctly got the variable to the right value\n");
+  } else {
+      printf("Try again, you got 0x%08x\n, instead of 0x61626364", control);
+  }
+}
+```
+1. Lê uma *string* como argumento.
+2. Cria a variável inteira `control` com o valor de 0
+3. Copia o argumento para um *array* `buffer` com a função predefinida `strcpy`.
+4. Compara o valor do `control` com o valor hexadecimal `0x61626364`.
+5. E depois mostra a mensagem de `congratulations` caso tenha sido bem sucedido ou `try again` caso tenha acontecido o oposto.
+
+Dessa forma, utilizando a ferramenta GDB conseguimos descobrir os endereços das variáveis `control` e `buffer` como mostra a figura seguinte:
+
+![Enderecos](Images/1-4%202.png)
+
+Assim, dado que o sistema é *little-endian*, ou seja os dados são armazenados de forma inversa, dado que o byte menos significativo fica no endereço de memória mais baixo, temos que o tamanho que devemos preencher o `buffer` é $endereçoControl - endereçoBuffer$ como visto na figura seguinte.
+
+![Calculo](Images/1-4%203.png)
+
+O valor que o programa compara o `control` são os caracteres ASCII de `a`, `b`, `c` e `d` que são respetivamente os bytes-hex `0x61`, `0x62`, `0x63`, `0x64`. Logo, por fim, colocamos uma *string* de 76 caracteres para efetuar o **overflow** do `buffer` e depois colocamos (de forma inversa) a *string* `dcba`, vencendo assim o jogo.
+
+![Final](Images/1-4.png)
 
 ---
 

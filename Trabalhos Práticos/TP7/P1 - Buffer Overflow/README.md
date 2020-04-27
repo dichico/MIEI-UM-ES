@@ -388,7 +388,44 @@ O valor que o programa compara o `control` são os caracteres ASCII de `a`, `b`,
 
 ### Pergunta P1.5 - ***Buffer Overflow* na *Heap***
 
-Texto
+Como foi analisado nos *slides* e na *videoaula* o *input* colocado pelo utilizador, caso excedesse conseguia obter um **overflow** tornando-se perigoso. Este tipo de problemas podem ser mitigados se pensarmos sempre nos limites das variáveis que alocamos.
+
+Desta maneira vamos:
+- Verificar o espaço alocado antes de copiar os dados, criando assim uma variável `tamanho` de forma a alocar apenas o espaço suficiente.
+- Utilizar a ferramenta `strlen` para fazer um número de comparações antes de efetuar cópias de *strings* e funções, para não acontecer **overflow**
+- Controlar o número de argumentos introduzidos pelo utilizador.
+
+Dessa forma o código mitigado do `overflowHeap.1.c` ficaria:
+
+```C
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(int argc, char **argv){
+    int tamanho = 10;
+
+    if (argc != 2 || strlen(argv[1]) > tamanho) {
+        printf("Não está correto os argumentos inseridos\n");
+        return 0;
+    }
+
+    char *dummy = (char *) malloc (sizeof(char) * 10);
+    char *readonly = (char *) malloc (sizeof(char) * 10);
+
+    strcpy(readonly, "laranjas");
+
+    if(strlen(arg[1]) <= tamanho){
+        strcpy(dummy, argv[1]);
+    }
+
+    printf("%s\n", readonly);
+}
+```
+
+Dando agora resultados já mitigados como:
+
+![Resultados](Images/1-5.png)
 
 ---
 

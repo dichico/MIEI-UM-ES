@@ -11,8 +11,11 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
    - Análise do número de linhas de código de um pacote/plataforma de *software*
     - Estimativa de número de *bugs* a partir desse número de linhas de código
     - Possíveis Vulnerabilidades
+
 3. [**Pergunta P1.3**](#pergunta-p13---tipos-de-vulnerabilidades-em-todo-o-ciclo-do-software-e-exemplos-associados) - Tipos de vulnerabilidades em todo o ciclo do *software* e exemplos associados
+
 4. [**Pergunta P1.4**](#pergunta-p14---vulnerabilidades-dia-zero) - Vulnerabilidades **dia-zero**
+
 ---
 
 ## Resolução da Pergunta 1

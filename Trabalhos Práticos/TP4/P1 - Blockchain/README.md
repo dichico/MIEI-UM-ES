@@ -1,8 +1,9 @@
 # Pergunta 1 - Construindo uma *blockchain*
 
-  - [Pergunta 1.1](#pergunta-11)
+1. [Pergunta 1.1](#pergunta-11)
     - Alteração do método que cria o **Genesis Block**.
-  - [Pergunta 1.2](#pergunta-12)
+  
+2. [Pergunta 1.2](#pergunta-12)
     - Adicionar blocos com transações novas.
 
 ## Pergunta 1.1

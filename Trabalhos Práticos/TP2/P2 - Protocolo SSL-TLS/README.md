@@ -4,6 +4,7 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 
 1. [**Experiência 2.1**](#experiência-21---ssl-server-test-para-o-site-do-governo-português) - ***SSL Server Test* para o site do Governo Português**
     - Uso do *website SSL Labs* para obter informações acerca da segurança do *website* correspondente ao Governo Português.  
+
 2. [**Pergunta 2.1**](#pergunta-21---protocolo-ssltls) - **Protocolo SSL/TLS**
     - Uso do *website SSL Labs* para obter informações acerca da segurança de dois *websites* de Governo de dois países europeus diferentes.  
     - Análise do resultado do *website* com pior *rating*.

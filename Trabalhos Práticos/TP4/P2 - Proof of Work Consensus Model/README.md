@@ -1,8 +1,9 @@
 # Pergunta 2 - Proof of Work Consensus Model
 
-  - [Pergunta 2.1](#pergunta-21)
+1. [Pergunta 2.1](#pergunta-21)
     - Análise temporal das diferentes dificuldades do algoritmo **Proof of Work**.
-  - [Pergunta 2.2](#pergunta-22)
+
+2. [Pergunta 2.2](#pergunta-22)
     - Análise sobre complexidade e segurança do algoritmo **Proof of Work**.
 
 ## Pergunta 2.1

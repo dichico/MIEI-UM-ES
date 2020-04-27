@@ -4,6 +4,7 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 
 1. [**Experiência 2.1 e 2.2**](#experiência-21-e-22---ficheiro-gensharedsecretphp-e-reconstroisecretphp) - **Uso do Ficheiro *genSharedSecret.php* e *reconstroiSecret.php* gerar e reconstruir segredos**
     - Análise dos ficheiros que tratam de criar e reconstruir um segredo de forma simples.
+
 2. [**Pergunta 2.1**](#pergunta-21---criação-e-reconstrução-de-segredos-com-uso-de-uma-private-key) - **Criação e Reconstrução de Segredos com o uso de uma *Private Key***
     - Introdução de *Private Key* (com *passphrase*) para a criação de um segredo.
     - Uso de Certificado associado à *Private Key* para reconstruir um segredo.

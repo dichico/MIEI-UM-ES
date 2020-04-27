@@ -5,9 +5,11 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 1. [**Experiência 1.1**](#experiência-11---regulamento-ue-2016679-rgpd) - **Regulamento (UE) 2016/679 (RGPD)**
     - Análise do Artigo 32.º - Segurança do tratamento
     - Escrita de pequeno texto que reflete a forma como este artigo pode influir no desenvolvimento de *software*
+
 2. [**Pergunta P1.1**](#pergunta-11---recommendations-on-shaping-technology-according-to-gdpr-provisions---exploring-the-notion-of-data-protection-by-default) - ***Recommendations on shaping technology according to GDPR provisions - Exploring the notion of data protection by default***
 	- Análise da Secção 3 - *Data protection by default in practice*
 	- Pequeno resumo da mesma
+
 3. [**Experiência 1.3**](#experiência-13---guidelines-on-data-protection-impact-assessment-dpia-and-determining-whether-processing-is-likely-to-result-in-a-high-risk-for-the-purposes-of-regulation-2016679) - ***Guidelines on Data Protection Impact Assessment (DPIA) and determining whether processing is “likely to result in a high risk” for the purposes of Regulation 2016/679***
 	- Nove critérios a ser considerados na avaliação do risco do processamento de dados pessoais
 	- Projeto hipotético que envolva a utilização de dados pessoais
@@ -15,8 +17,10 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 	  - Processamento dos dados pessoais
 	  - Critérios que satisfaz
 	  - Template DPIA
+
 4. [**Experiência 1.4**](#experiência-14---ferramenta-usada-para-o-data-protection-impact-assessment-dpia) - **Ferramenta usada para o *Data Protection Impact Assessment* (DPIA)**
 	- Utilização da ferramenta no projeto hipotético pensado anteriormente
+
 5. [**Pergunta P1.2**](#pergunta-p12---handbook-on-security-of-personal-data-processing) - ***Handbook on Security of Personal Data Processing***
     - Análise do caso de uso *Marketing/advertising*
     - Passos metodológicos seguidos até à avaliação do risco

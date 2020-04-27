@@ -4,16 +4,20 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 
 1. [**Experiência 1.1**](#experiência-11---comando-openssl) - **Execução comando OpenSSL `openssl rand -base64 1024` para gerar 1024 *bytes* pseudoaleatórios**
     - Pequeno enquadramento teórico.
+
 2. [**Pergunta P1.1**](#pergunta-p11---outros-comandos-openssl-e-diferenças) - **Execução outros comandos OpenSSL para gerar conjuntos de *bytes***
     - Tabela que permite estabelecer uma diferença entre os vários comandos.
     - Conclusões.
+
 3. [**Pergunta P1.2**](#pergunta-p12---daemon-haveged) - **Execucão comandos OpenSSL com o *package* haveged instalado**
     - Pequena explicação do *daemon* de entropia haveged.
     - Tabela que permite estabelecer uma nova diferença entre os vários comandos.
     - Conclusões.
-3. [**Experiência 1.2**](#experiência-12---ficheiro-randombytesjava) - **Uso do Ficheiro *RandomBytes.java* para gerar conjuntos de *bytes***
+
+4. [**Experiência 1.2**](#experiência-12---ficheiro-randombytesjava) - **Uso do Ficheiro *RandomBytes.java* para gerar conjuntos de *bytes***
     - Análise do *output* do ficheiro.
-4. [**Experiência 1.3**](#experiência-13---ficheiro-generatesecret-apppy) - **Uso do Ficheiro *generateSecret-app.py* para gerar conjunto de *bytes***
+
+5. [**Experiência 1.3**](#experiência-13---ficheiro-generatesecret-apppy) - **Uso do Ficheiro *generateSecret-app.py* para gerar conjunto de *bytes***
     - Análise do *output* do ficheiro.
     - Tentativa de não limitar este *output* a letras e dígitos.
     

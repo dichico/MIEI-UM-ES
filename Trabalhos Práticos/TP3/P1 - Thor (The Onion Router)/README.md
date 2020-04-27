@@ -6,9 +6,11 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
     - Uso do comando `anonsurf`para efetuar uma navegação anónima.
     - Mudança de endereço IP através desse comando.
     - Conclusões acerca do potencial do mesmo.
+
 2. [**Pergunta P1.1**](#pergunta-p11---acesso-a-sites-dos-eua-através-o-anonsurf-start) - **Acesso a sites dos EUA**
 	- Uso do comando `anonsurf start` para tentar aceder a uma localização específica.
 	- Pequena contextualização com o funcionamento do protocolo TOR.
+
 3. [**Pergunta P1.2**](#pergunta-p12---análise-do-circuito-de-ors-de-um-website) - **Análise dos circuitos de um *website***
 	- Uso do *browser* TOR para verificar o circuito de um determinado *website*
 	- Pequena contextualização com o funcionamento do protocolo TOR.

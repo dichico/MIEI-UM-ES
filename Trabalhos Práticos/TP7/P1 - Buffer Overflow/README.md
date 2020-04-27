@@ -2,26 +2,26 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Pergunta P1.1**](#) - ***Buffer Overflow* em várias linguagens**
+1. [**Pergunta P1.1**](#pergunta-p11---buffer-overflow-em-várias-linguagens) - ***Buffer Overflow* em várias linguagens**
    - Análise do programa `LOverflow2` em três linguagens distintas
    - Compreensão do comportamento do programa
 
-2. [**Pergunta P1.2**](#) - ***Buffer Overflow***
+2. [**Pergunta P1.2**](#pergunta-p12----buffer-overflow) - ***Buffer Overflow***
    - Análise dos programas `RootExploit` e `0-simple` escritos em C
    - Deteção vulnerabilidade de *Buffer Overflow* existente
    - Exploração dessa vulnerabilidade
 
-3. [**Pergunta P1.3**](#) - ***Read Overflow***
+3. [**Pergunta P1.3**](#pergunta-p13---read-overflow) - ***Read Overflow***
    - Análise do programa `ReadOverflow` escrito em C
 
-4. [**Pergunta P1.4**](#) - ***Buffer Overflow***
+4. [**Pergunta P1.4**](#pergunta-p14) - ***Buffer Overflow***
    - Compilação e execução do programa `1-match` escrito em C
    - Conceitos *little-endian* e *big-endian*
 
-5. [**Pergunta P1.5**](#) - ***Buffer Overflow* na *Heap***
+5. [**Pergunta P1.5**](#pergunta-p15---buffer-overflow-na-heap) - ***Buffer Overflow* na *Heap***
    - Técnicas de programação defensiva para mitigar vulnerabilidades de *Buffer Overflow* na *Heap*
 
-6. [**Pergunta P1.6**](#) - ***Buffer Overflow* na *Stack***
+6. [**Pergunta P1.6**](#pergunta-p16---buffer-overflow-na-stack) - ***Buffer Overflow* na *Stack***
    - Técnicas de programação defensiva para mitigar vulnerabilidades de *Buffer Overflow* na *Stack*
 
 ---
@@ -116,7 +116,7 @@ Para a resolução desta questão torna-se necessário estudar e compreender o a
 
 **Pela análise rápida de ambos os programas, deteta-se desde logo o uso da função `gets`, que como o próprio compilador gcc indica, pode representar um grande perigo em termos de segurança de código. É precisamente através da compreensão do funcionamento da mesma que vamos conseguir fazer o *exploit* das vulnerabilidades seguintes.**
 
-<br/>
+<p>
 
 #### 1. Análise do programa `RootExploit` em  C
 
@@ -191,6 +191,7 @@ Com esta estrutura pensada, a escrita para lá dos 3 caracteres do *buffer* perm
     <img src = "Images/RootExploit.png" width = 60%/> 
 </p>
 <p>
+<p>
 
 #### 2. Análise do programa `0-simple` em  C
 
@@ -255,7 +256,7 @@ Seguindo o mesmo pensamento aplicado para o programa anterior, a ideia seria esc
 
 Igualmente ao que aconteceu no exercício anterior, onde era pedido para analisar e consequentemente testar um programa em C, repete-se o mesmo procedimento para esta questão. 
 
-<br/>
+<p>
 
 #### 1. Análise do programa `ReadOverflow` em  C
 
@@ -337,7 +338,6 @@ Uma vez que o *buffer* em si nunca chega a ser libertado/limpo e que o número d
 <p align = "center">
     <img src = "Images/ReadOverflow.png" width = 100% />
 </p>
-
 ---
 
 ### Pergunta P1.4
@@ -474,4 +474,14 @@ int main(int argc, char **argv)
 
 ## Notas/Observações Finais
 
-Não existem observações finais para este Trabalho Prático.
+- Imagem [**LOverflow2PythonTest**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/LOverflow2PythonTest.png) que demonstra a exploração da vulnerabilidade do programa `LOverflow2`.
+
+- Imagem [**Stack1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/Stack1.png) que demonstra a *stack* pensada para o programa `RootExploit`.
+- Imagem [**RootExploit**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/RootExploit.png) que demonstra a exploração da vulnerabilidade do programa `RootExploit`.
+
+- Imagem [**Stack2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/Stack2.png) que demonstra a *stack* pensada para o programa `0-simple`.
+- Imagem [**0-simple**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/0-simple.png) que demonstra a exploração da vulnerabilidade do programa `0-simple`.
+- Imagem [**ReadOverflow**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP7/P1%20-%20Buffer%20Overflow/Images/ReadOverflow.png) que demonstra a exploração da vulnerabilidade do programa `ReadOverflow`.
+
+
+

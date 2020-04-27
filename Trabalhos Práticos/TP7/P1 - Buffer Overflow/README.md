@@ -250,6 +250,7 @@ Seguindo o mesmo pensamento aplicado para o programa anterior, a ideia seria esc
 <p align = "center">
     <img src = "Images/0-simple.png" width = 70%/> 
 </p>
+
 ---
 
 ### Pergunta P1.3 - *Read Overflow*
@@ -338,6 +339,7 @@ Uma vez que o *buffer* em si nunca chega a ser libertado/limpo e que o número d
 <p align = "center">
     <img src = "Images/ReadOverflow.png" width = 100% />
 </p>
+
 ---
 
 ### Pergunta P1.4

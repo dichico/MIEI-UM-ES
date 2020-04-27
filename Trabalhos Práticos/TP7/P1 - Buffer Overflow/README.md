@@ -393,6 +393,7 @@ Como foi analisado nos *slides* e na *videoaula* o *input* colocado pelo utiliza
 Desta maneira vamos:
 - Verificar o espaço alocado antes de copiar os dados, criando assim uma variável `tamanho` de forma a alocar apenas o espaço suficiente.
 - Utilizar a ferramenta `strlen` para fazer um número de comparações antes de efetuar cópias de *strings* e funções, para não acontecer **overflow**
+- Utilizar a `strncpy` para controlar o tamanho a copiar de *strings*
 - Controlar o número de argumentos introduzidos pelo utilizador.
 
 Dessa forma o código mitigado do `overflowHeap.1.c` ficaria:
@@ -403,23 +404,23 @@ Dessa forma o código mitigado do `overflowHeap.1.c` ficaria:
 #include <stdlib.h>
 
 int main(int argc, char **argv){
-    int tamanho = 10;
+    int tamanho = strlen(argv[1]);
 
-    if (argc != 2 || strlen(argv[1]) > tamanho) {
+    if (argc != 2) {
         printf("Não está correto os argumentos inseridos\n");
         return 0;
     }
 
-    char *dummy = (char *) malloc (sizeof(char) * 10);
+    char *dummy = (char *) malloc (sizeof(char) * tamanho+1);
     char *readonly = (char *) malloc (sizeof(char) * 10);
 
-    strcpy(readonly, "laranjas");
+    strncpy(readonly, "laranjas", 8);
 
-    if(strlen(arg[1]) <= tamanho){
-        strcpy(dummy, argv[1]);
-    }
+    strncpy(dummy, argv[1], tamanho);
+    dummy[tamanho] = '\0'; // fechar o array
 
     printf("%s\n", readonly);
+    printf("%s\n", dummy);
 }
 ```
 
@@ -431,14 +432,18 @@ Dando agora resultados já mitigados como:
 
 ### Pergunta P1.6 - ***Buffer Overflow* na *Stack***
 
-Texto
+Neste exercício devemos na mesma utilizar programação defensiva como:
+- Evitar funções base, substituindo por melhores que mitigam certos erros como a troca da tradicional `strcpy` para a `strncpy`.
+- Verificar o espaço alocado e se é suficiente para copiar a *string*
+- Alocar memória caso seja necessário um *array maior*.
+- Não verificação da existência do ficheiro, porque a função `fopen` pode ter resultado `NULL`.
+
+```C
+
+```
 
 ---
 
 ## Notas/Observações Finais
 
 Não existem observações finais para este Trabalho Prático.
-
-```
-
-```

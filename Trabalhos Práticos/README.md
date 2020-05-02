@@ -33,6 +33,9 @@ README principal que contém o a lista de todos os Trabalhos Práticos de Engenh
 - [**Trabalho Prático 7**](TP7) - **Aula 9 (20/04/2020)**
 	- *Buffer Overflow*
 
+- [**Trabalho Prático 8**](TP8) - **Aula 10 (27/04/2020)**
+	- *Vulnerabilidade de Inteiros*
+
 ---
 
 ## Notas

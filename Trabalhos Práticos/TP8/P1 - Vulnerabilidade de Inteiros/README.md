@@ -2,13 +2,20 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-(Índice por fazer)
+1. [**Pergunta P1.1**](#pergunta-p11) - ***Overflow* numa matriz em C**
+   - Mudança do código C
+   - Compreensão do resultado do programa
+
+2. [**Pergunta P1.2**](#pergunta-p12) - ***Underflow* em código C**
+   - Mudança do código C
+   - Compreensão do resultado do programa
+   - Utilização de técnicas de programação defensiva para mitigação das vulnerabilidades
 
 ---
 
 ## Resolução da Pergunta 1
 
-### Pergunta 1.1
+### Pergunta P1.1
 
 O problema deste código vulnerável é a utilização do `typedef size_t` sem confirmação dos tamanhos do mesmo podendo causar *underflow/overflow* dos números.
 
@@ -48,7 +55,7 @@ Utilizando a *macro* definida no *header* `<stdint.h>` intitulada de `SIZE_MAX` 
 
 ---
 
-### Pergunta 1.2
+### Pergunta P1.2
 
 Texto
 

@@ -15,7 +15,7 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 
 ## Resolução da Pergunta 1
 
-### Pergunta P1.1
+### Pergunta P1.1 - *Overflow* numa matriz em C
 
 O problema deste código vulnerável é a utilização do `typedef size_t` sem confirmação dos tamanhos do mesmo podendo causar *underflow/overflow* dos números.
 
@@ -51,13 +51,48 @@ int main() {
 
 Utilizando a *macro* definida no *header* `<stdint.h>` intitulada de `SIZE_MAX` podemos obter o valor máximo que um `size_t` pode tomar na máquina e compilador em questão, logo quando na função `vulneravel()` acontece o `malloc` fazendo $x*y \equiv SIZE\_MAX*SIZE\_MAX$, acontece um **overflow** e o resultado fica apenas 1. De seguida, vai-se preencher a matriz com endereçamentos e posições para lá dos limites, dado que as variáveis `x` e `y` são valores enormes e dessa forma o programa sofre um *Segmentation Fault*.
 
-![ResultadoCMD](images/1.png)
+![ResultadoCMD](Images/1.png)
 
 ---
 
-### Pergunta P1.2
+### Pergunta P1.2 - *Underflow* em código C
 
-Texto
+A vulnerabilidade detetada para o ficheiro `underflow.c` trata-se também (como acontecia no ficheiro `overflow.c`) da utilização do `typedef size_t` sem a confirmação dos tamanhos do mesmo podendo causar *underflow* dos números.
+
+Para tentar resolver o problema podemos mudar a função `main()` para:
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+const int MAX_SIZE = 2048;
+
+
+void vulneravel (char *origem, size_t tamanho) {
+        size_t tamanho_real;
+        char *destino;
+        if (tamanho < MAX_SIZE) {
+                tamanho_real = tamanho - 1; // Não copiar \0 de origem para destino
+                destino = malloc(tamanho_real);
+                memcpy(destino, origem, tamanho_real);
+        }
+}
+
+int main() {
+    char origem[5] = "Teste";
+    vulneravel(origem, 0);
+}
+```
+
+Esta mudança vai permitir então demonstrar a vulnerabilidade presente neste código, dado que força a que o valor da variável `tamanho_real` atinja um valor gigante, aplicando-se então o princípio do *underflow*. 
+
+**Note-se que ao colocar o valor do parâmetro `tamanho` da função `vulneravel` como sendo 0, acontece o seguinte:**
+
+- Valor da variável `tamanho` é dado como sendo 0;
+- Valor da variável `tamanho_real` atingirá um valor muito grande, criando toda uma situação de *underflow*, dado que o seu cálculo consiste em subtrair ao valor de `tamanho` uma unidade;
+- Função `malloc` retornará um apontador nulo, tendo em conta que não existe capacidade para reservar um espaço de memória tão grande quanto o declarado para o `tamanho_real`;
+- Função `memcpy` tentará aceder a um apontador nulo, o que levará a uma situação de `Segmentation fault`.
 
 ---
 

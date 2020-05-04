@@ -17,7 +17,15 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 
 ### Pergunta P1.1 - *Overflow* numa matriz em C
 
+<p>
+
+#### 1. Deteção da vulnerabilidade da função *vulneravel()* e seus efeitos
+
 O problema deste código vulnerável é a utilização do `typedef size_t` sem confirmação dos tamanhos do mesmo podendo causar *underflow/overflow* dos números.
+
+<p>
+
+#### 2. Explorar o *main()* de modo a demonstrar essa vulnerabilidade
 
 Para tentar resolver o problema podemos mudar a função `main()` para:
 
@@ -51,13 +59,28 @@ int main() {
 
 Utilizando a *macro* definida no *header* `<stdint.h>` intitulada de `SIZE_MAX` podemos obter o valor máximo que um `size_t` pode tomar na máquina e compilador em questão, logo quando na função `vulneravel()` acontece o `malloc` fazendo $x*y \equiv SIZE\_MAX*SIZE\_MAX$, acontece um **overflow** e o resultado fica apenas 1. De seguida, vai-se preencher a matriz com endereçamentos e posições para lá dos limites, dado que as variáveis `x` e `y` são valores enormes e dessa forma o programa sofre um *Segmentation Fault*.
 
-![ResultadoCMD](Images/1.png)
+<p>
 
+#### 3. Executar o programa depois da alteração e verificar possíveis erros
+
+Conforme se verifica pelo *output* apresentado a seguir, acontece um erro de segmentação.
+
+<p align = "center">
+	<img src = "Images/Output Programa Overflow.png"/>
+</p>
 ---
 
 ### Pergunta P1.2 - *Underflow* em código C
 
+<p>
+
+#### 1. Deteção da vulnerabilidade da função *vulneravel()* e seus efeitos
+
 A vulnerabilidade detetada para o ficheiro `underflow.c` trata-se também (como acontecia no ficheiro `overflow.c`) da utilização do `typedef size_t` sem a confirmação dos tamanhos do mesmo podendo causar *underflow* dos números.
+
+<p>
+
+#### 2. Explorar o *main()* de modo a demonstrar essa vulnerabilidade
 
 Para tentar resolver o problema podemos mudar a função `main()` para:
 
@@ -94,7 +117,51 @@ Esta mudança vai permitir então demonstrar a vulnerabilidade presente neste c�
 - Função `malloc` retornará um apontador nulo, tendo em conta que não existe capacidade para reservar um espaço de memória tão grande quanto o declarado para o `tamanho_real`;
 - Função `memcpy` tentará aceder a um apontador nulo, o que levará a uma situação de `Segmentation fault`.
 
+<p>
+
+#### 3. Executar o programa depois da alteração e verificar possíveis erros
+
+O *output* torna a comprovar um erro de segmentação, dado que o programa tentou manipular dados numa variável nula.
+
+
+<p align = "center">
+	<img src = "Images/Output Programa Underflow.png"/>
+</p>
+
+<p>
+#### 4. Técnicas de programação defensiva para mitigar as vulnerabilidades
+
+Depois de se ter entendido como todo o programa está a funcionar, fica clara a forma como a vulnerabilidade pode ser explorada e consequentemente mitigada. Pensando no erro em si, apenas foi necessário introduzir uma nova variável de nome `MIN_SIZE` que fizesse o controlo dos valores nulos que a variável pode assumir.
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+const int MIN_SIZE = 0;
+const int MAX_SIZE = 2048;
+
+void vulneravel (char *origem, size_t tamanho) {
+        size_t tamanho_real;
+        char *destino;
+        if (tamanho < MAX_SIZE && tamanho > MIN_SIZE) {
+                tamanho_real = tamanho - 1; // Não copiar \0 de origem para destino
+                destino = malloc(tamanho_real);
+                memcpy(destino, origem, tamanho_real);
+        }
+}
+
+int main() {
+    char origem[5] = "Teste";
+    vulneravel(origem, 0);
+}
+```
+
+Desta forma, o programa é capaz de fazer uma filtragem dos valores que a variável `tamanho` pode efetivamente conter. Neste caso, verifica se esse `tamanho` está compreendido entre 0 e `MAX_SIZE` e só dessa forma é capaz de fazer todo o restante do processo. Caso não se cumpra esse requisito, o programa simplesmente não devolve nada.
+
 ---
 
 ## Notas/Observações Finais
 
+- Imagem [**Output Programa Overflow**]() que demonstra o *output* do programa `overflow.c`.
+- Imagem [**Output Programa Underflow**]() que demonstra o *output* do programa `underflow.c`.

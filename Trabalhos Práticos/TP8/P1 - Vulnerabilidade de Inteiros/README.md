@@ -68,6 +68,7 @@ Conforme se verifica pelo *output* apresentado a seguir, acontece um erro de seg
 <p align = "center">
 	<img src = "Images/Output Programa Overflow.png"/>
 </p>
+
 ---
 
 ### Pergunta P1.2 - *Underflow* em código C
@@ -129,6 +130,7 @@ O *output* torna a comprovar um erro de segmentação, dado que o programa tento
 
 
 <p>
+
 #### 4. Técnicas de programação defensiva para mitigar as vulnerabilidades
 
 Depois de se ter entendido como todo o programa está a funcionar, fica clara a forma como a vulnerabilidade pode ser explorada e consequentemente mitigada. Pensando no erro em si, apenas foi necessário introduzir uma nova variável de nome `MIN_SIZE` que fizesse o controlo dos valores nulos que a variável pode assumir.

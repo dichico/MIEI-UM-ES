@@ -2,11 +2,11 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Pergunta P1.1**](#pergunta-p11) - ***Overflow* numa matriz em C**
+1. [**Pergunta P1.1**](#pergunta-p11---overflow-numa-matriz-em-c) - ***Overflow* numa matriz em C**
    - Mudança do código C
    - Compreensão do resultado do programa
 
-2. [**Pergunta P1.2**](#pergunta-p12) - ***Underflow* em código C**
+2. [**Pergunta P1.2**](#pergunta-p12---underflow-em-código-c) - ***Underflow* em código C**
    - Mudança do código C
    - Compreensão do resultado do programa
    - Utilização de técnicas de programação defensiva para mitigação das vulnerabilidades
@@ -123,10 +123,10 @@ Esta mudança vai permitir então demonstrar a vulnerabilidade presente neste c�
 
 O *output* torna a comprovar um erro de segmentação, dado que o programa tentou manipular dados numa variável nula.
 
-
 <p align = "center">
-	<img src = "Images/Output Programa Underflow.png"/>
+	<img src = "Images/Output Programa Underflow.png" width = 50%/>
 </p>
+
 
 <p>
 #### 4. Técnicas de programação defensiva para mitigar as vulnerabilidades
@@ -163,5 +163,5 @@ Desta forma, o programa é capaz de fazer uma filtragem dos valores que a variá
 
 ## Notas/Observações Finais
 
-- Imagem [**Output Programa Overflow**]() que demonstra o *output* do programa `overflow.c`.
-- Imagem [**Output Programa Underflow**]() que demonstra o *output* do programa `underflow.c`.
+- Imagem [**Output Programa Overflow**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP8/P1%20-%20Vulnerabilidade%20de%20Inteiros/Images/Output%20Programa%20Overflow.png) que demonstra o *output* do programa `overflow.c`.
+- Imagem [**Output Programa Underflow**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP8/P1%20-%20Vulnerabilidade%20de%20Inteiros/Images/Output%20Programa%20Underflow.png) que demonstra o *output* do programa `underflow.c`.

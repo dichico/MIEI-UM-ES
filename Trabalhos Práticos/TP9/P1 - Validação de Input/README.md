@@ -2,11 +2,11 @@
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
-1. [**Pergunta 1.1**]()
+1. [**Pergunta 1.1**](#pergunta-11)
    - Análise do programa `filetype.c`
    - Análise/Exploração de vulnerabilidades presentes
 
-2. [**Pergunta 1.2**]()
+2. [**Pergunta 1.2**](#pergunta-12)
    - Criação/desenvolvimento de um programa em Python
    - Validação do *input* consoante as regras de validação dadas na aula teórica
 
@@ -46,10 +46,9 @@ Tendo em conta as vulnerabilidades estudadas na aula teórica de "Validação de
   </p>
 <br/>
   
-
-A criação do ficheiro `teste.txt; ps -a` permite demonstrar que não é feita a tal verificação do nome/extensão do ficheiro, acabando assim por devolver não só o resultado da aplicação do programa ao ficheiro `teste.txt` mas também o resultado da execução do programa `ps -a`, dado que o operador `;` é usado para a execução de vários comandos.
-
-  **Isto demonstra o perigo aqui implícito, dado que se se pode fazer algo simples como a execução de um comando que de nada tem a ver com o propósito do programa em si, então pode existir outras "maldades" podem eventualmente funcionar.**
+  A criação do ficheiro `teste.txt; ps -a` permite demonstrar que não é feita a tal verificação do nome/extensão do ficheiro, acabando assim por devolver não só o resultado da aplicação do programa ao ficheiro `teste.txt` mas também o resultado da execução do programa `ps -a`, dado que o operador `;` é usado para a execução de vários comandos.
+  
+   **Isto demonstra o perigo aqui implícito, dado que se se pode fazer algo simples como a execução de um comando que de nada tem a ver com o propósito do programa em si, então pode existir outras "maldades" podem eventualmente funcionar.**
 
   
 
@@ -77,11 +76,12 @@ A execução de programas maliciosos, leitura/manipulação de ficheiros, etc se
 ### Pergunta 1.2
 
 <p>
+
 ---
 
 
 ## Notas/Observações Finais
 
-- Imagem [**Output Programa filetype**]() que demonstra o *output* do programa `filetype.c`.
-- Imagem [**Output Programa filetype V1**]() que demonstra o *output* do programa `filetype.c` com a exploração da primeira vulnerabilidade.
-- Imagem [**Output Programa filetype V2**]() que demonstra o *output* do programa `filetype.c` com a exploração da segunda vulnerabilidade.
+- Imagem [**Output Programa filetype**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP9/P1%20-%20Valida%C3%A7%C3%A3o%20de%20Input/Images/Output%20Programa%20filetype.png) que demonstra o *output* do programa `filetype.c`.
+- Imagem [**Output Programa filetype V1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP9/P1%20-%20Valida%C3%A7%C3%A3o%20de%20Input/Images/Output%20Programa%20filetype%20V1.png) que demonstra o *output* do programa `filetype.c` com a exploração da primeira vulnerabilidade.
+- Imagem [**Output Programa filetype V2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP9/P1%20-%20Valida%C3%A7%C3%A3o%20de%20Input/Images/Output%20Programa%20filetype%20V2.png) que demonstra o *output* do programa `filetype.c` com a exploração da segunda vulnerabilidade.

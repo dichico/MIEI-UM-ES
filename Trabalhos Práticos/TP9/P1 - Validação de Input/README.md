@@ -67,6 +67,17 @@ A execução de programas maliciosos, leitura/manipulação de ficheiros, etc se
 
 ### Pergunta 1.2
 
+Como falado na aula teórica foram adotados alguns métodos que facilitaram todo o código para inserção de valores sensíveis e dessa forma existir um *parse* correto utilizando a linguagem de programação `Python` e a utilização de expressões regulares de forma a filtrar corretamente esses dados. Dessa forma temos:
+
+- Valor a pagar:
+- Data de nascimento:
+- Nome:
+- NIF:
+- NIC:
+- Nº de Cartão de Crédito:
+- Validade:
+- CVC/CVV:
+
 <p>
 
 ---

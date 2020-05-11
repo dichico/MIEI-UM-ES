@@ -18,8 +18,6 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 
 Fazendo uma pequena análise do conteúdo/*source code* do programa `filetype.c` consegue-se deduzir que o mesmo trata de receber um nome de um ficheiro como argumento na linha de comandos, devolvendo como *output* o tipo de conteúdo que o ficheiro em causa possui.
 
-<br/>
-
 <p align="center">
     <img src="Images/Output Programa filetype.png" width=60%/>
 </p>
@@ -38,8 +36,6 @@ Tendo em conta as vulnerabilidades estudadas na aula teórica de "Validação de
   <br/>
 
   **Note-se a seguinte sequência de execuções em modo terminal:**
-
-  <br/>
 
   <p align = "center">
       <img src = "Images/Output Programa filetype V1.png" width = 60%/>

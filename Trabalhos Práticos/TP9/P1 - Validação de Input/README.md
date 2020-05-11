@@ -33,7 +33,7 @@ Tendo em conta as vulnerabilidades estudadas na aula teórica de "Validação de
 
 - O uso da função `system()` torna-se perigoso, dado que não existe qualquer parte de código que valide a extensão do ficheiro que está a ser mandado como argumento na altura de executar o programa;
 
-  **Note-se a seguinte sequência de execuções em modo terminal:**
+**Note-se a seguinte sequência de execuções em modo terminal:**
 
   <p align = "center">
       <img src = "Images/Output Programa filetype V1.png" width = 60%/>

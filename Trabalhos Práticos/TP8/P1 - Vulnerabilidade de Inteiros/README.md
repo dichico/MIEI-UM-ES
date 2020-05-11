@@ -1,4 +1,4 @@
-# Pergunta 1 - *Vulnerabilidade de Inteiros*
+# Pergunta 1 - Vulnerabilidade de Inteiros
 
 Todas as imagens e outros ficheiros considerados relevantes para o entendimento complementar da resolução a todas as questões encontram-se listados na secção de [**Notas/Observações Finais**](#notasobservações-finais).
 
@@ -68,7 +68,6 @@ Conforme se verifica pelo *output* apresentado a seguir, acontece um erro de seg
 <p align = "center">
 	<img src = "Images/Output Programa Overflow.png"/>
 </p>
-
 ---
 
 ### Pergunta P1.2 - *Underflow* em código C

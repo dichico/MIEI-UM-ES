@@ -36,6 +36,9 @@ README principal que contém o a lista de todos os Trabalhos Práticos de Engenh
 - [**Trabalho Prático 8**](TP8) - **Aula 10 (27/04/2020)**
 	- *Vulnerabilidade de Inteiros*
 
+- [**Trabalho Prático 9**](TP9) - **Aula 11 (04/05/2020)**
+	- Validação de *Input*
+
 ---
 
 ## Notas

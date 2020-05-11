@@ -48,8 +48,6 @@ Tendo em conta as vulnerabilidades estudadas na aula teórica de "Validação de
 
 - O uso da função `system()` possibilita ainda a realização de *path traversal*. Neste caso apenas seria necessário usar `/ ` para executar esse processo e obter a diretoria através do *autocomplete*.
 
-  <br/>
-
   <p align = "center">
       <img src = "Images/Output Programa filetype V2.png" width = 90%/>
   </p>

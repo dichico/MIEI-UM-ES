@@ -6,12 +6,12 @@ README principal que contém o a lista de todos os Projetos de Engenharia de Seg
 
 ## Lista dos Projetos
 
-- [**Projeto 1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%201) **- *Managing Security Risks Inherent in the Use of Third-Party Components***	
+- [**Projeto 1**](Projeto%201) **- *Managing Security Risks Inherent in the Use of Third-Party Components***	
 	- Introdução aos *Third-Party Components*
 	- Contextualização dos TPC's no produto final
 	- Riscos inerentes ao seu uso e possíveis formas de os contornar
 
-- [**Projeto 2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%202) - **Ferramentas e Técnicas de *Coding Standards***
+- [**Projeto 2**](Projeto%202) - **Ferramentas e Técnicas de *Coding Standards***
   - Introdução aos Indicadores de Qualidade de *Software* e a necessidade de métricas para uma avaliação justa de um produto de *software*
   - Contextualização da métrica de *Coding Standards* na constituição de um bom produto de *software*
 

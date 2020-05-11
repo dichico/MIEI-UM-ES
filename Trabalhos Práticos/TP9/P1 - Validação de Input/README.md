@@ -33,8 +33,6 @@ Tendo em conta as vulnerabilidades estudadas na aula teórica de "Validação de
 
 - O uso da função `system()` torna-se perigoso, dado que não existe qualquer parte de código que valide a extensão do ficheiro que está a ser mandado como argumento na altura de executar o programa;
 
-  <br/>
-
   **Note-se a seguinte sequência de execuções em modo terminal:**
 
   <p align = "center">
@@ -44,7 +42,7 @@ Tendo em conta as vulnerabilidades estudadas na aula teórica de "Validação de
   
   A criação do ficheiro `teste.txt; ps -a` permite demonstrar que não é feita a tal verificação do nome/extensão do ficheiro, acabando assim por devolver não só o resultado da aplicação do programa ao ficheiro `teste.txt` mas também o resultado da execução do programa `ps -a`, dado que o operador `;` é usado para a execução de vários comandos.
   
-   **Isto demonstra o perigo aqui implícito, dado que se se pode fazer algo simples como a execução de um comando que de nada tem a ver com o propósito do programa em si, então pode existir outras "maldades" podem eventualmente funcionar.**
+  **Isto demonstra o perigo aqui implícito, dado que se se pode fazer algo simples como a execução de um comando que de nada tem a ver com o propósito do programa em si, então pode existir outras "maldades" podem eventualmente funcionar.**
 
   
 

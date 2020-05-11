@@ -87,7 +87,7 @@ else:
     sys.exit()
 
 numCC = input("Insira o seu cartão de crédito: \n")
-validade = input("Insira a validade do mesmo MM/AA: \n")
+validade = input("Insira a validade do mesmo (MM/AA): \n")
 cvv = input("Introduza o seu CVV/CVC: \n")
 
 verify_validade = re.match("[0,1][0-9]/[1,2][0-9]", validade)
@@ -96,7 +96,7 @@ verify_cvv = re.match("[0-9]{3}", cvv)
 
 
 if verify_validade and verify_cvv and valida_cc(numCC):
-    print(" Cartão inserido corretamente.\n")
+    print("Cartão inserido corretamente. \n")
 else:
-    print("Inseriu um cartão errado.\n")
+    print("Inseriu um cartão errado. \n")
     sys.exit()

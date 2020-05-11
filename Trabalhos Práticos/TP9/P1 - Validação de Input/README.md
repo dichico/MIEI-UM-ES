@@ -69,14 +69,16 @@ A execução de programas maliciosos, leitura/manipulação de ficheiros, etc se
 
 Como falado na aula teórica foram adotados alguns métodos que facilitaram todo o código para inserção de valores sensíveis e dessa forma existir um *parse* correto utilizando a linguagem de programação `Python` e a utilização de expressões regulares de forma a filtrar corretamente esses dados. Dessa forma temos:
 
-- Valor a pagar:
-- Data de nascimento:
-- Nome:
-- NIF:
-- NIC:
-- Nº de Cartão de Crédito:
-- Validade:
-- CVC/CVV:
+- Valor a pagar: O valor a pagar filtrou-se para um máximo de 5 números à esquerda da vírgula e possivelmente ser decimal.
+- Data de nascimento: A data de nascimento tinha de seguir à regra de AAAA-MM-DD.
+- Nome: O nome tinha de ter no mínimo 2 nomes e no máximo 8.
+- NIF: O NIF foi utilizado o algoritmo oficial do módulo de 11 do Governo Português.
+- NIC: O NIC foi utilizado o algoritmo oficial do módulo de 11 do Governo Português.
+- Nº de Cartão de Crédito: Foi utilizado o algoritmo oficial da VISA e MASTERCARD para verificar a introdução correta.
+- Validade: A regra teria de ser MM/AA como está presente nos cartões verdadeiros.
+- CVC/CVV: Uma regra para ser apenas três algarismos.
+
+Dessa forma, o código-fonte para esta pergunta está na sua integralidade na pasta onde se encontra este documento Markdown.
 
 <p>
 

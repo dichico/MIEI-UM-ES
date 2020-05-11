@@ -10,5 +10,7 @@ README principal que contém o a lista de todos os Projetos de Engenharia de Seg
 	- Introdução aos *Third-Party Components*
 	- Contextualização dos TPC's no produto final
 	- Riscos inerentes ao seu uso e possíveis formas de os contornar
+- [**Projeto 2**]() - **Ferramentas e Técnicas de *Coding Standards***
+  - Introdução aos Indicadores de Qualidade de *Software* e a necessidade de métricas para uma avaliação justa de um produto de *software*
+  - Contextualização da métrica de *Coding Standards* na constituição de um bom produto de *software*
 
-- [**Projeto 2**]() - SOON

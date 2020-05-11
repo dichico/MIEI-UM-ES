@@ -79,7 +79,7 @@ Como falado na aula teórica foram adotados alguns métodos que facilitaram todo
 - CVC/CVV: Uma regra para ser apenas três algarismos.
 
 Dessa forma, o código-fonte para esta pergunta está na sua integralidade na pasta onde se encontra este documento Markdown.
-[Código Fonte Python](../responsible.py)
+[Código Fonte Python](/Trabalhos%20Pr%C3%A1ticos/TP9/P1%20-%20Valida%C3%A7%C3%A3o%20de%20Input/responsible.py)
 <p>
 
 ---

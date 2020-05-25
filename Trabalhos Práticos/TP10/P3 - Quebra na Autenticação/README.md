@@ -28,6 +28,10 @@ Esta aula utiliza o *WebWolf* para a parte do *email*.
 
 - O quinto passo demonstra uma pergunta completa sobre como atacar um serviço e tentar recuperar a password dum outro utilizador tom@webgoat-cloud.org utilizando um serviço de *proxies* e programa BURP.
 
+![burp](images/burp.png)
+
+Com ele podemos alterar o *request* para o serviço *WebWolf* e depois com esse serviço obter o *link* para fazer reset à palavra passe do Tom, conseguindo assim hackear o utilizador.
+
 
 ---
 

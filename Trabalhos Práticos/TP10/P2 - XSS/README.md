@@ -13,3 +13,5 @@ Todas as imagens e outros ficheiros considerados relevantes para o entendimento 
 ---
 
 ## Notas/Observações Finais
+
+Não existem observações finais para este Trabalho Prático.

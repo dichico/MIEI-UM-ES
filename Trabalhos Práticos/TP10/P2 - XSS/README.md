@@ -19,13 +19,9 @@ Através da *lesson* dada pelo WebGoat, conseguimos executar e consequentemente 
 
 **Com todo os passos resolvíveis feitos (começando-se no dois, conforma a *lesson* o indica) e compreendidos, detalham-se os mesmos:**
 
-<br/>
-
 #### Passo 2
 
 Tal como é explicado no próprio WebGoat, pode-se fazer uso das *developer tools* para tentar perceber se os *cookies* das duas *tabs* efetivamente correspondem. Fazendo-se isso, valida-se esta igualdade através da consola *javascript*.
-
-<br/>
 
 #### Passo 7
 
@@ -48,22 +44,19 @@ Está-se a introduzir a string `<script>alert("Hello")</script>`. Dado que é mo
 Está-se a introduzir também a string `<script>alert("Hello")</script>`. Conforme a própria mensagem de *output* o indica, está-se a tentar comprometer toda a data da loja com um *Reflected XSS attack*. Assim, deduz-se que este campo já não está suscetível ao *XSS*.
 
 <p align="center">
-    <img src="Images/XSS Field 2.png" width=70%>
+    <img src="Images/XSS Field 2.png" width=60%>
 </p>
-
-<br/>
 
 #### Passo 10
 
 Fazendo-se uso do *Inspect Element* do Mozilla, consegue-se visualizar toda a estrutura e código JS da página em causa. Navega-se até ao ficheiro **GoatRouter.js** e no seu conteúdo pode-se encontrar a linha `'test/:param': 'testRoute'`, consoante a imagem abaixo o demonstra.
 
 <p align="center">
-    <img src="Images/XSS GoatRouter.png" width=80%>
+    <img src="Images/XSS GoatRouter.png" width=70%>
 </p>
 
-Com a observação/interpretação necessária, conclui-se que a *route* para o *test code* seria então`start.mvc#test/`.
 
-<br/>
+Com a observação/interpretação necessária, conclui-se que a *route* para o *test code* seria então`start.mvc#test/`.
 
 #### Passo 11
 
@@ -75,8 +68,6 @@ Com a observação/interpretação necessária, conclui-se que a *route* para o 
 Ao fazer-se a inserção deste URL na *Address Bar*, obtém-se uma mensagem na parte da consola do *Inspect Element* do *browser*.
 
 A mensagem `phone home said {"lessonCompleted":true,"feedback":"Congratulations. You have successfully completed the assignment.","output":"phoneHome Response is 550178464","assignment":"DOMCrossSiteScripting","attemptWasMade":true}` indica então que a resposta para o *script* criado e incorporado pelo URL é **550178464**.
-
-<br/>
 
 #### Passo 12
 
@@ -92,6 +83,6 @@ A mensagem `phone home said {"lessonCompleted":true,"feedback":"Congratulations.
 
 ## Notas/Observações Finais
 
-- Imagem [**XSS Field 1**]() que demonstra o resultado obtido pela alteração do parâmetro ﻿`Enter your credit card number`.
-- Imagem [**XSS Field 2**]() que demonstra o resultado obtido pela alteração do parâmetro ﻿`Enter your three digit access code:`.
-- Imagem [**XSS GoatRouter**]() que mostra o conteúdo do ficheiro `GoatRouter.js`.
+- Imagem [**XSS Field 1**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP10/P2%20-%20XSS/Images/XSS%20Field%201.png) que demonstra o resultado obtido pela alteração do parâmetro ﻿`Enter your credit card number`.
+- Imagem [**XSS Field 2**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP10/P2%20-%20XSS/Images/XSS%20Field%202.png) que demonstra o resultado obtido pela alteração do parâmetro ﻿`Enter your three digit access code:`.
+- Imagem [**XSS GoatRouter**](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Trabalhos%20Pr%C3%A1ticos/TP10/P2%20-%20XSS/Images/XSS%20GoatRouter.png) que mostra o conteúdo do ficheiro `GoatRouter.js`.

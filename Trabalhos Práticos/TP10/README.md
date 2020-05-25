@@ -1,14 +1,15 @@
-# Trabalho Prático 2 - Aula 3 (02/03/2020)
+# Trabalho Prático 10 - Aula 12 (11/05/2020)
 
-README principal que contém o conteúdo correspondente ao Segundo Trabalho Prático.
+README principal que contém o conteúdo correspondente ao Décimo Trabalho Prático.
 
 <p>
 
 ## Conteúdo
 
-1. [Pergunta 1](../TP2/P1%20-%20Assinaturas%20Cegas%20baseadas%20no%20ECDLP) - Assinaturas cegas (*Blind signatures*) baseadas no Elliptic Curve Discrete Logarithm Problem (ECDLP)
-2. [Pergunta 2](../TP2/P2%20-%20Protocolo%20SSL-TLS) - Protocolo SSL/TLS
-3. [Pergunta 3](../TP2/P3%20-%20Protocolo%20SSH) - Protocolo SSH
+1. [Pergunta 1](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Trabalhos%20Pr%C3%A1ticos/TP10/P1%20-%20Injection) - *Injection*
+2. [Pergunta 2](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Trabalhos%20Pr%C3%A1ticos/TP10/P2%20-%20XSS) - *XSS*
+3. [Pergunta 3](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Trabalhos%20Pr%C3%A1ticos/TP10/P3%20-%20Quebra%20na%20Autentica%C3%A7%C3%A3o) - Quebra na Autenticação
+4. [Pergunta 4](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Trabalhos%20Pr%C3%A1ticos/TP10/P4%20-%20Componentes%20Vulner%C3%A1veis) - Componentes Vulneráveis
 
 <p>
 

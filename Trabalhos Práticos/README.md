@@ -39,6 +39,12 @@ README principal que contém o a lista de todos os Trabalhos Práticos de Engenh
 - [**Trabalho Prático 9**](TP9) - **Aula 11 (04/05/2020)**
 	- Validação de *Input*
 
+- [**Trabalho Prático 10**](TP10) - **Aula 12 (11/05/2020)**
+	- *Injection*
+	- XSS
+	- Quebra na Autenticação
+	- Componentes Vulneráveis
+
 ---
 
 ## Notas

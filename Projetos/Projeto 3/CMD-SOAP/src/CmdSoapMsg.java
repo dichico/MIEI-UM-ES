@@ -1,10 +1,19 @@
 import javax.xml.soap.SOAPConnection;
 import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPMessage;
 
 public class CmdSoapMsg {
 
-    public static String GetWSDL(int wsdl) {
+    // Variável global para albergar a ligação SOAP
+    SOAPConnection connection;
+
+    public CmdSoapMsg() throws SOAPException {
+        SOAPConnectionFactory factory = SOAPConnectionFactory.newInstance();
+        connection = factory.createConnection();
+    }
+
+    public static String getWSDL(int wsdl) {
 
         String[] wsdlURL = new String[] {
                 "https://preprod.cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?wsdl",
@@ -16,10 +25,5 @@ public class CmdSoapMsg {
             return "No valid WSDL.";
         }
     }
-
-    public static SOAPConnection CreateConn() throws SOAPException {
-
-        SOAPConnectionFactory connection = SOAPConnectionFactory.newInstance();
-        return connection.createConnection();
-    }
 }
+

@@ -1,5 +1,8 @@
 /**
  * Classe usada para configurar o URL do WSDL a usar e do Application ID Fornecido pela AMA.
+ * @author Diogo Araújo
+ * @author Diogo Nogueira
+ * @version 1.0
  */
 public class CmdConfig {
 

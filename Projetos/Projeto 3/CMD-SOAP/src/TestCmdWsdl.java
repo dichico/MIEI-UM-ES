@@ -9,11 +9,11 @@ public class TestCmdWsdl {
     static CmdConfig cmdConfig = new CmdConfig();
     static String applicationID = cmdConfig.getApplicationID();
 
-    public static void argParse(String[] argumentos) {
+    public static void argParse(String[] args) {
 
-        switch (argumentos[0]){
+        switch (args[0]){
             case "GetCertificate":
-                System.out.println(argumentos[0]);
+                System.out.println(args[0]);
                 break;
 
             case "CCMovelSign":

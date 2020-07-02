@@ -12,6 +12,7 @@ public class TestCmdWsdl {
     static String programVersion = "Version 1.0";
 
     static final String regexPhone = "\\+351\\ [0-9]{9}";
+    static final String regexPIN = "[0-9]{4}";
 
     public static String menuGetCertificate() {
         myScanner = new Scanner(System.in);
@@ -33,12 +34,26 @@ public class TestCmdWsdl {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################# CC Movel Sign #############################################\n");
-        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN)...");
+
+        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
         String userId = myScanner.nextLine();
-        System.out.println("Insert Your CMD Signature Pin...");
+
+        while(!userId.matches(regexPhone)){
+            System.out.println("Your User Phone Number doesn't follow the parameters. (+XXX NNNNNNNNN)");
+            System.out.println("Insert Your User Phone Number again: ");
+            userId = myScanner.nextLine();
+        }
+
+        System.out.println("Insert Your CMD Signature Pin: ");
         String userPin = myScanner.nextLine();
 
-        return testClass.ccMovelSign(applicationID, userId, userPin).toString();
+        while(!userPin.matches(regexPIN)){
+            System.out.println("Your CMD Signature Pin doesn't follow the parameters. (4 digits)");
+            System.out.println("Insert Your CMD Signature Pin again: ");
+            userPin = myScanner.nextLine();
+        }
+
+        return testClass.ccMovelSign(applicationID, userId, userPin);
     }
 
     public static String menuValidateOTP() {
@@ -86,8 +101,8 @@ public class TestCmdWsdl {
                     if(auxCmdOption == 0) break;
                     else System.out.println("Invalid Option!");
                 case 2:
-                    String status = menuCCMovelSign();
-                    System.out.println(status);
+                    String processID = menuCCMovelSign();
+                    System.out.println("O ProcessID deste pedido é: " + processID);
                     break;
                 case 3:
                     break;

@@ -45,7 +45,7 @@ public class CmdSoapMsg {
         return connector.getCertificate(applicationId, userId);
     }
 
-    public SignStatus ccMovelSign(byte[] applicationId, String userId, String userPin) throws NoSuchAlgorithmException {
+    public String ccMovelSign(byte[] applicationId, String userId, String userPin) throws NoSuchAlgorithmException {
 
         // Criar a Instância do Pedido Request
         SignRequest request = new SignRequest();
@@ -53,24 +53,23 @@ public class CmdSoapMsg {
         // Definir o Application Id
         request.setApplicationId(applicationId);
 
-        // Definir o Document Name
-        JAXBElement<String> docName = new JAXBElement<>(new QName("", ""),
-                String.class, null, "teste");
-        request.setDocName(docName);
-
         // Definir a Hash
         String message = "Nobody inspects the spammish repetition";
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedHash = digest.digest(message.getBytes(StandardCharsets.UTF_8));
+        byte[] encodedHash = digest.digest(message.getBytes());
         request.setHash(encodedHash);
-        byte[] finalHash = hashPrefix(encodedHash, "SHA-256");
-        request.setHash(finalHash);
 
         // Definir o Id e o Pin do User
         request.setUserId(userId);
         request.setPin(userPin);
 
-        return connector.ccMovelSign(request);
+        // Efetuar o pedido ao serviço AMA
+        SignStatus status = connector.ccMovelSign(request);
+
+        // Retornar apenas o processID para mostrar na linha de comandos
+        return status.getProcessId();
+
+
     }
 
     public SignResponse validateOTP(byte[] applicationId, String processId, String otpCode) {

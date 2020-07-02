@@ -1,3 +1,5 @@
+package code;
+
 /**
  * Classe usada para configurar o URL do WSDL a usar e do Application ID Fornecido pela AMA.
  * @author Diogo Araújo
@@ -13,8 +15,8 @@ public class CmdConfig {
      * Método que retorna o Application Id fornecido pela AMA.
      * @return Application Id fornecido pela AMA.
      */
-    public String getApplicationID() {
-        return applicationID;
+    public byte[] getApplicationID() {
+        return applicationID.getBytes();
     }
 
 }

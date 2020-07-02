@@ -11,12 +11,20 @@ public class TestCmdWsdl {
     static byte[] applicationID = new CmdConfig().getApplicationId();
     static String programVersion = "Version 1.0";
 
+    static final String regexPhone = "\\+351\\ [0-9]{9}";
+
     public static String menuGetCertificate() {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################ Get Certificate ############################################\n");
-        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN)...");
+        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
         String userId = myScanner.nextLine();
+
+        while(!userId.matches(regexPhone)){
+            System.out.println("Your User Phone Number doesn't follow the parameters. (+XXX NNNNNNNNN)");
+            System.out.println("Insert Your User Phone Number again: ");
+            userId = myScanner.nextLine();
+        }
 
         return testClass.getCertificate(applicationID, userId);
     }

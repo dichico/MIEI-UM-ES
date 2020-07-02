@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CCMovelDigitalSignature", targetNamespace = "http://tempuri.org/", wsdlLocation = "file:/C:/Users/cocos/Desktop/ama.wsdl")
+@WebServiceClient(name = "CCMovelDigitalSignature", targetNamespace = "http://tempuri.org/", wsdlLocation = "")
 public class CCMovelDigitalSignature
     extends Service
 {
@@ -30,7 +30,7 @@ public class CCMovelDigitalSignature
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/C:/Users/cocos/Desktop/ama.wsdl");
+            url = new URL("file:src/wsdlservice/ama.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

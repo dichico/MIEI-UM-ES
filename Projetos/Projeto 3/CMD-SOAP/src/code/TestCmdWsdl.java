@@ -33,6 +33,18 @@ public class TestCmdWsdl {
         return testClass.ccMovelSign(applicationID, userId, userPin).toString();
     }
 
+    public static String menuValidateOTP() {
+        myScanner = new Scanner(System.in);
+
+        System.out.println("\n############################################# CC Movel Sign #############################################\n");
+        System.out.println("Insert your ProcessID received in the answer of the CCMovel(Multiple)Sign command");
+        String processId = myScanner.nextLine();
+        System.out.println("Insert Your OTP received in your device");
+        String otpCode = myScanner.nextLine();
+
+        return testClass.validateOTP(applicationID, processId, otpCode).toString();
+    }
+
     public static void main(String[] args) throws NoSuchAlgorithmException {
 
         int cmdOption = 0;
@@ -46,9 +58,10 @@ public class TestCmdWsdl {
                                 "   2  CC Movel Sign - Devolve a inf. do estado da CMD Signature com a resposta do CCMovelSign\n" +
                                 "   3  CC Multiple Sign - Devolve a inf. do estado da CMD Signature com a resposta do CCMovelMultipleSign\n" +
                                 "   4  Validate OTP - Devolve a inf. do estado da Validação da OTP com a resposta do CCMovelMultipleSign\n" +
-                                "   6  Run All Comands - Executa sequencialmente todos os comandos anteriores\n\n" +
+                                "   6  Run All Commands - Executa sequencialmente todos os comandos anteriores\n\n" +
                                 "   7  Show Program Version - Mostra a Versão atual do Command Line Program\n" +
-                                "   8  Show Help - Mostra ajuda relativamente ao uso do Commmand Line Program"
+                                "   8  Show Help - Mostra ajuda relativamente ao uso do Commmand Line Program\n\n" +
+                                "   0  Exit/Close the program"
                             );
             System.out.println("\n#########################################################################################################\n");
             System.out.println("Insert Your Option...");
@@ -71,13 +84,19 @@ public class TestCmdWsdl {
                 case 3:
                     break;
                 case 4:
-                    break;
+                    String validateOTP = menuValidateOTP();
+                    System.out.println(validateOTP);
+                    System.out.println("\nInsert 0 to Back Main Menu...");
+                    auxCmdOption = myScanner.nextInt();
+
+                    if(auxCmdOption == 0) break;
+                    else System.out.println("Invalid Option!");
                 case 5:
                     break;
                 case 6:
                     break;
                 case 7:
-                    break;
+                    System.out.println("Program Version: " + programVersion);
                 case 8:
                     break;
                 case 0:

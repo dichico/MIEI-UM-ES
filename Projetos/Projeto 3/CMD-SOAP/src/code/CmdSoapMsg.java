@@ -1,9 +1,6 @@
 package code;
 
-import wsdlservice.CCMovelDigitalSignature;
-import wsdlservice.CCMovelSignature;
-import wsdlservice.SignRequest;
-import wsdlservice.SignStatus;
+import wsdlservice.*;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
@@ -74,5 +71,9 @@ public class CmdSoapMsg {
         request.setPin(userPin);
 
         return connector.ccMovelSign(request);
+    }
+
+    public SignResponse validateOTP(byte[] applicationId, String processId, String otpCode) {
+        return connector.validateOtp(otpCode, processId, applicationId);
     }
 }

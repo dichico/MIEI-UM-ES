@@ -1,3 +1,5 @@
-.vscode
-.idea
-.out
+.vscode/
+.idea/
+.out/
+#Byte-code JAVA
+*.class

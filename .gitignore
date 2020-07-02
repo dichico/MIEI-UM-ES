@@ -1,5 +1,3 @@
 .vscode/
 .idea/
 out/
-#Byte-code JAVA
-*.class

@@ -8,22 +8,20 @@ public class TestCmdWsdl {
     static Scanner myScanner;
     static CmdSoapMsg testClass = new CmdSoapMsg();
 
-    static byte[] applicationID = new CmdConfig().getApplicationId();
+    static byte[] applicationId = new CmdConfig().getApplicationId();
     static String programVersion = "Version 1.0";
 
+    // Expressões Regulares para garantir os inputs dados no Command Line Program
     static final String regexPhone = "\\+351\\ [0-9]{9}";
     static final String regexPIN = "[0-9]{4,8}";
     static final String regexOTP = "[0-9]{6}";
 
-    public static String menuGetCertificate() throws InterruptedException {
+    public static String menuGetCertificate() {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################ Get Certificate ############################################\n");
         System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
         String userId = myScanner.nextLine();
-
-        System.out.println("Insert Your Apllication Id (Enter to Ignore): ");
-        String myApplicationID = myScanner.nextLine();
 
         while(!userId.matches(regexPhone)){
             System.out.println("Your User Phone Number doesn't follow the parameters. (+XXX NNNNNNNNN)");
@@ -31,10 +29,13 @@ public class TestCmdWsdl {
             userId = myScanner.nextLine();
         }
 
-        if(myApplicationID.isEmpty() && applicationID.length == 0) {
+        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        String myApplicationID = myScanner.nextLine();
+
+        if(myApplicationID.isEmpty() && applicationId.length == 0) {
             return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
         }
-        else if (myApplicationID.isEmpty()) return testClass.getCertificate(applicationID, userId);
+        else if (myApplicationID.isEmpty()) return testClass.getCertificate(applicationId, userId);
         else return testClass.getCertificate(myApplicationID.getBytes(), userId);
     }
 
@@ -61,25 +62,73 @@ public class TestCmdWsdl {
             userPin = myScanner.nextLine();
         }
 
-        return testClass.ccMovelSign(applicationID, null, null, userId, userPin);
+        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        String myApplicationId = myScanner.nextLine();
+
+        if(myApplicationId.isEmpty() && applicationId.length == 0) {
+            return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
+        }
+        else if (myApplicationId.isEmpty()) return testClass.ccMovelSign(applicationId, null, null, userId, userPin);
+        else return testClass.ccMovelSign(myApplicationId.getBytes(), null, null, userId, userPin);
+    }
+
+    public static String menuCCMovelMultipleSign() throws NoSuchAlgorithmException {
+        myScanner = new Scanner(System.in);
+
+        System.out.println("\n######################################## CC Movel Multiple Sign #########################################\n");
+
+        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
+        String userId = myScanner.nextLine();
+
+        while(!userId.matches(regexPhone)){
+            System.out.println("Your User Phone Number doesn't follow the parameters (+XXX NNNNNNNNN).");
+            System.out.println("Insert Your User Phone Number again: ");
+            userId = myScanner.nextLine();
+        }
+
+        System.out.println("Insert Your CMD Signature Pin: ");
+        String userPin = myScanner.nextLine();
+
+        while(!userPin.matches(regexPIN)){
+            System.out.println("Your CMD Signature Pin doesn't follow the parameters (Minimum 4, Maximum 8 Digits).");
+            System.out.println("Insert Your CMD Signature Pin again: ");
+            userPin = myScanner.nextLine();
+        }
+
+        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        String myApplicationId = myScanner.nextLine();
+
+        if(myApplicationId.isEmpty() && applicationId.length == 0) {
+            return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
+        }
+        else if (myApplicationId.isEmpty()) return testClass.ccMovelMultipleSign(applicationId, null, null, userId, userPin);
+        else return testClass.ccMovelMultipleSign(myApplicationId.getBytes(), null, null, userId, userPin);
     }
 
     public static String menuValidateOTP() {
         myScanner = new Scanner(System.in);
 
-        System.out.println("\n############################################# CC Movel Sign #############################################\n");
+        System.out.println("\n############################################# Validate OTP ##############################################\n");
+
         System.out.println("Insert your ProcessID received in the answer of the CCMovel(Multiple)Sign command: ");
         String processId = myScanner.nextLine();
         System.out.println("Insert Your OTP received in your device: ");
         String otpCode = myScanner.nextLine();
 
         while(!otpCode.matches(regexPIN)){
-            System.out.println("Your One Time Password doesn't follow the parameters. (6 digits)");
+            System.out.println("Your One Time Password doesn't follow the parameters (6 digits).");
             System.out.println("Insert Your OTP received in your device again: ");
             otpCode = myScanner.nextLine();
         }
 
-        return testClass.validateOTP(applicationID, processId, otpCode);
+        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        String myApplicationId = myScanner.nextLine();
+
+        if(myApplicationId.isEmpty() && applicationId.length == 0) {
+            return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
+        }
+        else if (myApplicationId.isEmpty()) return testClass.validateOTP(applicationId, processId, otpCode);
+        else return testClass.validateOTP(myApplicationId.getBytes(), processId, otpCode);
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InterruptedException {
@@ -111,11 +160,14 @@ public class TestCmdWsdl {
                     Thread.sleep(2000);
                     break;
                 case 2:
-                    String processID = menuCCMovelSign();
-                    System.out.println("Your Process Id is: " + processID);
+                    String processID1 = menuCCMovelSign();
+                    System.out.println("Your Process Id is: " + processID1);
                     Thread.sleep(2000);
                     break;
                 case 3:
+                    String processID2 = menuCCMovelMultipleSign();
+                    System.out.println("Your Process Id is: " + processID2);
+                    Thread.sleep(2000);
                     break;
                 case 4:
                     String assinatura = menuValidateOTP();

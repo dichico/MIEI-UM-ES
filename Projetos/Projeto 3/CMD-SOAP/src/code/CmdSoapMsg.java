@@ -2,9 +2,6 @@ package code;
 
 import wsdlservice.*;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.namespace.QName;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -80,6 +77,54 @@ public class CmdSoapMsg {
 
         // Imprimir o resultado do pedido
         System.out.println(status.getMessage());
+
+        // Retornar apenas o processID para mostrar no menu CLI
+        return status.getProcessId();
+    }
+
+    public String ccMovelMultipleSign(byte[] applicationId, String docName, byte[] hash, String userId, String userPin) throws NoSuchAlgorithmException {
+
+        // Criar a Instância do Pedido
+        MultipleSignRequest request = new MultipleSignRequest();
+
+        // Definir o Application Id
+        request.setApplicationId(applicationId);
+
+        // Definir o Id e o Pin do User
+        request.setUserId(userId);
+        request.setPin(userPin);
+
+        // Definir o Array de Documentos a Assinar
+        ArrayOfHashStructure documents = new ArrayOfHashStructure();
+
+        // Documento 1
+        HashStructure firstDocument = new HashStructure();
+
+        String firstMessage = "Nobody inspects the spammish repetition";
+        MessageDigest firstDigest = MessageDigest.getInstance("SHA-256");
+        byte[] firstHash = firstDigest.digest(firstMessage.getBytes());
+
+        firstDocument.setHash(firstHash);
+        firstDocument.setName("Docname Test 1");
+        firstDocument.setId("1234");
+
+        documents.getHashStructure().add(firstDocument);
+
+        // Documento 2
+        HashStructure secondDocument = new HashStructure();
+
+        String secondMessage = "Nobody inspects the spammish repetition";
+        MessageDigest secondDigest = MessageDigest.getInstance("SHA-256");
+        byte[] secondHash = secondDigest.digest(secondMessage.getBytes());
+
+        secondDocument.setHash(secondHash);
+        secondDocument.setName("Docname Test 2");
+        secondDocument.setId("1235");
+
+        documents.getHashStructure().add(secondDocument);
+
+        // Efetuar o pedido ao serviço AMA
+        SignStatus status = connector.ccMovelMultipleSign(request, documents);
 
         // Retornar apenas o processID para mostrar no menu CLI
         return status.getProcessId();

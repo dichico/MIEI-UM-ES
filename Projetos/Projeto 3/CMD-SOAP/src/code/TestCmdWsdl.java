@@ -13,6 +13,7 @@ public class TestCmdWsdl {
 
     static final String regexPhone = "\\+351\\ [0-9]{9}";
     static final String regexPIN = "[0-9]{4}";
+    static final String regexOTP = "[0-9]{6}";
 
     public static String menuGetCertificate() {
         myScanner = new Scanner(System.in);
@@ -60,15 +61,21 @@ public class TestCmdWsdl {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################# CC Movel Sign #############################################\n");
-        System.out.println("Insert your ProcessID received in the answer of the CCMovel(Multiple)Sign command");
+        System.out.println("Insert your ProcessID received in the answer of the CCMovel(Multiple)Sign command: ");
         String processId = myScanner.nextLine();
-        System.out.println("Insert Your OTP received in your device");
+        System.out.println("Insert Your OTP received in your device: ");
         String otpCode = myScanner.nextLine();
 
-        return testClass.validateOTP(applicationID, processId, otpCode).toString();
+        while(!otpCode.matches(regexPIN)){
+            System.out.println("Your One Time Password doesn't follow the parameters. (6 digits)");
+            System.out.println("Insert Your OTP received in your device again: ");
+            otpCode = myScanner.nextLine();
+        }
+
+        return testClass.validateOTP(applicationID, processId, otpCode);
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException {
+    public static void main(String[] args) throws NoSuchAlgorithmException, InterruptedException {
 
         int cmdOption = 0;
         int auxCmdOption;
@@ -81,9 +88,9 @@ public class TestCmdWsdl {
                                 "   2  CC Movel Sign - Devolve a inf. do estado da CMD Signature com a resposta do CCMovelSign\n" +
                                 "   3  CC Multiple Sign - Devolve a inf. do estado da CMD Signature com a resposta do CCMovelMultipleSign\n" +
                                 "   4  Validate OTP - Devolve a inf. do estado da Validação da OTP com a resposta do CCMovelMultipleSign\n" +
-                                "   6  Run All Commands - Executa sequencialmente todos os comandos anteriores\n\n" +
-                                "   7  Show Program Version - Mostra a Versão atual do Command Line Program\n" +
-                                "   8  Show Help - Mostra ajuda relativamente ao uso do Commmand Line Program\n\n" +
+                                "   5  Run All Commands - Executa sequencialmente todos os comandos anteriores\n\n" +
+                                "   6  Show Program Version - Mostra a Versão atual do Command Line Program\n" +
+                                "   7  Show Help - Mostra ajuda relativamente ao uso do Commmand Line Program\n\n" +
                                 "   0  Exit/Close the program"
                             );
             System.out.println("\n#########################################################################################################\n");
@@ -94,34 +101,26 @@ public class TestCmdWsdl {
                 case 1:
                     String certificate = menuGetCertificate();
                     System.out.println(certificate);
-                    System.out.println("\nInsert 0 to Back Main Menu...");
-
-                    auxCmdOption = myScanner.nextInt();
-
-                    if(auxCmdOption == 0) break;
-                    else System.out.println("Invalid Option!");
+                    Thread.sleep(2000);
+                    break;
                 case 2:
                     String processID = menuCCMovelSign();
                     System.out.println("O ProcessID deste pedido é: " + processID);
+                    Thread.sleep(2000);
                     break;
                 case 3:
                     break;
                 case 4:
-                    String validateOTP = menuValidateOTP();
-                    System.out.println(validateOTP);
-                    System.out.println("\nInsert 0 to Back Main Menu...");
-                    auxCmdOption = myScanner.nextInt();
-
-                    if(auxCmdOption == 0) break;
-                    else System.out.println("Invalid Option!");
+                    String assinatura = menuValidateOTP();
+                    System.out.println("A assinatura do documento é: " + assinatura);
+                    Thread.sleep(2000);
+                    break;
                 case 5:
                     break;
                 case 6:
                     break;
                 case 7:
                     System.out.println("Program Version: " + programVersion);
-                case 8:
-                    break;
                 case 0:
                     break;
                 default:

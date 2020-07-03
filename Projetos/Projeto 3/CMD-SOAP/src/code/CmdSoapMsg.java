@@ -47,7 +47,7 @@ public class CmdSoapMsg {
 
     public String ccMovelSign(byte[] applicationId, String userId, String userPin) throws NoSuchAlgorithmException {
 
-        // Criar a Instância do Pedido Request
+        // Criar a Instância do Pedido
         SignRequest request = new SignRequest();
 
         // Definir o Application Id
@@ -66,13 +66,21 @@ public class CmdSoapMsg {
         // Efetuar o pedido ao serviço AMA
         SignStatus status = connector.ccMovelSign(request);
 
-        // Retornar apenas o processID para mostrar na linha de comandos
+        // Imprimir o resultado do pedido
+        System.out.println(status.getMessage());
+
+        // Retornar apenas o processID para mostrar no menu CLI
         return status.getProcessId();
-
-
     }
 
-    public SignResponse validateOTP(byte[] applicationId, String processId, String otpCode) {
-        return connector.validateOtp(otpCode, processId, applicationId);
+    public String validateOTP(byte[] applicationId, String processId, String otpCode) {
+
+        SignResponse response = connector.validateOtp(otpCode, processId, applicationId);
+
+        // Imprimir o resultado da validação da assinatura
+        System.out.println(response.getStatus().getMessage());
+
+        // Retornar a assinatura para o menu CLI
+        return response.getSignature().toString();
     }
 }

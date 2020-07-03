@@ -12,7 +12,7 @@ public class TestCmdWsdl {
     static String programVersion = "Version 1.0";
 
     static final String regexPhone = "\\+351\\ [0-9]{9}";
-    static final String regexPIN = "[0-9]{4}";
+    static final String regexPIN = "[0-9]{4,8}";
     static final String regexOTP = "[0-9]{6}";
 
     public static String menuGetCertificate() {
@@ -40,7 +40,7 @@ public class TestCmdWsdl {
         String userId = myScanner.nextLine();
 
         while(!userId.matches(regexPhone)){
-            System.out.println("Your User Phone Number doesn't follow the parameters. (+XXX NNNNNNNNN)");
+            System.out.println("Your User Phone Number doesn't follow the parameters (+XXX NNNNNNNNN).");
             System.out.println("Insert Your User Phone Number again: ");
             userId = myScanner.nextLine();
         }
@@ -49,12 +49,12 @@ public class TestCmdWsdl {
         String userPin = myScanner.nextLine();
 
         while(!userPin.matches(regexPIN)){
-            System.out.println("Your CMD Signature Pin doesn't follow the parameters. (4 digits)");
+            System.out.println("Your CMD Signature Pin doesn't follow the parameters (Maximum 8 Digits).");
             System.out.println("Insert Your CMD Signature Pin again: ");
             userPin = myScanner.nextLine();
         }
 
-        return testClass.ccMovelSign(applicationID, userId, userPin);
+        return testClass.ccMovelSign(applicationID, null, null, userId, userPin);
     }
 
     public static String menuValidateOTP() {
@@ -94,7 +94,7 @@ public class TestCmdWsdl {
                                 "   0  Exit/Close the program"
                             );
             System.out.println("\n#########################################################################################################\n");
-            System.out.println("Insert Your Option...");
+            System.out.println("Insert Your Option:");
             cmdOption = myScanner.nextInt();
 
             switch (cmdOption) {
@@ -105,14 +105,14 @@ public class TestCmdWsdl {
                     break;
                 case 2:
                     String processID = menuCCMovelSign();
-                    System.out.println("O ProcessID deste pedido é: " + processID);
+                    System.out.println("Your Process Id is: " + processID);
                     Thread.sleep(2000);
                     break;
                 case 3:
                     break;
                 case 4:
                     String assinatura = menuValidateOTP();
-                    System.out.println("A assinatura do documento é: " + assinatura);
+                    System.out.println("The Document Signature is: " + assinatura);
                     Thread.sleep(2000);
                     break;
                 case 5:

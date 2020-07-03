@@ -44,8 +44,8 @@ public class SignRequest {
 
     @XmlElement(name = "ApplicationId", required = true, nillable = true)
     protected byte[] applicationId;
-    @XmlElementRef(name = "DocName", namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> docName;
+    @XmlElement(name = "DocName", namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", required = false)
+    protected String docName;
     @XmlElement(name = "Hash", required = true, nillable = true)
     protected byte[] hash;
     @XmlElement(name = "Pin", required = true, nillable = true)
@@ -83,19 +83,19 @@ public class SignRequest {
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public JAXBElement<String> getDocName() {
+    public String getDocName() {
         return docName;
     }
 
     /**
      * Sets the value of the docName property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDocName(JAXBElement<String> value) {
+    public void setDocName(String value) {
         this.docName = value;
     }
 

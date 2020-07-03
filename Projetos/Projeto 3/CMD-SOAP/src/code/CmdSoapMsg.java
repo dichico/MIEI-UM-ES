@@ -45,7 +45,7 @@ public class CmdSoapMsg {
         return connector.getCertificate(applicationId, userId);
     }
 
-    public String ccMovelSign(byte[] applicationId, String userId, String userPin) throws NoSuchAlgorithmException {
+    public String ccMovelSign(byte[] applicationId, String docName, byte[] hash, String userId, String userPin) throws NoSuchAlgorithmException {
 
         // Criar a Instância do Pedido
         SignRequest request = new SignRequest();
@@ -53,11 +53,23 @@ public class CmdSoapMsg {
         // Definir o Application Id
         request.setApplicationId(applicationId);
 
+        // Definir o Document Name
+        if(docName == null) request.setDocName("Docname Teste");
+        else request.setDocName(docName);
+
         // Definir a Hash
-        String message = "Nobody inspects the spammish repetition";
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedHash = digest.digest(message.getBytes());
-        request.setHash(encodedHash);
+        if(hash == null) {
+            String message = "Nobody inspects the spammish repetition";
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            byte[] encodedHash = digest.digest(message.getBytes());
+            byte[] hashWithPrefix = hashPrefix(encodedHash, "SHA256");
+            request.setHash(hashWithPrefix);
+        }
+        else {
+            byte[] hashWithPrefix = hashPrefix(hash, "SHA256");
+            request.setHash(hashWithPrefix);
+        }
 
         // Definir o Id e o Pin do User
         request.setUserId(userId);

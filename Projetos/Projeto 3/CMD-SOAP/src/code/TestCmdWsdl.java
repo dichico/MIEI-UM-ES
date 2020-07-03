@@ -15,12 +15,15 @@ public class TestCmdWsdl {
     static final String regexPIN = "[0-9]{4,8}";
     static final String regexOTP = "[0-9]{6}";
 
-    public static String menuGetCertificate() {
+    public static String menuGetCertificate() throws InterruptedException {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################ Get Certificate ############################################\n");
         System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
         String userId = myScanner.nextLine();
+
+        System.out.println("Insert Your Apllication Id (Enter to Ignore): ");
+        String myApplicationID = myScanner.nextLine();
 
         while(!userId.matches(regexPhone)){
             System.out.println("Your User Phone Number doesn't follow the parameters. (+XXX NNNNNNNNN)");
@@ -28,7 +31,11 @@ public class TestCmdWsdl {
             userId = myScanner.nextLine();
         }
 
-        return testClass.getCertificate(applicationID, userId);
+        if(myApplicationID.isEmpty() && applicationID.length == 0) {
+            return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
+        }
+        else if (myApplicationID.isEmpty()) return testClass.getCertificate(applicationID, userId);
+        else return testClass.getCertificate(myApplicationID.getBytes(), userId);
     }
 
     public static String menuCCMovelSign() throws NoSuchAlgorithmException {
@@ -49,7 +56,7 @@ public class TestCmdWsdl {
         String userPin = myScanner.nextLine();
 
         while(!userPin.matches(regexPIN)){
-            System.out.println("Your CMD Signature Pin doesn't follow the parameters (Maximum 8 Digits).");
+            System.out.println("Your CMD Signature Pin doesn't follow the parameters (Minimum 4, Maximum 8 Digits).");
             System.out.println("Insert Your CMD Signature Pin again: ");
             userPin = myScanner.nextLine();
         }

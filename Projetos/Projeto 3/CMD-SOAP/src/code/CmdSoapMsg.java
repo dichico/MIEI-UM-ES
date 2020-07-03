@@ -28,15 +28,15 @@ public class CmdSoapMsg {
 
     public byte[] hashPrefix(byte[] hash, String hashType) {
 
-        byte[] prefixSha256 = new byte[] {
+        byte[] Sha256 = new byte[] {
                 (byte)0x30, (byte)0x31, (byte)0x30, (byte)0x0d, (byte)0x06, (byte)0x09,
                 (byte)0x60, (byte)0x86, (byte)0x48, (byte)0x01, (byte)0x65, (byte)0x03,
                 (byte)0x04, (byte)0x02, (byte)0x01, (byte)0x05, (byte)0x00, (byte)0x04, (byte)0x20};
 
         // Concatenar o Prefixo à Hash dada como parâmetro
-        byte[] hashWithPrefix = new byte[prefixSha256.length + hash.length];
-        System.arraycopy(prefixSha256   , 0, hashWithPrefix, 0, prefixSha256.length);
-        System.arraycopy(hash, 0, hashWithPrefix, prefixSha256.length, hash.length);
+        byte[] hashWithPrefix = new byte[Sha256.length + hash.length];
+        System.arraycopy(Sha256   , 0, hashWithPrefix, 0, Sha256.length);
+        System.arraycopy(hash, 0, hashWithPrefix, Sha256.length, hash.length);
 
         return hashWithPrefix;
     }
@@ -63,11 +63,11 @@ public class CmdSoapMsg {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
             byte[] encodedHash = digest.digest(message.getBytes());
-            byte[] hashWithPrefix = hashPrefix(encodedHash, "SHA256");
+            byte[] hashWithPrefix = hashPrefix(encodedHash, "Sha256");
             request.setHash(hashWithPrefix);
         }
         else {
-            byte[] hashWithPrefix = hashPrefix(hash, "SHA256");
+            byte[] hashWithPrefix = hashPrefix(hash, "Sha256");
             request.setHash(hashWithPrefix);
         }
 

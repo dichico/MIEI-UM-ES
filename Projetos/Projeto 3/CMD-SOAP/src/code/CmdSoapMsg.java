@@ -2,8 +2,19 @@ package code;
 
 import wsdlservice.*;
 
+import java.io.*;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CmdSoapMsg {
 
@@ -36,6 +47,50 @@ public class CmdSoapMsg {
         System.arraycopy(hash, 0, hashWithPrefix, Sha256.length, hash.length);
 
         return hashWithPrefix;
+    }
+
+    public void createPemFile(byte[] applicationId, String userId) {
+
+        String certificate = getCertificate(applicationId,userId);
+        OutputStream certificatePem = null;
+
+        try {
+            certificatePem = new FileOutputStream(new File("src/files/certificate.pem"));
+            certificatePem.write(certificate.getBytes(), 0, certificate.length());
+        } catch (IOException exception) {
+            System.out.println("Unable to create PEM File.");
+        } finally {
+            try {
+                certificatePem.close();
+            } catch (IOException exception) {
+                System.out.println("Unable to close PEM File.");
+            }
+        }
+    }
+
+    public KeyStore getCertChains() throws IOException, CertificateException, KeyStoreException, NoSuchAlgorithmException {
+        String aliasName = null;
+        int numberChains = 0;
+
+        InputStream pemFile = new FileInputStream("src/files/certificate.pem");
+        BufferedInputStream contentPemFile = new BufferedInputStream(pemFile);
+        CertificateFactory cf = CertificateFactory.getInstance("X.509");
+
+        KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+        keyStore.load(null);
+
+        while (contentPemFile.available() > 0) {
+            if(numberChains == 0) aliasName = "user";
+            else if(numberChains == 1) aliasName = "root";
+            else if(numberChains == 2) aliasName = "CA";
+
+            Certificate certificate = cf.generateCertificate(contentPemFile);
+            keyStore.setCertificateEntry(aliasName, certificate);
+
+            numberChains++;
+        }
+
+        return keyStore;
     }
 
     public String getCertificate(byte[] applicationId, String userId) {
@@ -140,4 +195,24 @@ public class CmdSoapMsg {
         // Retornar a assinatura para o menu CLI
         return response.getSignature().toString();
     }
+
+    public String testAll(byte[] applicationId, String docName, byte[] hash, String userId, String userPin) throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException {
+
+        // Inicialização Test All Commands
+        System.out.println("Test Command Line Program (for Preprod/Prod Signature CMD (SOAP) version 1.6 technical specification)");
+        System.out.println("Initializing Test of All Commands");
+
+        // Leitura dos Argumentos da Linha de Comandos
+        System.out.println("0% ... Reading Arguments from the Command Line");
+        System.out.println("Document Name: " + docName + ", User Id: " + userId);
+
+        // Obtenção do Certificado e suas respetivas informações necessárias
+        // Conversão da String Certificado para um ficheiro PEM
+        System.out.println("10% ... Contacting CMD SOAP Server for GetCertificate Operation");
+        createPemFile(applicationId, userId);
+        KeyStore certChaisn = getCertChains();
+
+        return "Teste";
+    }
+
 }

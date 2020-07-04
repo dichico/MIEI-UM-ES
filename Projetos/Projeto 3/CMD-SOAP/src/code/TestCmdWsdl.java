@@ -1,6 +1,9 @@
 package code;
 
+import java.io.IOException;
+import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
 import java.util.Scanner;
 
 public class TestCmdWsdl {
@@ -131,7 +134,43 @@ public class TestCmdWsdl {
         else return testClass.validateOTP(myApplicationId.getBytes(), processId, otpCode);
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException, InterruptedException {
+    public static String menuTestAll() throws IOException, NoSuchAlgorithmException, CertificateException, KeyStoreException {
+        myScanner = new Scanner(System.in);
+
+        System.out.println("\n########################################## Test All Commands ############################################\n");
+
+        System.out.println("Insert the Path of the File you want to Sign: \n");
+        String pathFile = myScanner.nextLine();
+
+        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
+        String userId = myScanner.nextLine();
+
+        while(!userId.matches(regexPhone)){
+            System.out.println("Your User Phone Number doesn't follow the parameters (+XXX NNNNNNNNN).");
+            System.out.println("Insert Your User Phone Number again: ");
+            userId = myScanner.nextLine();
+        }
+
+        System.out.println("Insert Your CMD Signature Pin: ");
+        String userPin = myScanner.nextLine();
+
+        while(!userPin.matches(regexPIN)){
+            System.out.println("Your CMD Signature Pin doesn't follow the parameters (Minimum 4, Maximum 8 Digits).");
+            System.out.println("Insert Your CMD Signature Pin again: ");
+            userPin = myScanner.nextLine();
+        }
+
+        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        String myApplicationId = myScanner.nextLine();
+
+        if(myApplicationId.isEmpty() && applicationId.length == 0) {
+            return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
+        }
+        else if (myApplicationId.isEmpty()) return testClass.testAll(applicationId, pathFile, null, userId, userPin);
+        else return testClass.testAll(myApplicationId.getBytes(), pathFile, null, userId, userPin);
+    }
+
+    public static void main(String[] args) throws NoSuchAlgorithmException, InterruptedException, IOException, CertificateException, KeyStoreException {
 
         int cmdOption = 0;
         int auxCmdOption;
@@ -175,6 +214,9 @@ public class TestCmdWsdl {
                     Thread.sleep(2000);
                     break;
                 case 5:
+                    String teste = menuTestAll();
+                    System.out.println(teste);
+                    Thread.sleep(2000);
                     break;
                 case 6:
                     break;

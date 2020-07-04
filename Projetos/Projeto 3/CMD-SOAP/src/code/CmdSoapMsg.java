@@ -1,5 +1,6 @@
 package code;
 
+import org.apache.commons.lang3.StringUtils;
 import wsdlservice.*;
 
 import java.io.*;
@@ -10,11 +11,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
 public class CmdSoapMsg {
 
@@ -32,6 +28,14 @@ public class CmdSoapMsg {
         } catch(ArrayIndexOutOfBoundsException exception) {
             return "No valid WSDL.";
         }
+    }
+
+    public byte[] hash(String message) throws NoSuchAlgorithmException {
+
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] encodedHash = digest.digest(message.getBytes());
+
+        return encodedHash;
     }
 
     public byte[] hashPrefix(byte[] hash, String hashType) {
@@ -55,7 +59,7 @@ public class CmdSoapMsg {
         OutputStream certificatePem = null;
 
         try {
-            certificatePem = new FileOutputStream(new File("src/files/certificate.pem"));
+            certificatePem = new FileOutputStream(new File("src/files/" + StringUtils.substring(userId,5) + ".pem"));
             certificatePem.write(certificate.getBytes(), 0, certificate.length());
         } catch (IOException exception) {
             System.out.println("Unable to create PEM File.");
@@ -68,11 +72,12 @@ public class CmdSoapMsg {
         }
     }
 
-    public KeyStore getCertChains() throws IOException, CertificateException, KeyStoreException, NoSuchAlgorithmException {
-        String aliasName = null;
-        int numberChains = 0;
+    public KeyStore getCertChain(String userId) throws IOException, CertificateException, KeyStoreException, NoSuchAlgorithmException {
 
-        InputStream pemFile = new FileInputStream("src/files/certificate.pem");
+        String aliasName = null;
+        int numberPath = 0;
+
+        InputStream pemFile = new FileInputStream("src/files/" + StringUtils.substring(userId,5)  + ".pem");
         BufferedInputStream contentPemFile = new BufferedInputStream(pemFile);
         CertificateFactory cf = CertificateFactory.getInstance("X.509");
 
@@ -80,17 +85,24 @@ public class CmdSoapMsg {
         keyStore.load(null);
 
         while (contentPemFile.available() > 0) {
-            if(numberChains == 0) aliasName = "user";
-            else if(numberChains == 1) aliasName = "root";
-            else if(numberChains == 2) aliasName = "CA";
+            if(numberPath == 0) aliasName = "user";
+            else if(numberPath == 1) aliasName = "root";
+            else if(numberPath == 2) aliasName = "CA";
 
             Certificate certificate = cf.generateCertificate(contentPemFile);
             keyStore.setCertificateEntry(aliasName, certificate);
 
-            numberChains++;
+            numberPath++;
         }
 
         return keyStore;
+    }
+
+    public String getSubject(KeyStore certChain, String aliasName) throws KeyStoreException {
+
+        String certificate = certChain.getCertificate(aliasName).toString();
+
+        return StringUtils.substringBetween(certificate, "Subject: CN=", ",");
     }
 
     public String getCertificate(byte[] applicationId, String userId) {
@@ -112,9 +124,8 @@ public class CmdSoapMsg {
         // Definir a Hash
         if(hash == null) {
             String message = "Nobody inspects the spammish repetition";
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] encodedHash = hash(message);
 
-            byte[] encodedHash = digest.digest(message.getBytes());
             byte[] hashWithPrefix = hashPrefix(encodedHash, "Sha256");
             request.setHash(hashWithPrefix);
         }
@@ -156,8 +167,7 @@ public class CmdSoapMsg {
         HashStructure firstDocument = new HashStructure();
 
         String firstMessage = "Nobody inspects the spammish repetition";
-        MessageDigest firstDigest = MessageDigest.getInstance("SHA-256");
-        byte[] firstHash = firstDigest.digest(firstMessage.getBytes());
+        byte[] firstHash = hash(firstMessage);
 
         firstDocument.setHash(firstHash);
         firstDocument.setName("Docname Test 1");
@@ -169,8 +179,7 @@ public class CmdSoapMsg {
         HashStructure secondDocument = new HashStructure();
 
         String secondMessage = "Nobody inspects the spammish repetition";
-        MessageDigest secondDigest = MessageDigest.getInstance("SHA-256");
-        byte[] secondHash = secondDigest.digest(secondMessage.getBytes());
+        byte[] secondHash = hash(secondMessage);
 
         secondDocument.setHash(secondHash);
         secondDocument.setName("Docname Test 2");
@@ -203,14 +212,45 @@ public class CmdSoapMsg {
         System.out.println("Initializing Test of All Commands");
 
         // Leitura dos Argumentos da Linha de Comandos
-        System.out.println("0% ... Reading Arguments from the Command Line");
-        System.out.println("Document Name: " + docName + ", User Id: " + userId);
+        System.out.println("0% ...  Reading Arguments from the Command Line");
+        System.out.println("        Document Name: " + docName + ", User Id: " + userId);
 
-        // Obtenção do Certificado e suas respetivas informações necessárias
-        // Conversão da String Certificado para um ficheiro PEM
+        // Obtenção do Certificado e da KeyStore com a Chain do Certificado
         System.out.println("10% ... Contacting CMD SOAP Server for GetCertificate Operation");
+
         createPemFile(applicationId, userId);
-        KeyStore certChaisn = getCertChains();
+        KeyStore certChain = getCertChain(userId);
+
+        // Impressão das informações dos vários níveis da Chain do Certificado
+        System.out.println("20% ... Certificate Emitted for " + "\"" + getSubject(certChain, "user") + "\"");
+        System.out.println("        by the Certification Entity " + "\"" + getSubject(certChain, "CA") + "\"");
+        System.out.println("        in the Hierarchy of " + "\"" + getSubject(certChain, "root") + "\"");
+
+        // Leitura do Documento
+        System.out.println("30% ... Reading the Document " + "\"" + docName + "\"");
+
+        FileInputStream document = null;
+        try {
+            document = new FileInputStream(new File("src/files/" + StringUtils.substring(userId,5) + ".pem"));;
+        } catch (IOException exception) {
+            System.out.println("Unable to open Document " + "\"" + docName + "\"");
+        } finally {
+            try {
+                document.close();
+            } catch (IOException exception) {
+                System.out.println("Unable to close Document " + "\"" + docName + "\"");
+            }
+        }
+        BufferedInputStream contentDocument = new BufferedInputStream(document);
+
+        // Criação Hash do Documento
+        System.out.println("40% ... Hashing the Document " + "\"" + docName + "\"");
+
+        byte[] hashDocument = hash(contentDocument.toString());
+
+        // Impressão da Hash
+        System.out.println("50% ... Generated Hash ");
+        System.out.println("        " + hashDocument);
 
         return "Teste";
     }

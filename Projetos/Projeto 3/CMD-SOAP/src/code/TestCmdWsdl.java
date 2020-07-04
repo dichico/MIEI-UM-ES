@@ -139,7 +139,7 @@ public class TestCmdWsdl {
 
         System.out.println("\n########################################## Test All Commands ############################################\n");
 
-        System.out.println("Insert the Path of the File you want to Sign: \n");
+        System.out.println("Insert the Path of the File you want to Sign: ");
         String pathFile = myScanner.nextLine();
 
         System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
@@ -187,7 +187,7 @@ public class TestCmdWsdl {
                                 "   6  Show Program Version - Mostra a Versão atual do Command Line Program\n" +
                                 "   7  Show Help - Mostra ajuda relativamente ao uso do Commmand Line Program\n\n" +
                                 "   0  Exit/Close the program"
-                            );
+                             );
             System.out.println("\n#########################################################################################################\n");
             System.out.println("Insert Your Option:");
             cmdOption = myScanner.nextInt();

@@ -1,16 +1,15 @@
 package code;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import wsdlservice.*;
 
 import java.io.*;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
+import java.util.Scanner;
 
 public class CmdSoapMsg {
 
@@ -141,9 +140,6 @@ public class CmdSoapMsg {
         // Efetuar o pedido ao serviço AMA
         SignStatus status = connector.ccMovelSign(request);
 
-        // Imprimir o resultado do pedido
-        System.out.println(status.getMessage());
-
         // Retornar apenas o processID para mostrar no menu CLI
         return status.getProcessId();
     }
@@ -194,7 +190,7 @@ public class CmdSoapMsg {
         return status.getProcessId();
     }
 
-    public String validateOTP(byte[] applicationId, String processId, String otpCode) {
+    public String validateOtp(byte[] applicationId, String processId, String otpCode) {
 
         SignResponse response = connector.validateOtp(otpCode, processId, applicationId);
 
@@ -205,29 +201,29 @@ public class CmdSoapMsg {
         return response.getSignature().toString();
     }
 
-    public String testAll(byte[] applicationId, String docName, byte[] hash, String userId, String userPin) throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException {
+    public String testAll(byte[] applicationId, String docName, String userId, String userPin) throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException {
 
         // Inicialização Test All Commands
         System.out.println("Test Command Line Program (for Preprod/Prod Signature CMD (SOAP) version 1.6 technical specification)");
         System.out.println("Initializing Test of All Commands");
 
         // Leitura dos Argumentos da Linha de Comandos
-        System.out.println("0% ...  Reading Arguments from the Command Line");
-        System.out.println("        Document Name: " + docName + ", User Id: " + userId);
+        System.out.println("0% ...   Reading Arguments from the Command Line");
+        System.out.println("         Document Name: " + docName + ", User Id: " + userId);
 
         // Obtenção do Certificado e da KeyStore com a Chain do Certificado
-        System.out.println("10% ... Contacting CMD SOAP Server for GetCertificate Operation");
+        System.out.println("10% ...  Contacting CMD SOAP Server for GetCertificate Operation");
 
         createPemFile(applicationId, userId);
         KeyStore certChain = getCertChain(userId);
 
         // Impressão das informações dos vários níveis da Chain do Certificado
-        System.out.println("20% ... Certificate Emitted for " + "\"" + getSubject(certChain, "user") + "\"");
-        System.out.println("        by the Certification Entity " + "\"" + getSubject(certChain, "CA") + "\"");
-        System.out.println("        in the Hierarchy of " + "\"" + getSubject(certChain, "root") + "\"");
+        System.out.println("20% ...  Certificate Emitted for " + "\"" + getSubject(certChain, "user") + "\"");
+        System.out.println("         by the Certification Entity " + "\"" + getSubject(certChain, "CA") + "\"");
+        System.out.println("         in the Hierarchy of " + "\"" + getSubject(certChain, "root") + "\"");
 
         // Leitura do Documento
-        System.out.println("30% ... Reading the Document " + "\"" + docName + "\"");
+        System.out.println("30% ...  Reading the Document " + "\"" + docName + "\"");
 
         FileInputStream document = null;
         try {
@@ -244,15 +240,45 @@ public class CmdSoapMsg {
         BufferedInputStream contentDocument = new BufferedInputStream(document);
 
         // Criação Hash do Documento
-        System.out.println("40% ... Hashing the Document " + "\"" + docName + "\"");
+        System.out.println("40% ...  Hashing the Document " + "\"" + docName + "\"");
 
         byte[] hashDocument = hash(contentDocument.toString());
 
         // Impressão da Hash
-        System.out.println("50% ... Generated Hash ");
-        System.out.println("        " + hashDocument);
+        System.out.println("50% ...  Generated Hash ");
+        System.out.println("         " + hashDocument);
 
-        return "Teste";
+        // Contactar Servidor SOAP para a operação CCMovelSign
+        System.out.println("60% ...  Contacting CMD SOAP Server for CCMovelSign Operation");
+        String resultCcMovelSign = ccMovelSign(applicationId, docName, hashDocument, userId, userPin);
+
+        // Impressão do Process Id devolvido na operação anterior
+        String processId = StringUtils.substringBefore(resultCcMovelSign, "ValidateOTP\n");
+        System.out.println("70% ...  Process Id returned by CCMovelSign Operation");
+        System.out.println("         " + processId);
+
+        // Validação da OTP
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("80% ...  Initializing OTP Validation\n");
+        System.out.println("Enter the OTP received on your Device:");
+        String otpCode = myScanner.nextLine();
+
+        System.out.println("90% ...  Contacting CMD SOAP Server for ValidateOtp Operation");
+        String signature = validateOtp(applicationId, processId, otpCode);
+
+        // Validação da Assinatura devolvida pela operação anterior
+        System.out.println("100% ... Signature returned by ValidateOtp Operation");
+        System.out.println("         " + signature);
+
+        System.out.println("110% ... Validating Signature\n");
+
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        digest.update(contentDocument.readAllBytes());
+        PublicKey publicKey = certChain.getCertificate("user").getPublicKey();
+        byte[] publicKeyBytes = publicKey.getEncoded();
+        System.out.println(publicKeyBytes);
+
+        return "\n############################################ Test All Done ##############################################\n";
     }
 
 }

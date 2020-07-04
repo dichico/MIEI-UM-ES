@@ -23,16 +23,16 @@ public class TestCmdWsdl {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################ Get Certificate ############################################\n");
-        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
+        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN):");
         String userId = myScanner.nextLine();
 
         while(!userId.matches(regexPhone)){
             System.out.println("Your User Phone Number doesn't follow the parameters. (+XXX NNNNNNNNN)");
-            System.out.println("Insert Your User Phone Number again: ");
+            System.out.println("Insert Your User Phone Number again:");
             userId = myScanner.nextLine();
         }
 
-        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        System.out.println("Insert Your Application Id (Enter to Ignore):");
         String myApplicationID = myScanner.nextLine();
 
         if(myApplicationID.isEmpty() && applicationId.length == 0) {
@@ -47,25 +47,25 @@ public class TestCmdWsdl {
 
         System.out.println("\n############################################# CC Movel Sign #############################################\n");
 
-        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
+        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN):");
         String userId = myScanner.nextLine();
 
         while(!userId.matches(regexPhone)){
             System.out.println("Your User Phone Number doesn't follow the parameters (+XXX NNNNNNNNN).");
-            System.out.println("Insert Your User Phone Number again: ");
+            System.out.println("Insert Your User Phone Number again:");
             userId = myScanner.nextLine();
         }
 
-        System.out.println("Insert Your CMD Signature Pin: ");
+        System.out.println("Insert Your CMD Signature Pin:");
         String userPin = myScanner.nextLine();
 
         while(!userPin.matches(regexPIN)){
             System.out.println("Your CMD Signature Pin doesn't follow the parameters (Minimum 4, Maximum 8 Digits).");
-            System.out.println("Insert Your CMD Signature Pin again: ");
+            System.out.println("Insert Your CMD Signature Pin again:");
             userPin = myScanner.nextLine();
         }
 
-        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        System.out.println("Insert Your Application Id (Enter to Ignore):");
         String myApplicationId = myScanner.nextLine();
 
         if(myApplicationId.isEmpty() && applicationId.length == 0) {
@@ -108,30 +108,30 @@ public class TestCmdWsdl {
         else return testClass.ccMovelMultipleSign(myApplicationId.getBytes(), null, null, userId, userPin);
     }
 
-    public static String menuValidateOTP() {
+    public static String menuValidateOtp() {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################# Validate OTP ##############################################\n");
 
-        System.out.println("Insert your ProcessID received in the answer of the CCMovel(Multiple)Sign command: ");
+        System.out.println("Insert your ProcessID received in the answer of the CCMovel(Multiple)Sign command:");
         String processId = myScanner.nextLine();
-        System.out.println("Insert Your OTP received in your device: ");
+        System.out.println("Insert Your OTP received in your device:");
         String otpCode = myScanner.nextLine();
 
         while(!otpCode.matches(regexPIN)){
             System.out.println("Your One Time Password doesn't follow the parameters (6 digits).");
-            System.out.println("Insert Your OTP received in your device again: ");
+            System.out.println("Insert Your OTP received in your device again:");
             otpCode = myScanner.nextLine();
         }
 
-        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        System.out.println("Insert Your Application Id (Enter to Ignore):");
         String myApplicationId = myScanner.nextLine();
 
         if(myApplicationId.isEmpty() && applicationId.length == 0) {
             return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
         }
-        else if (myApplicationId.isEmpty()) return testClass.validateOTP(applicationId, processId, otpCode);
-        else return testClass.validateOTP(myApplicationId.getBytes(), processId, otpCode);
+        else if (myApplicationId.isEmpty()) return testClass.validateOtp(applicationId, processId, otpCode);
+        else return testClass.validateOtp(myApplicationId.getBytes(), processId, otpCode);
     }
 
     public static String menuTestAll() throws IOException, NoSuchAlgorithmException, CertificateException, KeyStoreException {
@@ -139,35 +139,35 @@ public class TestCmdWsdl {
 
         System.out.println("\n########################################## Test All Commands ############################################\n");
 
-        System.out.println("Insert the Path of the File you want to Sign: ");
+        System.out.println("Insert the Path of the File you want to Sign:");
         String pathFile = myScanner.nextLine();
 
-        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN): ");
+        System.out.println("Insert Your User Phone Number (+XXX NNNNNNNNN):");
         String userId = myScanner.nextLine();
 
         while(!userId.matches(regexPhone)){
             System.out.println("Your User Phone Number doesn't follow the parameters (+XXX NNNNNNNNN).");
-            System.out.println("Insert Your User Phone Number again: ");
+            System.out.println("Insert Your User Phone Number again:");
             userId = myScanner.nextLine();
         }
 
-        System.out.println("Insert Your CMD Signature Pin: ");
+        System.out.println("Insert Your CMD Signature Pin:");
         String userPin = myScanner.nextLine();
 
         while(!userPin.matches(regexPIN)){
             System.out.println("Your CMD Signature Pin doesn't follow the parameters (Minimum 4, Maximum 8 Digits).");
-            System.out.println("Insert Your CMD Signature Pin again: ");
+            System.out.println("Insert Your CMD Signature Pin again:");
             userPin = myScanner.nextLine();
         }
 
-        System.out.println("Insert Your Application Id (Enter to Ignore): ");
+        System.out.println("Insert Your Application Id (Enter to Ignore):");
         String myApplicationId = myScanner.nextLine();
 
         if(myApplicationId.isEmpty() && applicationId.length == 0) {
             return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
         }
-        else if (myApplicationId.isEmpty()) return testClass.testAll(applicationId, pathFile, null, userId, userPin);
-        else return testClass.testAll(myApplicationId.getBytes(), pathFile, null, userId, userPin);
+        else if (myApplicationId.isEmpty()) return testClass.testAll(applicationId, pathFile, userId, userPin);
+        else return testClass.testAll(myApplicationId.getBytes(), pathFile, userId, userPin);
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InterruptedException, IOException, CertificateException, KeyStoreException {
@@ -209,7 +209,7 @@ public class TestCmdWsdl {
                     Thread.sleep(2000);
                     break;
                 case 4:
-                    String assinatura = menuValidateOTP();
+                    String assinatura = menuValidateOtp();
                     System.out.println("The Document Signature is: " + assinatura);
                     Thread.sleep(2000);
                     break;

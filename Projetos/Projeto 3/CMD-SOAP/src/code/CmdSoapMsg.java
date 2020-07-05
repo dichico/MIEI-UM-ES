@@ -8,7 +8,6 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.Scanner;
 
 import wsdlservice.*;
@@ -17,8 +16,6 @@ public class CmdSoapMsg {
 
     CCMovelDigitalSignature service = new CCMovelDigitalSignature();
     CCMovelSignature connector = service.getBasicHttpBindingCCMovelSignature();
-    Base64.Encoder b64encoder = Base64.getEncoder();
-    Base64.Decoder b64decoder = Base64.getDecoder();
 
     public String getWsdl(int wsdl) {
 
@@ -36,14 +33,8 @@ public class CmdSoapMsg {
     public byte[] hash(String message) throws NoSuchAlgorithmException {
 
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedHash = digest.digest(message.getBytes());
 
-        return encodedHash;
-    }
-
-    public byte[] hash(byte[] messageBytes) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        return digest.digest(messageBytes);
+        return digest.digest(message.getBytes());
     }
 
     public byte[] hashPrefix(byte[] hash, String hashType) {
@@ -73,6 +64,7 @@ public class CmdSoapMsg {
             System.out.println("Unable to create PEM File.");
         } finally {
             try {
+                assert certificatePem != null;
                 certificatePem.close();
             } catch (IOException exception) {
                 System.out.println("Unable to close PEM File.");
@@ -135,11 +127,11 @@ public class CmdSoapMsg {
             byte[] encodedHash = hash(message);
 
             byte[] hashWithPrefix = hashPrefix(encodedHash, "Sha256");
-            request.setHash(hashWithPrefix);
+            request.setHash(encodedHash);
         }
         else {
             byte[] hashWithPrefix = hashPrefix(hash, "Sha256");
-            request.setHash(hashWithPrefix);
+            request.setHash(hash);
         }
 
         // Definir o Id e o Pin do User
@@ -212,8 +204,6 @@ public class CmdSoapMsg {
 
     public String testAll(byte[] applicationId, String docName, String userId, String userPin) throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException {
 
-        String teste = "Isto é um teste em vez de ser ler de um ficheiro";
-
         // Inicialização Test All Commands
         System.out.println("Test Command Line Program (for Preprod/Prod Signature CMD (SOAP) version 1.6 technical specification)");
         System.out.println("Initializing Test of All Commands");
@@ -238,11 +228,12 @@ public class CmdSoapMsg {
 
         FileInputStream document = null;
         try {
-            document = new FileInputStream(new File("src/files/" + docName));;
+            document = new FileInputStream(new File("src/files/" + docName));
         } catch (IOException exception) {
             System.out.println("Unable to open Document " + "\"" + docName + "\"");
         } finally {
             try {
+                assert document != null;
                 document.close();
             } catch (IOException exception) {
                 System.out.println("Unable to close Document " + "\"" + docName + "\"");

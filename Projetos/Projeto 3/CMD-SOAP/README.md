@@ -2,6 +2,8 @@
 
 A aplicação Comando Linha (CLI) surge no sentido de permitir efetuar todos os testes das várias operações do serviço nacional SCMD (*Signature* CMD). Esta aplicação foi inicialmente desenvolvida na linguagem Pyhton, sendo este repositório reservado à sua implementação na linguagem Java, através de *Reverse Engineer* da aplicação original [CMD-SOAP](https://github.com/devisefutures/CMD-SOAP).
 
+---
+
 # Implementação/Estrutura do Programa
 
 O programa encontra-se então implementado na linguagem Java, tendo-se feito uso do ***Software Project Management* Maven** que se baseia num  *Project Object Model (POM)* sob a forma de `xml`, onde se encontram listadas todas as dependências internas ao programa desenvolvido. 
@@ -16,12 +18,15 @@ Este ficheiro `xml` permite uma flexibilidade em termos de atualização das ver
       - :memo: Ficheiro [CmdSoapMsg.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/CmdSoapMsg.java) que contém todas as funções que preparam e executam os vários comandos SOAP da Assinatura com Chave Móvel Digital
       - :memo: Ficheiro [TestCmdWsdl.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/TestCmdWsdl.java) que contém a *main* do programa que permite que os testes dos vários comandos sejam executados
     - :file_folder: **Diretoria [wsdlservice](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/wsdlservice)**
+      - :memo: Ficheiros  [\*.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/wsdlservice)  que criam todo o *Web Service* necessário para executar o teste das várias operações da Assinatura com Chave Móvel Digital
   - :open_file_folder: **Diretoria [resources](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources)**
-    - :page_facing_up: **Ficheiro [ama.wsdl](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl)** que define como descreve como todo o *Web Service* SOAP funciona 
-    - :key: **Ficheiro(s) [XXXXXXXXX.pem](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl)** que correspondem a todos os ficheiros PEM dos vários utilizadores do programa, usando-se como nome do ficheiro o seu *User Id*
+    - :page_facing_up: Ficheiro [ama.wsdl](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl) que define como descreve como todo o *Web Service* SOAP funciona 
+    - :key: Ficheiro(s) [XXXXXXXXX.pem](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl) que correspondem a todos os ficheiros PEM dos vários utilizadores do programa, usando-se como nome do ficheiro o seu *User Id*
 - :bookmark_tabs: Ficheiro [pom.xml](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/pom.xml) que consiste na *Bill of Materials* do *software* desenvolvido
 
 **Para demonstrar todo o processo da utilização da aplicação, desde a parte inicial de *build* até à parte do *compile* do ficheiro Java com a *main*, recorre-se ao *Code Editor* IntelliJ IDEA**.
+
+---
 
 # Utilização da Aplicação de Testes
 
@@ -37,7 +42,6 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 <br/>
 
 - Abrir o ficheiro `pom.xml` e clicar no ícone de ferramenta a verde na parte superior da janela.
-
   - Isto faz um *compile/build* inicial desse mesmo ficheiro `pom.xml`, que trata de criar toda a pasta **target** com as devidas Classes Java necessárias ao programa.
   - Todas as dependências definidas na *Bill of Materials* são corretamente instaladas e armazenadas na diretoria `.idea/libraries`.
 - Navegar até à Diretoria [code](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code), selecionado o Ficheiro [TestCmdWsdl.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/TestCmdWsdl.java).
@@ -47,12 +51,19 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 
 **Este conjunto de passos inicia o programa, espoletando a exibição do menu principal do mesmo:**
 
+<br/>
+
 <p align = "center">
    <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Menu%20Command%20Line%20Program.png" alt = "Run First Time Program" width="80%"/>
 </p>
 <p align = "center"><b>Figura 2.</b>Menu Principal do *Command Line Program*<br/></p>  
 
+<br/>
 
 ## Exemplo da utilização Comando GetAll
+
+Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do nosso *Command Line Program*, foque-se no compando principal que trata de executar todas as operações pensadas para o programa.
+
+
 
 # Notas

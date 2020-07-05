@@ -82,6 +82,37 @@ Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do n
 
 **Com estes dados o programa será capaz de processar todo o resto, pedindo ao utilizador o OTP recebido no seu telemóvel. Com esse OTP validado, e se tudo correr bem como planeado, a assinatura é validada com sucesso, sendo o resultado esperado o seguinte:**
 
+```
+Test Command Line Program (for Preprod/Prod Signature CMD (SOAP) version 1.6 technical specification)
+Initializing Test of All Commands
+0% ...   Reading Arguments from the Command Line
+         Document Name: teste.txt, User Id: +351 913392656
+10% ...  Contacting CMD SOAP Server for GetCertificate Operation
+20% ...  Certificate Emitted for "Diogo Emanuel da Silva Nogueira"
+         by the Certification Entity "EC de Chave Móvel Digital de Assinatura Digital Qualificada do Cartão de Cidadão 00003"
+         in the Hierarchy of "Cartão de Cidadão 006"
+30% ...  Reading the Document "teste.txt"
+40% ...  Hashing the Document "teste.txt"
+50% ...  Generated Hash 
+         [37, 94, -103, 42, 42, -117, -51, -128, 127, 80, -83, 102, ... ]
+60% ...  Contacting CMD SOAP Server for CCMovelSign Operation
+70% ...  Process Id returned by CCMovelSign Operation
+         172ad597-4e77-499b-8f1e-6f00924b5cac
+80% ...  Initializing OTP Validation
+
+Enter the OTP received on your Device:
+066181
+90% ...  Contacting CMD SOAP Server for ValidateOtp Operation
+OTP code is valid
+100% ... Signature returned by ValidateOtp Operation
+         [24, 0, -22, 35, -120, 36, -2, -91, -94, -5, 45, -55, -21, -63, ... ]
+110% ... Validating Signature
+
+Assinatura verificada com sucesso.
+
+############################################ Test All Done ##############################################
+```
+
 
 
 ---

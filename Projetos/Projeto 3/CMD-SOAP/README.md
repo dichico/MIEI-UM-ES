@@ -79,7 +79,10 @@ Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do n
 - Insere-se o número de telemóvel do Utilizador seguido do seu Pin.
 - **Caso não tenha sido configurado o *Application Id* no ficheiro [CmdConfig.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/CmdConfig.java), insere-se também. Caso contrário, *enter* para ignorar**.
 
-**Com estes dados o programa será capaz de processar todo o resto, pedindo ao utilizador o OTP recebido no seu telemóvel. Com esse OTP validado, e se tudo correr bem como planeado, a assinatura é validada com sucesso.**
+
+**Com estes dados o programa será capaz de processar todo o resto, pedindo ao utilizador o OTP recebido no seu telemóvel. Com esse OTP validado, e se tudo correr bem como planeado, a assinatura é validada com sucesso, sendo o resultado esperado o seguinte:**
+
+
 
 ---
 

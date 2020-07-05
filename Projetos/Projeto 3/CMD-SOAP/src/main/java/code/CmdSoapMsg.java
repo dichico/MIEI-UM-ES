@@ -58,7 +58,7 @@ public class CmdSoapMsg {
         OutputStream certificatePem = null;
 
         try {
-            certificatePem = new FileOutputStream(new File("src/files/" + StringUtils.substring(userId,5) + ".pem"));
+            certificatePem = new FileOutputStream(new File("src/main/resources/" + StringUtils.substring(userId,5) + ".pem"));
             certificatePem.write(certificate.getBytes(), 0, certificate.length());
         } catch (IOException exception) {
             System.out.println("Unable to create PEM File.");
@@ -77,7 +77,7 @@ public class CmdSoapMsg {
         String aliasName = null;
         int numberPath = 0;
 
-        InputStream pemFile = new FileInputStream("src/files/" + StringUtils.substring(userId,5)  + ".pem");
+        InputStream pemFile = new FileInputStream("src/main/resources/" + StringUtils.substring(userId,5)  + ".pem");
         BufferedInputStream contentPemFile = new BufferedInputStream(pemFile);
         CertificateFactory cf = CertificateFactory.getInstance("X.509");
 
@@ -228,7 +228,7 @@ public class CmdSoapMsg {
 
         FileInputStream document = null;
         try {
-            document = new FileInputStream(new File("src/files/" + docName));
+            document = new FileInputStream(new File("src/main/resources/" + docName));
         } catch (IOException exception) {
             System.out.println("Unable to open Document " + "\"" + docName + "\"");
         } finally {

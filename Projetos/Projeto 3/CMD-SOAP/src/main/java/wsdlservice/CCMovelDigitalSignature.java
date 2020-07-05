@@ -30,7 +30,7 @@ public class CCMovelDigitalSignature
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:src/wsdlservice/ama.wsdl");
+            url = new URL("file:src/main/resources/ama.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

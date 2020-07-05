@@ -30,7 +30,7 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 <br/>
 
 <p align = "center">
-   <img src = "Run First Time Program.gif" alt = "Run First Time Program" width="80%"/>
+   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Run%20First%20Time%20Program.gif" alt = "Run First Time Program" width="80%"/>
 </p>
 <p align = "center"><b>Figura 1.</b> Demonstração de como fazer o <i>build</i> inicial do programa<br/></p>
 
@@ -45,10 +45,10 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 
 <br/>
 
-**Este conjunto de passos inicia o programa o que espoleta a exibição do menu principal do mesmo:**
+**Este conjunto de passos inicia o programa, espoletando a exibição do menu principal do mesmo:**
 
 <p align = "center">
-   <img src = "Menu Command Line Program.png" alt = "Run First Time Program" width="80%"/>
+   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Menu%20Command%20Line%20Program.png" alt = "Run First Time Program" width="80%"/>
 </p>
 <p align = "center"><b>Figura 2.</b>Menu Principal do *Command Line Program*<br/></p>  
 

@@ -4,18 +4,19 @@ import java.io.IOException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TestCmdWsdl {
 
     static Scanner myScanner;
-    static CmdSoapMsg testClass = new CmdSoapMsg();
+    static final CmdSoapMsg testClass = new CmdSoapMsg();
 
-    static byte[] applicationId = new CmdConfig().getApplicationId();
-    static String programVersion = "Version 1.0";
+    static final byte[] applicationId = new CmdConfig().getApplicationId();
+    static final String programVersion = "Version 1.0";
 
     // Expressões Regulares para garantir os inputs dados no Command Line Program
-    static final String regexPhone = "\\+351\\ [0-9]{9}";
+    static final String regexPhone = "\\+351 [0-9]{9}";
     static final String regexPIN = "[0-9]{4,8}";
     static final String regexOTP = "[0-9]{6}";
 
@@ -118,7 +119,7 @@ public class TestCmdWsdl {
         System.out.println("Insert Your OTP received in your device:");
         String otpCode = myScanner.nextLine();
 
-        while(!otpCode.matches(regexPIN)){
+        while(!otpCode.matches(regexOTP)){
             System.out.println("Your One Time Password doesn't follow the parameters (6 digits).");
             System.out.println("Insert Your OTP received in your device again:");
             otpCode = myScanner.nextLine();
@@ -210,7 +211,7 @@ public class TestCmdWsdl {
                     break;
                 case 4:
                     byte[] assinatura = menuValidateOtp();
-                    System.out.println("The Document Signature is: " + assinatura);
+                    System.out.println("The Document Signature is: " + Arrays.toString(assinatura));
                     Thread.sleep(2000);
                     break;
                 case 5:

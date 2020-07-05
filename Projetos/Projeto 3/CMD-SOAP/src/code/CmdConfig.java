@@ -9,7 +9,7 @@ package code;
 public class CmdConfig {
 
     // ApplicationId da Entidade. Fornecida pela AMA.
-    String applicationId  = "b826359c-06f8-425e-8ec3-50a97a418916";
+    final String applicationId  = "b826359c-06f8-425e-8ec3-50a97a418916";
 
     /**
      * Método que retorna o Application Id fornecido pela AMA.

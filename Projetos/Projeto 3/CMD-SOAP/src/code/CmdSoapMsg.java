@@ -14,8 +14,8 @@ import wsdlservice.*;
 
 public class CmdSoapMsg {
 
-    CCMovelDigitalSignature service = new CCMovelDigitalSignature();
-    CCMovelSignature connector = service.getBasicHttpBindingCCMovelSignature();
+    final CCMovelDigitalSignature service = new CCMovelDigitalSignature();
+    final CCMovelSignature connector = service.getBasicHttpBindingCCMovelSignature();
 
     public String getWsdl(int wsdl) {
 

@@ -4,8 +4,8 @@ A aplicação Comando Linha (CLI) surge no sentido de permitir efetuar todos os 
 
 # Implementação/Estrutura do Programa
 
-O programa encontra-se então implementado na linguagem Java, tendo-se feito uso do ***Software Project Management* Maven** que se baseia num  *Project Object Model (POM)* sob a forma de xml, onde se encontram listadas todas as dependências internas ao programa desenvolvido. 
-Este ficheiro xml permite uma flexibilidade em termos de atualização das versões das várias bibliotecas e possíveis adições futuras, sendo apenas necessário fazer um *build* inicial para que as mesmas sejam automaticamente instaladas/integradas no projeto.
+O programa encontra-se então implementado na linguagem Java, tendo-se feito uso do ***Software Project Management* Maven** que se baseia num  *Project Object Model (POM)* sob a forma de `xml`, onde se encontram listadas todas as dependências internas ao programa desenvolvido. 
+Este ficheiro `xml` permite uma flexibilidade em termos de atualização das versões das várias bibliotecas e possíveis adições futuras, sendo apenas necessário fazer um *build* inicial para que as mesmas sejam automaticamente instaladas/integradas no projeto.
 
 **Assim, esta diretoria encontra-se organizada da seguinte forma:**
 
@@ -25,10 +25,32 @@ Este ficheiro xml permite uma flexibilidade em termos de atualização das vers�
 
 # Utilização da Aplicação de Testes
 
+Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que o mesmo está já implementado com o **Maven**, o primeiro passo consiste em abrir o projeto no IntelliJ IDEA, selecionado para isso apenas o ficheiro `pom.xml` e selecionar `Open as Project`. 
+
+<br/>
+
 <p align = "center">
    <img src = "Run First Time Program.gif" alt = "Run First Time Program" width="80%"/>
 </p>
-<p align = "center"><b>Figura 1.</b> Evolução dos Casos a nível Mundial<br/><b>(GIF obtido através do QGIS com TimeManager)</b></p>
+<p align = "center"><b>Figura 1.</b> Demonstração de como fazer o <i>build</i> inicial do programa<br/></p>
+
+<br/>
+
+- Abrir o ficheiro `pom.xml` e clicar no ícone de ferramenta a verde na parte superior da janela.
+
+  - Isto faz um *compile/build* inicial desse mesmo ficheiro `pom.xml`, que trata de criar toda a pasta **target** com as devidas Classes Java necessárias ao programa.
+  - Todas as dependências definidas na *Bill of Materials* são corretamente instaladas e armazenadas na diretoria `.idea/libraries`.
+- Navegar até à Diretoria [code](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code), selecionado o Ficheiro [TestCmdWsdl.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/TestCmdWsdl.java).
+- Com o ficheiro aberto, o próprio IntelliJ IDEA cria um ícone de play a verde que ao ser acionado permite fazer o *run* da Classse `main` nele descriminada.
+
+<br/>
+
+**Este conjunto de passos inicia o programa o que espoleta a exibição do menu principal do mesmo:**
+
+<p align = "center">
+   <img src = "Menu Command Line Program.png" alt = "Run First Time Program" width="80%"/>
+</p>
+<p align = "center"><b>Figura 2.</b>Menu Principal do *Command Line Program*<br/></p>  
 
 
 ## Exemplo da utilização Comando GetAll

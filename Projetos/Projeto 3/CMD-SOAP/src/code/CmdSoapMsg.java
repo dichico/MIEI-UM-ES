@@ -1,20 +1,24 @@
 package code;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import wsdlservice.*;
-
 import java.io.*;
+
 import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.Scanner;
+
+import wsdlservice.*;
 
 public class CmdSoapMsg {
 
     CCMovelDigitalSignature service = new CCMovelDigitalSignature();
     CCMovelSignature connector = service.getBasicHttpBindingCCMovelSignature();
+    Base64.Encoder b64encoder = Base64.getEncoder();
+    Base64.Decoder b64decoder = Base64.getDecoder();
 
     public String getWsdl(int wsdl) {
 
@@ -35,6 +39,11 @@ public class CmdSoapMsg {
         byte[] encodedHash = digest.digest(message.getBytes());
 
         return encodedHash;
+    }
+
+    public byte[] hash(byte[] messageBytes) throws NoSuchAlgorithmException {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        return digest.digest(messageBytes);
     }
 
     public byte[] hashPrefix(byte[] hash, String hashType) {
@@ -117,7 +126,7 @@ public class CmdSoapMsg {
         request.setApplicationId(applicationId);
 
         // Definir o Document Name
-        if(docName == null) request.setDocName("Docname Teste");
+        if(docName == null) request.setDocName("Documento Teste");
         else request.setDocName(docName);
 
         // Definir a Hash
@@ -190,7 +199,7 @@ public class CmdSoapMsg {
         return status.getProcessId();
     }
 
-    public String validateOtp(byte[] applicationId, String processId, String otpCode) {
+    public byte[] validateOtp(byte[] applicationId, String processId, String otpCode) {
 
         SignResponse response = connector.validateOtp(otpCode, processId, applicationId);
 
@@ -198,10 +207,12 @@ public class CmdSoapMsg {
         System.out.println(response.getStatus().getMessage());
 
         // Retornar a assinatura para o menu CLI
-        return response.getSignature().toString();
+        return response.getSignature();
     }
 
     public String testAll(byte[] applicationId, String docName, String userId, String userPin) throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException {
+
+        String teste = "Isto é um teste em vez de ser ler de um ficheiro";
 
         // Inicialização Test All Commands
         System.out.println("Test Command Line Program (for Preprod/Prod Signature CMD (SOAP) version 1.6 technical specification)");
@@ -227,7 +238,7 @@ public class CmdSoapMsg {
 
         FileInputStream document = null;
         try {
-            document = new FileInputStream(new File("src/files/" + StringUtils.substring(userId,5) + ".pem"));;
+            document = new FileInputStream(new File("src/files/" + docName));;
         } catch (IOException exception) {
             System.out.println("Unable to open Document " + "\"" + docName + "\"");
         } finally {
@@ -246,7 +257,7 @@ public class CmdSoapMsg {
 
         // Impressão da Hash
         System.out.println("50% ...  Generated Hash ");
-        System.out.println("         " + hashDocument);
+        System.out.println("         " + Arrays.toString(hashDocument));
 
         // Contactar Servidor SOAP para a operação CCMovelSign
         System.out.println("60% ...  Contacting CMD SOAP Server for CCMovelSign Operation");
@@ -264,19 +275,33 @@ public class CmdSoapMsg {
         String otpCode = myScanner.nextLine();
 
         System.out.println("90% ...  Contacting CMD SOAP Server for ValidateOtp Operation");
-        String signature = validateOtp(applicationId, processId, otpCode);
+        byte[] signature = validateOtp(applicationId, processId, otpCode);
 
         // Validação da Assinatura devolvida pela operação anterior
         System.out.println("100% ... Signature returned by ValidateOtp Operation");
-        System.out.println("         " + signature);
+        System.out.println("         " + Arrays.toString(signature));
 
         System.out.println("110% ... Validating Signature\n");
 
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        digest.update(contentDocument.readAllBytes());
-        PublicKey publicKey = certChain.getCertificate("user").getPublicKey();
-        byte[] publicKeyBytes = publicKey.getEncoded();
-        System.out.println(publicKeyBytes);
+        // Digest a verificar com a chave pública RSA
+        byte[] hashFile = hash(contentDocument.toString());
+
+        // Inicializar a verficação da assinatura RSA com o certificado do user
+        Signature sig = Signature.getInstance("NonewithRSA");
+        try {
+            PublicKey pubkey = certChain.getCertificate("user").getPublicKey();
+            sig.initVerify(pubkey);
+            sig.update(hashFile);
+            if (sig.verify(signature)) {
+                System.out.println("Assinatura verificada com sucesso.");
+            }
+            else {
+                System.out.println("Este certificado de utilizador não assinou este documento.");
+            }
+        } catch (InvalidKeyException | SignatureException e) {
+            System.out.println("The verification of the signature failed.");
+            System.out.println(e.toString());
+        }
 
         return "\n############################################ Test All Done ##############################################\n";
     }

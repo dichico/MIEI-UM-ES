@@ -108,7 +108,7 @@ public class TestCmdWsdl {
         else return testClass.ccMovelMultipleSign(myApplicationId.getBytes(), null, null, userId, userPin);
     }
 
-    public static String menuValidateOtp() {
+    public static byte[] menuValidateOtp() {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################# Validate OTP ##############################################\n");
@@ -128,10 +128,11 @@ public class TestCmdWsdl {
         String myApplicationId = myScanner.nextLine();
 
         if(myApplicationId.isEmpty() && applicationId.length == 0) {
-            return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
+            System.out.println("Set your Application ID in the cmd_config.py file or provide it as a parameter.");
         }
         else if (myApplicationId.isEmpty()) return testClass.validateOtp(applicationId, processId, otpCode);
-        else return testClass.validateOtp(myApplicationId.getBytes(), processId, otpCode);
+
+        return testClass.validateOtp(myApplicationId.getBytes(), processId, otpCode);
     }
 
     public static String menuTestAll() throws IOException, NoSuchAlgorithmException, CertificateException, KeyStoreException {
@@ -172,8 +173,7 @@ public class TestCmdWsdl {
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InterruptedException, IOException, CertificateException, KeyStoreException {
 
-        int cmdOption = 0;
-        int auxCmdOption;
+        int cmdOption;
 
         myScanner = new Scanner(System.in);
 
@@ -209,7 +209,7 @@ public class TestCmdWsdl {
                     Thread.sleep(2000);
                     break;
                 case 4:
-                    String assinatura = menuValidateOtp();
+                    byte[] assinatura = menuValidateOtp();
                     System.out.println("The Document Signature is: " + assinatura);
                     Thread.sleep(2000);
                     break;
@@ -219,8 +219,6 @@ public class TestCmdWsdl {
                     Thread.sleep(2000);
                     break;
                 case 6:
-                    break;
-                case 7:
                     System.out.println("Program Version: " + programVersion);
                 case 0:
                     break;

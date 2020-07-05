@@ -1,12 +1,14 @@
 package code;
 
-import java.io.IOException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Classe usada para testar os vários comandos que permitem executar as operações do SOAP Server
+ * @author Diogo Araújo
+ * @author Diogo Nogueira
+ * @version 1.0
+ */
 public class TestCmdWsdl {
 
     static Scanner myScanner;
@@ -20,6 +22,10 @@ public class TestCmdWsdl {
     static final String regexPIN = "[0-9]{4,8}";
     static final String regexOTP = "[0-9]{6}";
 
+    /**
+     * Menu que processa toda a informação referente à operação GetCertificate
+     * @return Uma String que contém toda a Chain de Certificados do Utilizador
+     */
     public static String menuGetCertificate() {
         myScanner = new Scanner(System.in);
 
@@ -43,7 +49,11 @@ public class TestCmdWsdl {
         else return testClass.getCertificate(myApplicationID.getBytes(), userId);
     }
 
-    public static String menuCCMovelSign() throws NoSuchAlgorithmException {
+    /**
+     * Menu que processa toda a informação referente à operação CCMovelSign
+     * @return Uma String com o Process Id do pedido feito pelo Utilizador
+     */
+    public static String menuCCMovelSign() {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n############################################# CC Movel Sign #############################################\n");
@@ -76,7 +86,11 @@ public class TestCmdWsdl {
         else return testClass.ccMovelSign(myApplicationId.getBytes(), null, null, userId, userPin);
     }
 
-    public static String menuCCMovelMultipleSign() throws NoSuchAlgorithmException {
+    /**
+     * Menu que processa toda a informação referente à operação CCMovelMultipleSign
+     * @return Uma String com o Process Id do pedido feito pelo Utilizador
+     */
+    public static String menuCCMovelMultipleSign() {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n######################################## CC Movel Multiple Sign #########################################\n");
@@ -109,6 +123,10 @@ public class TestCmdWsdl {
         else return testClass.ccMovelMultipleSign(myApplicationId.getBytes(), null, null, userId, userPin);
     }
 
+    /**
+     * Menu que processa toda a informação referente à operação ValidateOtp
+     * @return Uma Array de Bytes com a assinatura do Documento pedido pelo Utilizador
+     */
     public static byte[] menuValidateOtp() {
         myScanner = new Scanner(System.in);
 
@@ -136,7 +154,11 @@ public class TestCmdWsdl {
         return testClass.validateOtp(myApplicationId.getBytes(), processId, otpCode);
     }
 
-    public static String menuTestAll() throws IOException, NoSuchAlgorithmException, CertificateException, KeyStoreException {
+    /**
+     * Menu que processa toda a informação sequencial dos comandos anteriores
+     * @return Uma String com estado final da boa execução do programa
+     */
+    public static String menuTestAll() {
         myScanner = new Scanner(System.in);
 
         System.out.println("\n########################################## Test All Commands ############################################\n");
@@ -172,7 +194,12 @@ public class TestCmdWsdl {
         else return testClass.testAll(myApplicationId.getBytes(), pathFile, userId, userPin);
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException, InterruptedException, IOException, CertificateException, KeyStoreException {
+    /**
+     * Função main que apresenta o Menu Principal ao Utilizador e se conecta com todos os Menus anteriores
+     * @param args Argumentos/Input fornecido(s) pelo Utilizador
+     * @throws InterruptedException
+     */
+    public static void main(String[] args) throws InterruptedException {
 
         int cmdOption;
 

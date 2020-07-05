@@ -56,14 +56,31 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 <p align = "center">
    <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Menu%20Command%20Line%20Program.png" alt = "Run First Time Program" width="80%"/>
 </p>
-<p align = "center"><b>Figura 2.</b>Menu Principal do *Command Line Program*<br/></p>  
+<p align = "center"><b>Figura 2.</b>Menu Principal do <i>Command Line Program</i><br/></p>  
 
 <br/>
 
 ## Exemplo da utilização Comando GetAll
 
-Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do nosso *Command Line Program*, foque-se no compando principal que trata de executar todas as operações pensadas para o programa.
+Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do nosso *Command Line Program*, foque-se no compando principal que trata de executar todas as operações pensadas para o programa. 
 
+**Ao optar-se por esta *option* surge um novo menu:**
 
+<br/>
+
+<p align = "center">
+   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Menu%20Test%20All%20Commands.png" alt = "Menu Test All Commands" width="80%"/>
+</p>
+<p align = "center"><b>Figura 3.</b> Menu <i>Test All Commands</i><br/></p>
+
+</br>
+
+- Insere-se o *path* do documento ao qual se vai aplicar a Assinatura com Chave Móvel Digital.
+- Insere-se o número de telemóvel do Utilizador seguido do seu Pin.
+- **Caso não tenha sido configurado o *Application Id* no ficheiro [CmdConfig.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/CmdConfig.java), insere-se também. Caso contrário, *enter* para ignorar**.
+
+**Com estes dados o programa será capaz de processar todo o resto, pedindo ao utilizador o OTP recebido no seu telemóvel. Com esse OTP validado, e se tudo correr bem como planeado, a assinatura é validada com sucesso.**
+
+---
 
 # Notas

@@ -18,12 +18,18 @@ Este ficheiro xml permite uma flexibilidade em termos de atualização das vers�
     - :file_folder: **Diretoria [wsdlservice](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/wsdlservice)**
   - :open_file_folder: **Diretoria [resources](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources)**
     - :page_facing_up: **Ficheiro [ama.wsdl](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl)** que define como descreve como todo o *Web Service* SOAP funciona 
-    - :ket: **Ficheiro(s) [XXXXXXXXX.pem](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl)** que correspondem a todos os ficheiros PEM dos vários utilizadores do programa, usando-se como nome do ficheiro o seu *User Id*
+    - :key: **Ficheiro(s) [XXXXXXXXX.pem](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl)** que correspondem a todos os ficheiros PEM dos vários utilizadores do programa, usando-se como nome do ficheiro o seu *User Id*
 - :bookmark_tabs: Ficheiro [pom.xml](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/pom.xml) que consiste na *Bill of Materials* do *software* desenvolvido
 
 **Para demonstrar todo o processo da utilização da aplicação, desde a parte inicial de *build* até à parte do *compile* do ficheiro Java com a *main*, recorre-se ao *Code Editor* IntelliJ IDEA**.
 
 # Utilização da Aplicação de Testes
+
+<p align = "center">
+   <img src = "Run First Time Program.gif" alt = "Run First Time Program" width="80%"/>
+</p>
+<p align = "center"><b>Figura 1.</b> Evolução dos Casos a nível Mundial<br/><b>(GIF obtido através do QGIS com TimeManager)</b></p>
+
 
 ## Exemplo da utilização Comando GetAll
 

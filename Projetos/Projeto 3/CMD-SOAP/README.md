@@ -6,7 +6,7 @@ A aplicação Comando Linha (CLI) surge no sentido de permitir efetuar todos os 
 
 # Implementação/Estrutura do Programa
 
-O programa encontra-se então implementado na linguagem Java, tendo-se feito uso do ***Software Project Management* Maven** que se baseia num  *Project Object Model (POM)* sob a forma de `xml`, onde se encontram listadas todas as dependências internas ao programa desenvolvido. 
+O programa encontra-se então implementado na linguagem Java, tendo-se feito uso do ***Software Project Management* Maven** que se baseia num  *Project Object Model* (POM) sob a forma de `xml`, onde se encontram listadas todas as dependências internas ao programa desenvolvido. 
 Este ficheiro `xml` permite uma flexibilidade em termos de atualização das versões das várias bibliotecas e possíveis adições futuras, sendo apenas necessário fazer um *build* inicial para que as mesmas sejam automaticamente instaladas/integradas no projeto.
 
 <br/>

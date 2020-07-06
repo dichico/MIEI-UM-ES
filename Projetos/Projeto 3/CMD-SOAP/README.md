@@ -32,7 +32,7 @@ Este ficheiro `xml` permite uma flexibilidade em termos de atualização das ver
 
 ---
 
-# Utilização da Aplicação de Testes
+# Inicialização/Utilização do Programa
 
 Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que o mesmo está já implementado com o **Maven**, o primeiro passo consiste em abrir o projeto no IntelliJ IDEA, selecionado para isso apenas o ficheiro `pom.xml` e selecionar `Open as Project`. 
 

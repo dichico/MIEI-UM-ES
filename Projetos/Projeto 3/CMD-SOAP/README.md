@@ -64,7 +64,7 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 
 <br/>
 
-## Exemplo da utilização Comando GetAll
+## Exemplo da utilização da opção *Run All Commands*
 
 Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do nosso *Command Line Program*, foque-se no compando principal que trata de executar todas as operações pensadas para o programa. 
 

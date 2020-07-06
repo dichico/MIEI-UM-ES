@@ -13,6 +13,7 @@ Este ficheiro `xml` permite uma flexibilidade em termos de atualização das ver
 
 **Assim, esta diretoria encontra-se organizada da seguinte forma:**
 
+- :open_file_folder: **Diretoria [doc](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/doc)** que possui todos os Ficheiros e Diretorias necessárias ao uso do JavaDoc gerado para o projeto
 - :open_file_folder: **Diretoria [src](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main)** que contém a diretoria **[java](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java)** que possui toda a parte do código Java e ainda a diretoria **[resources](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources)** que possui todos os ficheiros extra ao programa
   - :open_file_folder: **Diretoria [java](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java)**
     - :file_folder: **Diretoria [code](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code)**
@@ -127,3 +128,4 @@ Assinatura verificada com sucesso.
 1. Não é necessário instalar qualquer biblioteca de forma manual.
 2. A aplicação foi testada usando-se o SDK `openjdk-14.0.1`.
 3. Antes de usar, verificar o *value* da variável ***Application Id***  no ficheiro [CmdConfig.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/CmdConfig.java).
+4. Foi usado o *Documentation Generator* **JavaDoc**, uma vez que todo o código possui a documentação necessária e que dessa forma torna-se mais fácil visualizar as várias classes e métodos criados no projeto. Para fazer uso da mesma, basta aceder ao ficheiro [index.html](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/doc/index.html) presente na Diretoria [doc](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/doc).

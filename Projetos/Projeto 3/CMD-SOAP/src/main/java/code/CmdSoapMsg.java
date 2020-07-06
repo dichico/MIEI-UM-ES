@@ -25,23 +25,25 @@ public class CmdSoapMsg {
     final CCMovelDigitalSignature service = new CCMovelDigitalSignature();
     final CCMovelSignature connector = service.getBasicHttpBindingCCMovelSignature();
 
-    /**
-     * Função que trata de retornar o URL WSDL a usar para criar o Web Service SOAP
-     * @param wsdl Número do URL
-     * @return URL WSDL
-     */
-    public String getWsdl(int wsdl) {
-
-        String[] wsdlURL = new String[] {
-                "https://preprod.cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?wsdl",
-                "https://cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?wsdl"
-        };
-        try {
-            return wsdlURL[wsdl];
-        } catch(ArrayIndexOutOfBoundsException exception) {
-            return "No valid WSDL.";
-        }
-    }
+// --Commented out by Inspection START (06/07/2020 22:42):
+//    /**
+//     * Função que trata de retornar o URL WSDL a usar para criar o Web Service SOAP
+//     * @param wsdl Número do URL
+//     * @return URL WSDL
+//     */
+//    public String getWsdl(int wsdl) {
+//
+//        String[] wsdlURL = new String[] {
+//                "https://preprod.cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?wsdl",
+//                "https://cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?wsdl"
+//        };
+//        try {
+//            return wsdlURL[wsdl];
+//        } catch(ArrayIndexOutOfBoundsException exception) {
+//            return "No valid WSDL.";
+//        }
+//    }
+// --Commented out by Inspection STOP (06/07/2020 22:42)
 
     /**
      * Função que cria uma Hash SHA256 da Mensagem passada como parâmetro
@@ -50,7 +52,7 @@ public class CmdSoapMsg {
      */
     public byte[] hash(String message) {
 
-        MessageDigest digest = null;
+        MessageDigest digest;
         try {
             digest = MessageDigest.getInstance("SHA-256");
             return digest.digest(message.getBytes());
@@ -212,13 +214,11 @@ public class CmdSoapMsg {
     /**
      * Função que trata de invocar a operação CCMovelMultipleSign do Web Service SOAP
      * @param applicationId Application Id dada (ou não) como argumento
-     * @param docName Nome do Documento a assinar
-     * @param hash Hash a usar na assinatura
      * @param userId Id do Utilizador
      * @param userPin Pin do Utilizador
      * @return Uma String com o Process Id do pedido de Assinatura
      */
-    public String ccMovelMultipleSign(byte[] applicationId, String docName, byte[] hash, String userId, String userPin) {
+    public String ccMovelMultipleSign(byte[] applicationId, String userId, String userPin) {
 
         // Criar a Instância do Pedido
         MultipleSignRequest request = new MultipleSignRequest();

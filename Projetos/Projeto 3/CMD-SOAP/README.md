@@ -9,6 +9,8 @@ A aplicação Comando Linha (CLI) surge no sentido de permitir efetuar todos os 
 O programa encontra-se então implementado na linguagem Java, tendo-se feito uso do ***Software Project Management* Maven** que se baseia num  *Project Object Model (POM)* sob a forma de `xml`, onde se encontram listadas todas as dependências internas ao programa desenvolvido. 
 Este ficheiro `xml` permite uma flexibilidade em termos de atualização das versões das várias bibliotecas e possíveis adições futuras, sendo apenas necessário fazer um *build* inicial para que as mesmas sejam automaticamente instaladas/integradas no projeto.
 
+<br/>
+
 **Assim, esta diretoria encontra-se organizada da seguinte forma:**
 
 - :open_file_folder: **Diretoria [src](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main)** que contém a diretoria **[java](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/java)** que possui toda a parte do código Java e ainda a diretoria **[resources](https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources)** que possui todos os ficheiros extra ao programa
@@ -23,6 +25,8 @@ Este ficheiro `xml` permite uma flexibilidade em termos de atualização das ver
     - :page_facing_up: Ficheiro [ama.wsdl](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl) que define como descreve como todo o *Web Service* SOAP funciona 
     - :key: Ficheiro(s) [XXXXXXXXX.pem](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/resources/ama.wsdl) que correspondem a todos os ficheiros PEM dos vários utilizadores do programa, usando-se como nome do ficheiro o seu *User Id*
 - :bookmark_tabs: Ficheiro [pom.xml](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/pom.xml) que consiste na *Bill of Materials* do *software* desenvolvido
+
+<br/>
 
 **Para demonstrar todo o processo da utilização da aplicação, desde a parte inicial de *build* até à parte do *compile* do ficheiro Java com a *main*, recorre-se ao *Code Editor* IntelliJ IDEA**.
 
@@ -64,7 +68,9 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 
 Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do nosso *Command Line Program*, foque-se no compando principal que trata de executar todas as operações pensadas para o programa. 
 
-**Ao optar-se por esta *option* surge um novo menu:**
+<br/>
+
+**Ao optar-se por esta *option* surge um novo menu totalmente adaptado a essa escolha. Note-se que para cada escolha existe um menu específico:**
 
 <br/>
 
@@ -79,6 +85,7 @@ Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do n
 - Insere-se o número de telemóvel do Utilizador seguido do seu Pin.
 - **Caso não tenha sido configurado o *Application Id* no ficheiro [CmdConfig.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/CmdConfig.java), insere-se também. Caso contrário, *enter* para ignorar**.
 
+<br/>
 
 **Com estes dados o programa será capaz de processar todo o resto, pedindo ao utilizador o OTP recebido no seu telemóvel. Com esse OTP validado, e se tudo correr bem como planeado, a assinatura é validada com sucesso, sendo o resultado esperado o seguinte:**
 
@@ -113,8 +120,10 @@ Assinatura verificada com sucesso.
 ############################################ Test All Done ##############################################
 ```
 
-
-
 ---
 
 # Notas
+
+1. Não é necessário instalar qualquer biblioteca de forma manual.
+2. A aplicação foi testada usando-se o SDK `openjdk-14.0.1`.
+3. Antes de usar, verificar o *value* da variável ***Application Id***  no ficheiro [CmdConfig.java](https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/CMD-SOAP/src/main/java/code/CmdConfig.java).

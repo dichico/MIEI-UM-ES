@@ -197,7 +197,7 @@ public class TestCmdWsdl {
     /**
      * Função main que apresenta o Menu Principal ao Utilizador e se conecta com todos os Menus anteriores
      * @param args Argumentos/Input fornecido(s) pelo Utilizador
-     * @throws InterruptedException
+     * @throws InterruptedException Exeção que é acionada quando existe um erro no Sleep
      */
     public static void main(String[] args) throws InterruptedException {
 
@@ -248,6 +248,9 @@ public class TestCmdWsdl {
                     break;
                 case 6:
                     System.out.println("Program Version: " + programVersion);
+                case 7:
+                    System.out.println("Consultar Detalhes do Repositório em https://github.com/uminho-miei-engseg-19-20/Grupo5/tree/master/Projetos/Projeto%203/CMD-SOAP");
+                    break;
                 case 0:
                     break;
                 default:

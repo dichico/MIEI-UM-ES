@@ -16,6 +16,6 @@ README principal que contém o a lista de todos os Projetos de Engenharia de Seg
   - Contextualização da métrica de *Coding Standards* na constituição de um bom produto de *software*
 
 - [**Projeto 3**](Projeto%203) - ***Command Line Program* para teste das Operações do Serviço de Assinatura com Chave Móvel Digital**
-  - *Reverse Engineer* da aplicação em Python CMD-SOAP[https://github.com/devisefutures/CMD-SOAP]
+  - *Reverse Engineer* da aplicação em Python [CMD-SOAP](https://github.com/devisefutures/CMD-SOAP)
   - Aplicação dos conceitos de Técnicas de Desenvolvimento Seguro de *Software* ([Projeto 1](Projeto%201)) e de Ferramentas e Indicadores de Qualidade de *Software* e/ou Testes de *Software* ([Projeto 2](Projeto%202))
 

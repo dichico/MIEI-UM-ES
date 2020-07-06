@@ -119,8 +119,8 @@ public class TestCmdWsdl {
         if(myApplicationId.isEmpty() && applicationId.length == 0) {
             return "Set your Application ID in the cmd_config.py file or provide it as a parameter.";
         }
-        else if (myApplicationId.isEmpty()) return testClass.ccMovelMultipleSign(applicationId, null, null, userId, userPin);
-        else return testClass.ccMovelMultipleSign(myApplicationId.getBytes(), null, null, userId, userPin);
+        else if (myApplicationId.isEmpty()) return testClass.ccMovelMultipleSign(applicationId, userId, userPin);
+        else return testClass.ccMovelMultipleSign(myApplicationId.getBytes(), userId, userPin);
     }
 
     /**

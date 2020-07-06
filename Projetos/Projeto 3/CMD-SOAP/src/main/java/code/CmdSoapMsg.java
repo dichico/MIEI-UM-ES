@@ -89,7 +89,7 @@ public class CmdSoapMsg {
     /**
      * Função que trata de criar um KeyStore com a Chain dos Certificados do Utilizador
      * @param userId User Id a usar para saber qual ficheiro PEM deve ser aberto/lido
-     * @return
+     * @return Uma variável contendo o chain de certificados
      */
     public KeyStore getCertChain(String userId) {
 

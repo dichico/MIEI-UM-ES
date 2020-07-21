@@ -40,7 +40,7 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 <br/>
 
 <p align = "center">
-   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Run%20First%20Time%20Program.gif" alt = "Run First Time Program" width="70%"/>
+   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/GIFs/Run%20First%20Time%20Program.gif" alt = "Run First Time Program" width="70%"/>
 </p>
 <p align = "center"><b>Figura 1.</b> Demonstração de como fazer o <i>build</i> inicial do programa<br/></p>
 
@@ -59,7 +59,7 @@ Para começar a utilizar o programa Java pela primeira vez, e tendo em conta que
 <br/>
 
 <p align = "center">
-   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Menu%20Command%20Line%20Program.png" alt = "Run First Time Program" width="70%"/>
+   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Images/Menu%20Command%20Line%20Program.png" alt = "Menu Command Line Program" width="70%"/>
 </p>
 <p align = "center"><b>Figura 2.</b>Menu Principal do <i>Command Line Program</i><br/></p>  
 
@@ -76,7 +76,7 @@ Para demonstrar o uso de um dos comandos disponibilizados no Menu Principal do n
 <br/>
 
 <p align = "center">
-   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Menu%20Test%20All%20Commands.png" alt = "Menu Test All Commands" width="70%"/>
+   <img src = "https://github.com/uminho-miei-engseg-19-20/Grupo5/blob/master/Projetos/Projeto%203/Images/Menu%20Test%20All%20Commands.png" alt = "Menu Test All Commands" width="70%"/>
 </p>
 <p align = "center"><b>Figura 3.</b> Menu <i>Test All Commands</i><br/></p>
 
